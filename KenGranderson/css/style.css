@@ -1053,3 +1053,7 @@ input[type="text"] {
 
 .divider {
   border-top-color: #5c445e; }
+
+@media screen and (max-width: 768px) {
+  .img-frame {
+    max-height: 160px; } }

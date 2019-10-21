@@ -77,7 +77,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-xs-12 col-md-4">
                         <ul class="info">
                             <li><span class="first-block">Name:</span><span class="second-block">Ken Granderson</span></li>
                             <li><span class="first-block">Phone:</span><span class="second-block">+ 1 857 222 2318</span></li>
@@ -99,7 +99,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-xs-12 col-md-8">
                         <div class="content-scrollable">
                             <h2>Hey There!  Thanks for stopping By!</h2>
                             <p>
@@ -286,8 +286,9 @@
 
                     $.each(mediaUrls, function (index, mediaUrl) {
                         var ext = getExt(mediaUrl);
+                        var bootstrapCss = ext === null ? 'col-xs-12 col-lg-6 ' : 'col-xs-6 col-sm-4 ';
 
-                        html += '<div class="col-xs-6 col-sm-4 ' + (showInLightbox(ext) ? 'img-frame' : '') + '">' +
+                        html += '<div class="' + bootstrapCss + (showInLightbox(ext) ? 'img-frame' : '') + '">' +
                             renderMediaUrl(mediaUrl, ext) + '</div>';
                     });
 

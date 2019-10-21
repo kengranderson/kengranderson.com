@@ -1296,3 +1296,10 @@ input[type="text"] {
 .divider {
     border-top-color: $brand-primary;
 }
+
+@media screen and (max-width: $screen-sm) {
+    .img-frame {
+        max-height: 160px;
+    }
+}
+
