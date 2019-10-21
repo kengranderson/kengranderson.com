@@ -1,14 +1,12 @@
 $font-primary: 'Space Mono', Arial, serif;
 $font-secondary: 'Kaushan Script', cursive;
 
-
-
 // Overrides
 $grid-gutter-width: 40px !default; 
 $border-radius-base:  4px !default;
 $padding-base-vertical: 14px !default;
 
-$brand-primary: #FF9000 !default;
+$brand-primary: #5c445e !default;
 
 $brand-white: #fff;
 $brand-black: #000;
@@ -25,7 +23,10 @@ $brand-bg-dark: #2F3C4F;
 $input-border-focus:  $brand-primary !default;
 $form-group-margin-bottom:       30px !default;
 
+$header-height: 500px;
+$section-vpadding: 2em;
 
+$img-gallery-height: 160px;
 
 // Mixin
 @mixin translateX($translatex) {
@@ -39,7 +40,7 @@ $form-group-margin-bottom:       30px !default;
     -moz-transition:    all $transition ease;
     -o-transition:      all $transition ease;
     -webkit-transition: all $transition ease;
-    -ms-transition: 		all $transition ease;
+    -ms-transition:     all $transition ease;
     transition:         all $transition ease;
 }
 @mixin inline-block() {
@@ -98,9 +99,6 @@ $form-group-margin-bottom:       30px !default;
 // Import 
 @import 'bootstrap/mixins';
 @import 'bootstrap/variables';
-
-
-
 
 /* =======================================================
 *
@@ -179,7 +177,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	background-size: cover;
 	background-attachment: fixed;
 	position: relative;
-	height: 600px;
+	height: $header-height;
 	width: 100%;
 	.overlay{
 		position: absolute;
@@ -196,7 +194,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	.display-tc {
 		display: table-cell;
 		vertical-align: middle;
-		height: 600px;
+		height: $header-height;
 		h1, h2, h3 {
 			margin: 0;
 			padding: 0;
@@ -300,7 +298,7 @@ h1, h2, h3, h4, h5, h6, figure {
 		color: $brand-white;
 	}
 	.services-padding{
-		padding: 7em 0;
+		padding: $section-vpadding 0 0 0;
 	}
 	.feature-left {
 		margin-bottom: 40px;
@@ -346,7 +344,6 @@ h1, h2, h3, h4, h5, h6, figure {
 	}
 }
 
-
 #fh5co-about,
 #fh5co-resume,
 #fh5co-skills,
@@ -355,7 +352,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-blog,
 #fh5co-pricing,
 #fh5co-contact{
-	padding: 7em 0;
+	padding: $section-vpadding 0;
 	clear: both;
 	@media screen and (max-width: $screen-sm) {
 		padding: 3em 0;
@@ -458,7 +455,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 
 .fh5co-heading {
-	margin-bottom: 5em;
+	margin-bottom: 3em;
 	&.fh5co-heading-sm {
 		margin-bottom: 2em;
 	}
@@ -750,10 +747,10 @@ h1, h2, h3, h4, h5, h6, figure {
 	width: 100%;
 	display: table;
 	overflow: hidden;
-	@media screen and(max-width: $screen-sm){
+	@media screen and (max-width: $screen-sm) {
 		height: 400px;
 	}
-	@media screen and(max-width: $screen-xs){
+	@media screen and (max-width: $screen-xs) {
 		height: 270px;
 	}	
 	.desc{
@@ -779,7 +776,7 @@ h1, h2, h3, h4, h5, h6, figure {
 			-webkit-transform: translate3d(0, 15px, 0);
 			transform: translate3d(0, 15px, 0);
 		}
-		@media screen and(max-width: $screen-sm){
+		@media screen and (max-width: $screen-sm) {
 			opacity: 1;
 			background: rgba($brand-white,.6);
 			h3{
@@ -857,10 +854,10 @@ h1, h2, h3, h4, h5, h6, figure {
 		background-repeat: no-repeat;
 		position: relative;
 		height: 300px;
-		@media screen and(max-width: $screen-sm){
+		@media screen and (max-width: $screen-sm) {
 			height: 400px;
 		}
-		@media screen and(max-width: $screen-xs){
+		@media screen and (max-width: $screen-xs) {
 			height: 270px;
 		}
 	}
@@ -878,7 +875,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 		@include transition(.3s);
 
-		@media screen and(max-width: $screen-sm){
+		@media screen and (max-width: $screen-sm) {
 			padding: 10px;
 		}
 
@@ -897,7 +894,7 @@ h1, h2, h3, h4, h5, h6, figure {
 				list-style: none;
 				display: inline-block;
 				margin-left: 10px;
-				@media screen and(max-width: $screen-sm){
+				@media screen and (max-width: $screen-sm) {
 					font-size: 14px;
 				}
 				&:first-child{
@@ -939,7 +936,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	float: left;
 	.video, .choose{
 		display: inline-block;
-		@media screen and (max-width: $screen-sm){
+		@media screen and (max-width: $screen-sm) {
 			width: 100% !important;
 		}
 	}
@@ -952,14 +949,14 @@ h1, h2, h3, h4, h5, h6, figure {
 		position: relative;
 		@include flex();
 		@include flexwrap();
-		@media screen and(max-width: $screen-sm){
+		@media screen and (max-width: $screen-sm) {
 			display: none;
 		}
 	}
 	.choose{
 		width: 50%;
 		padding: 4em;
-		@media screen and(max-width: $screen-sm){
+		@media screen and (max-width: $screen-sm) {
 			width: 100%;
 			padding: 4em 1em;
 		}
@@ -967,7 +964,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-video {
 	overflow: hidden;
-	@media screen and (max-width: $screen-md){
+	@media screen and (max-width: $screen-md) {
 		height: 450px;
 	}
 	.overlay {
@@ -1278,4 +1275,24 @@ input[type="text"] {
 	.js & {
 		opacity: 0;
 	}
+}
+
+.media-gallery {
+
+    img {
+        height: $img-gallery-height;
+    }
+}
+
+.mfp-close {
+    cursor: pointer !important;
+}
+
+.content-scrollable {
+    max-height: 600px;
+    overflow-y: scroll;
+}
+
+.divider {
+    border-top-color: $brand-primary;
 }

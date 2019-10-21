@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Documentation - Responsive jQuery Grid Plugin | Media Boxes Portfolio</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="description" content="Learn how the Media Boxes works">
+    
+        <!-- loading the css -->
+        <link href="assets/css/bootstrap.css" rel="stylesheet">
+        <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+        <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+        
+        <!--[if lt IE 9]>
+          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        
+        <style>
+            body{
+                margin-left: 180px;
+                padding-bottom: 40px;
+            }
+            
+            .navigation{
+                width: 180px;
+                height: 100%;
+                background: #222;
+                position: absolute;
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+
+            .navigation ul{
+                margin-left: 25px;
+                width: 100%;
+            }
+
+            .navigation ul li:first-child{
+                padding-top: 30px !important;
+            }
+
+            .navigation ul li{
+                list-style: none;
+                padding: 3px 0;
+                font-size: 15px;
+                font-weight: 200;
+                float: none !important;
+            }
+            
+            .navigation ul li a{
+                color: #d6d6d6;
+                text-decoration: none;
+                text-shadow: none !important;
+            }
+
+            .navigation ul li a:hover{
+                color: #e5e5e5 !important;
+            }
+
+            .navigation ul li.active a:hover{
+                color: #555555 !important;
+            }
+        
+            .container{
+                width: 100%;
+                padding: 0px 40px;
+                -webkit-box-sizing: border-box; 
+                   -moz-box-sizing: border-box; 
+                        box-sizing: border-box;
+            }
+
+            section{
+                padding-bottom: 60px;
+            }
+
+            .highlight{
+                background-color: #FDFDB1;
+            }
+
+            .filters li{
+                margin: 15px 0;
+            }
+        </style>
+
+        <!-- Various Icons (Favicon, Touch Icon,... -->
+        <link rel="shortcut icon" href="assets/img/favicon.ico">
+        <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-touch-icon-114x114.png">
+        
+    </head>
+    
+    <body data-spy="scroll" data-target=".navbar" id="top">
+    
+        <!-- ========================= NAVIGATION BAR >> START ========================= -->
+        
+        <div class="navigation navbar">
+            <ul class="nav">
+                <li class="active"><a href="#overview">Overview</a></li>
+                <li><a href="#including">Including files</a></li>
+                <li><a href="#html">HTML</a></li>
+                <li><a href="#initi">Initializing</a></li>
+                <li><a href="#thumbs">Thumbnails</a></li>
+                <li><a href="#overlay">Thumbnail overlay</a></li>
+                <li><a href="#popup">Popup</a></li>
+                <li><a href="#content">Some content</a></li>
+                <li><a href="#filtering">Filtering</a></li>
+                <li><a href="#searching">Searching</a></li>
+                <li><a href="#sorting">Sorting</a></li>
+                <li><a href="#options">Options</a></li>
+                <li><a href="#methods">Methods</a></li>
+                <li><a href="#handystuff">Handy Stuff</a></li>
+            </ul>
+        </div>
+        
+        <!-- ========================= NAVIGATION BAR >> END ========================= -->
+    
+    
+    
+        <!-- ========================= MAIN CONTAINER >> START ========================= -->
+        <div class="container">
+        
+            <!-- ========================= SECTION: OVERVIEW >> START ========================= -->
+            <section id="overview" style="padding-top:20px;">
+                
+                <h1>Media Boxes <small>by <a href="http://codecanyon.net/user/castlecode" target="_blank">castlecode</a></small></h1>
+
+                <hr>
+
+                <p class="alert alert-info">
+                    Thank you for purchasing this plugin. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form 
+                    <a href="http://codecanyon.net/user/castlecode">here</a>. Thanks so much!
+                </p>
+
+                
+                <hr>
+                
+            </section>
+            <!-- ========================= SECTION: OVERVIEW >> END ========================= -->
+
+
+          
+            <!-- ========================= SECTION: INCLUDING FILES >> START ========================= -->
+            <section id="including">
+                <div class="page-header">
+                    <h1>Including files</h1>
+                </div>
+                       
+                <p> These are all the files you need to import in your page so the plugin can work.</p>
+
+<!-- Code Block >> Start -->                   
+<pre class="prettyprint linenums">
+&lt;!-- Media Boxes CSS files --&gt;
+&lt;link rel="stylesheet" href="plugin/components/Font Awesome/css/font-awesome.min.css"&gt;
+&lt;link rel="stylesheet" href="plugin/components/Magnific Popup/magnific-popup.css"&gt; &lt;!-- Only if you are going to use Magnific Popup -->
+&lt;link rel="stylesheet" href="plugin/components/Fancybox/jquery.fancybox.min.css"&gt; &lt;!-- Only if you are going to use fancybox -->
+&lt;link rel="stylesheet" href="plugin/css/mediaBoxes.css"&gt;
+
+
+&lt;!-- jQuery 1.8+ -->
+&lt;script src="plugin/components/jQuery/jquery-1.11.3.min.js">&lt;/script>
+
+
+&lt;!-- Media Boxes JS files --&gt;
+&lt;script src="plugin/components/Isotope/jquery.isotope.min.js"&gt;&lt;/script&gt;
+&lt;script src="plugin/components/imagesLoaded/jquery.imagesLoaded.min.js"&gt;&lt;/script&gt;
+&lt;script src="plugin/components/Transit/jquery.transit.min.js"&gt;&lt;/script&gt;
+&lt;script src="plugin/components/jQuery Easing/jquery.easing.js"&gt;&lt;/script&gt;
+&lt;script src="plugin/components/Waypoints/waypoints.min.js"&gt;&lt;/script&gt;
+&lt;script src="plugin/components/Modernizr/modernizr.custom.min.js"&gt;&lt;/script&gt;
+&lt;script src="plugin/components/Magnific Popup/jquery.magnific-popup.min.js"&gt;&lt;/script&gt; &lt;!-- Only if you are going to use Magnific Popup -->
+&lt;script src="plugin/components/Fancybox/jquery.fancybox.min.js"&gt;&lt;/script&gt; &lt;!-- Only if you are going to use fancybox -->
+&lt;script src="plugin/js/jquery.mediaBoxes.dropdown.js"&gt;&lt;/script&gt;
+&lt;script src="plugin/js/jquery.mediaBoxes.js"&gt;&lt;/script&gt;
+
+</pre>
+<!-- Code Block >> End -->     
+
+                <div class="alert">
+                    <strong>Heads up!</strong> even if you already got isotope included in your page you need to include the one that comes with the plugin since it is the latest version and I changed the namespace.
+                </div>              
+                
+                <p>It’s not required, but I recommend placing the CSS files in <code>&lt;head&gt;</code> and the JavaScript files and initialization code in the footer of your site (before the closing <code>&lt;/body&gt;</code> tag).
+If you already have jquery.js on your site, don’t include it a second time.</p>
+                
+                <div class="alert alert-danger">
+                    <strong>Important!</strong>
+                    Inside the <code>css</code> folder you will find an <code>icons</code> folder which contains all the icons (some needed) for the plugin so if you move the CSS files somewhere else don't forget to move the <code>icons</code> folder as well (they need to be in the same directory).
+                </div>
+
+                <hr />
+            
+            </section>
+            <!-- ========================= SECTION: INCLUDING FILES >> END ========================= -->
+            
+            
+            <!-- ========================= SECTION: THE HTML >> START ========================= -->
+            <section id="html">
+                <div class="page-header">
+                    <h1>HTML</h1>
+                </div>
+            
+                <p>Here is the basic HTML for the Media Boxes, you can create as many boxes as you need.</p>
+
+<pre class="prettyprint linenums">
+&lt;!-- The searching text field --&gt;
+&lt;input type="text" id="search" class="media-boxes-search" placeholder="Search By Title"&gt;
+
+
+&lt;!-- The filter bar --&gt;
+&lt;ul class="media-boxes-filter" id="filter"&gt;
+  &lt;li&gt;&lt;a class="selected" href="#" data-filter="*"&gt;All&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#" data-filter=".category1"&gt;Category 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#" data-filter=".category2"&gt;Category 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#" data-filter=".category3"&gt;Category 3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;!-- The grid with media boxes --&gt;
+&lt;div id="grid"&gt;
+    
+    &lt;!-- --------- MEDIA BOX MARKUP --------- --&gt;      
+    &lt;div class="media-box category1"&gt;
+        I'm the first box and I belong to category 1
+    &lt;/div&gt;
+
+    &lt;!-- --------- MEDIA BOX MARKUP --------- --&gt;      
+    &lt;div class="media-box category2"&gt;
+        Here goes some content that belong to category 2
+    &lt;/div&gt;
+
+    &lt;!-- --------- MEDIA BOX MARKUP --------- --&gt;      
+    &lt;div class="media-box category3"&gt;
+        And I am from category 3
+    &lt;/div&gt;
+
+&lt;/div&gt;
+</pre>                
+
+            <div class="alert">
+                <strong>Heads up!</strong> this little example above doesn't have any image or a nice styled content, I will show you soon how to add it.
+            </div>  
+
+            <hr>
+            <h5>Specify more than 1 column to a single media box</h5>
+            <hr>
+
+            <p>If you want a media box to be 2 or 3 columns wide then you can define this with the <code>data-columns</code> attribute in the media box</p>
+
+<pre class="prettyprint linenums">
+&lt;!-- The grid with media boxes --&gt;
+&lt;div id="grid"&gt;
+    
+    &lt;!-- --------- MEDIA BOX MARKUP --------- --&gt;      
+    &lt;div class="media-box category1" <span class="highlight">data-columns="2"</span>&gt;
+        I'm the first box and I belong to category 1
+    &lt;/div&gt;
+
+    &lt;!-- --------- MEDIA BOX MARKUP --------- --&gt;      
+    &lt;div class="media-box category2"&gt;
+        Here goes some content that belong to category 2
+    &lt;/div&gt;
+
+    &lt;!-- --------- MEDIA BOX MARKUP --------- --&gt;      
+    &lt;div class="media-box category3"&gt;
+        And I am from category 3
+    &lt;/div&gt;
+
+&lt;/div&gt;
+</pre>  
+            <div class="alert alert-danger">
+                <strong>Important!</strong> play carefully with this option since in some resolutions you may find gaps between media boxes because it may not fit perfectly all the time.
+            </div>  
+            <hr>
+
+            </section>
+            <!-- ========================= SECTION: THE HTML >> END ========================= -->
+
+
+            <!-- ========================= SECTION: INITALIZING >> START ========================= -->
+            <section id="initi">
+                <div class="page-header">
+                    <h1>Initializing</h1>
+                </div>
+            
+                <p>Once you got the HTML markup in your site you need to initialize the plugin in Javascript. </p>
+                <p>You need to take the <strong>id</strong> from the container of the boxes in the HTML (In the example above would be: <code>id="grid"</code>) and use it for the initialization.</p>
+
+<pre class="prettyprint linenums">
+&lt;script&gt;
+    
+    $('#grid').mediaBoxes(); 
+    
+&lt;/script&gt;
+</pre>
+                <p>And here is where you can pass all the options available. For example:</p>
+
+<pre class="prettyprint linenums">
+&lt;script&gt;
+    
+    $('#grid').mediaBoxes({
+        boxesToLoadStart: 10,
+        boxesToLoad: 8,
+    }); 
+    
+&lt;/script&gt;
+</pre>
+                
+                <p>You can see all the options available <a href="#options">here</a></p>
+
+                <hr>
+
+            </section>
+            <!-- ========================= SECTION: INITALIZING >> END ========================= -->
+
+
+            <!-- ========================= SECTION: THUMBNAILS >> START ========================= -->
+            <section id="thumbs">
+                <div class="page-header">
+                    <h1>Thumbnails</h1>
+                </div>
+            
+                <p>Now is time to add some thumbnails to each media box.</p>
+                <p>You only need to specify the URL for the thumbnail in the <code>data-thumbnail</code> attribute. It can be from an external location or in your own server (just like if it were a <code>&lt;img src="URL" /&gt;</code>).</p>
+                <p>This is the HTML markup for just the thumbnail.</p>
+
+<pre class="prettyprint linenums">
+&lt;div class="media-box-image"&gt;
+    &lt;div data-thumbnail="http://goo.gl/nzRWqf"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+                <p>Then you can drop that peace of code inside a media box.</p>
+
+<pre class="prettyprint linenums">
+&lt;!-- --------- MEDIA BOX MARKUP --------- --&gt;      
+&lt;div class="media-box category1"&gt;
+
+    <span class="highlight">&lt;div class="media-box-image"&gt;</span>
+    <span class="highlight">    &lt;div data-thumbnail="http://goo.gl/nzRWqf"&gt;&lt;/div&gt;</span>
+    <span class="highlight">&lt;/div&gt;</span>
+
+&lt;/div&gt;
+</pre>                
+                
+                <hr>
+                <h4>Specify the ratio</h4>
+                <hr>
+
+                <p>If you specify the ratio for the thumbnails the plugin will show you the grid layout and the content right from the beginning (without having to wait until all the thumbnails are loaded). So it will feel like the plugin loads faster.</p>
+
+                <p>You can specify for each thumbnail that for certain <strong>width</strong> you want certain <strong>height</strong> and the plugin will cut the height for you (depending on the resolution, this works as the ratio), with the <code>data-width</code> and <code>data-height</code> attributes.</p>
+
+<pre class="prettyprint linenums">
+&lt;!-- --------- MEDIA BOX MARKUP --------- --&gt;      
+&lt;div class="media-box category1"&gt;
+
+    &lt;div class="media-box-image"&gt;
+        &lt;div <span class="highlight">data-width="240px" data-height="140px"</span> data-thumbnail="http://goo.gl/nzRWqf"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+</pre>              
+
+                <hr>
+                <h4>Add SEO</h4>
+                <hr>
+
+                <p>For SEO (Search Engine Optimization) purposes you can add the title and alt attributes for the thumbnails, just do it as follows.</p>
+
+<pre class="prettyprint linenums">
+&lt;!-- --------- MEDIA BOX MARKUP --------- --&gt;      
+&lt;div class="media-box category1"&gt;
+
+    &lt;div class="media-box-image"&gt;
+        &lt;div <span class="highlight">data-title="my title" data-alt="my alt"</span> data-width="240px" data-height="140px" data-thumbnail="http://goo.gl/nzRWqf"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+</pre>                
+
+                <hr>
+                <h4>Add a little extra height to the thumbnail</h4>
+                <hr>
+
+                <p>You may find a case where you may want to add a little bit of extra height to certain thumbnail, maybe to match its neighbor height. You can do it as follows, in pixels.</p>
+
+<pre class="prettyprint linenums">
+&lt;!-- --------- MEDIA BOX MARKUP --------- --&gt;      
+&lt;div class="media-box category1" <span class="highlight">data-extra-height="15"</span>&gt;
+
+    &lt;div class="media-box-image"&gt;
+        &lt;div data-title="my title" data-alt="my alt" data-width="240px" data-height="140px" data-thumbnail="http://goo.gl/nzRWqf"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+</pre>                
+
+
+                <hr>
+
+            </section>
+            <!-- ========================= SECTION: THUMBNAILS >> END ========================= -->
+            
+
+            <!-- ========================= SECTION: THUMBNAIL OVERAL >> START ========================= -->
+            <section id="overlay">
+                <div class="page-header">
+                    <h1>Thumbnail overlay</h1>
+                </div>
+            
+                <p>You can also add an overlay effect to the thumbnails and put anything inside (like text, links, icons, etc). This is the HTML markup for just the overlay.</p>
+
+<pre class="prettyprint linenums">
+&lt;div class="thumbnail-overlay"&gt;
+    YOU CAN PUT ANYTHING HERE
+&lt;/div&gt;
+</pre>
+
+                <p>Then you need to put that code inside the div with the attribute <code>class="media-box-image"</code></p>
+
+<pre class="prettyprint linenums">
+&lt;!-- --------- MEDIA BOX MARKUP --------- --&gt;      
+&lt;div class="media-box category1"&gt;
+
+    &lt;div class="media-box-image"&gt;
+        &lt;div data-thumbnail="http://goo.gl/nzRWqf"&gt;&lt;/div&gt;
+        
+        <span class="highlight">&lt;div class="thumbnail-overlay"&gt;</span>
+        <span class="highlight">    YOU CAN PUT ANYTHING HERE</span>
+        <span class="highlight">&lt;/div&gt;</span>
+    &lt;/div&gt;
+
+&lt;/div&gt;
+</pre>      
+
+                <hr>
+
+            </section>
+            <!-- ========================= SECTION: THUMBNAIL OVERAL >> END ========================= -->
+
+
+            <!-- ========================= SECTION: POPUP >> START ========================= -->
+            <section id="popup">
+                <div class="page-header">
+                    <h1>Popup</h1>
+                </div>
+            
+                <p>The plugin is using <a target="_blank" href="http://fancyapps.com/fancybox/3/">Fancybox</a>  and the <a target="_blank" href="http://dimsemenov.com/plugins/magnific-popup/">Magnific Popup</a> so if you want to extend it you can find many support on Google.</p>
+                
+                <hr>
+                <h4>What will trigger the popup</h4>
+                <hr>
+
+                <p>First you need to define what's going to be the trigger for the popup (what will open the popup) and all you need to do is add the class <code>mb-open-popup</code> to any element inside the <code>&lt;div class="media-box"&gt;</code> and then specify the url for your image in that same element using the <code>data-src</code> attribute</p>
+
+                <p>For example if you want the <strong>thumbnail overay</strong> to be what opens the popup it would look like this:</p>
+
+<pre class="prettyprint linenums">
+&lt;!-- --------- MEDIA BOX MARKUP --------- --&gt;      
+&lt;div class="media-box category1"&gt;
+
+    &lt;div class="media-box-image"&gt;
+        &lt;div data-thumbnail="http://goo.gl/nzRWqf"&gt;&lt;/div&gt;
+
+        &lt;div class="thumbnail-overlay <span class="highlight">mb-open-popup" data-src="http://goo.gl/Rbi9CB"</span>&gt;
+            YOU CAN PUT ANYTHING HERE
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+</pre>     
+
+                <p>Or maybe you want an <strong>icon</strong> inside the thumbnail overlay to be the trigger for the popup, if so it would look like this:</p>
+
+<pre class="prettyprint linenums">
+&lt;!-- --------- MEDIA BOX MARKUP --------- --&gt;      
+&lt;div class="media-box category1"&gt;
+
+    &lt;div class="media-box-image"&gt;
+        &lt;div data-thumbnail="http://goo.gl/nzRWqf"&gt;&lt;/div&gt;
+
+        &lt;div class="thumbnail-overlay"&gt;
+            &lt;i class="fa fa-plus <span class="highlight">mb-open-popup" data-src="http://goo.gl/Rbi9CB"</span>&gt;&lt;/i&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+</pre>     
+
+                <div class="alert">
+                    <strong>Heads up!</strong> in one single <code>media-box</code> you can have several popup triggers with its own <code>data-src</code>
+                </div>
+                
+                <hr>
+                <h4>Content types</h4>
+                <hr>
+
+                <p>By default, the popup has 4 types of content: <code>image</code>, <code>iframe</code>, <code>inline</code>, and <code>ajax</code>. There is no any “auto-detection” of type based on URL, so you should define it manually.</p>
+
+                <div class="alert">
+                    <strong>Heads up!</strong> If you don't specify a content type the plugin will set the type to <code>image</code> and try to load the URL specified as an image.
+                </div>
+                
+                <p>You need to specify the content type with the <code>data-type</code> attribute, for example for a youtube video the content type is <code>data-type="iframe"</code> and it would look like this: </p>
+
+<pre class="prettyprint linenums">
+&lt;i class="fa fa-plus mb-open-popup" <span class="highlight">data-type="iframe"</span> data-src="https://www.youtube.com/watch?v=uf8Fwiy0Bkc"&gt;&lt;/i&gt;
+</pre>
+                    
+                <div class="alert alert-info">
+                    <h5>1. Image type</h5>
+                </div>
+
+                <p>I already explained how to specify the URL for an image in the <strong>"Specify the URL"</strong> section, you don't need to specify the type since <code>data-type="image"</code> is the default, so just put the path of the image.</p>
+                    
+                <div class="alert alert-info">
+                    <h5>2. Iframe type</h5>
+                </div>
+                
+                <p>Here is where you can specify an iframe URL, such as videos (like Youtube and Vimeo), sounds (like Soundcloud), and more. </p>
+
+                </p>
+
+                <ul>
+                    <li>
+                        <strong>Youtube</strong>
+                        <p>For Youtube videos you only need the url in the address bar of your browser (just with the <code>v=2fngvQS_PmQ</code> parameter don't add the extra parameters).</p>
+                        <p>For example:</p>
+<pre class="prettyprint linenums">
+&lt;i class="fa fa-plus mb-open-popup" data-type="iframe" <span class="highlight">data-src="https://www.youtube.com/watch?v=uf8Fwiy0Bkc"</span>&gt;&lt;/i&gt;
+</pre>                        
+                    </li>
+                    <li>
+                        <strong>Vimeo</strong>
+                        <p>For Vimeo is the same as the youtube videos, just copy and paste the URL of a single video</p>
+                        <p>For example:</p>
+<pre class="prettyprint linenums">
+&lt;i class="fa fa-plus mb-open-popup" data-type="iframe" <span class="highlight">data-src="http://vimeo.com/22884674"</span>&gt;&lt;/i&gt;
+</pre>                           
+                    </li>
+                    <li>
+                        <strong>More</strong>
+                        <p>You only need the iframe URL, for example if you want a sound from <strong>SoundCloud</strong> they got an option on each sound named <strong>"share"</strong> just click it and then select <strong>"Embed"</strong> in there you will find an <code>iframe</code>, just copy what is inside the <code>src="iframe-url"</code> attribute and paste it as the <code>data-src</code>.</p>
+                        <p>For example (usually is a long URL):</p>
+<pre class="prettyprint linenums">
+&lt;i class="fa fa-plus mb-open-popup" data-type="iframe" <span class="highlight">data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/123844205&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"</span>&gt;&lt;/i&gt;
+</pre>   
+                    </li>
+                </ul>
+                    
+                <div class="alert alert-info">
+                    <h5>3. Inline type</h5>
+                </div>
+
+                <p>Here you can display HTML from your site in the popup</p>
+
+                <p>To create the popup from an inline element you need to:</p>
+
+                <p>1) Create a HTML element that you wish to display in popup and add it somewhere. The class <code>mfp-hide</code> is required to hide the popup from the page.</p>
+
+<pre class="prettyprint linenums">
+&lt;div id="test-popup" class="white-popup mfp-hide"&gt;
+  Popup content
+&lt;/div&gt;
+</pre>  
+
+                <p>2) Style this element. The popup by default doesn’t apply any styles to it, except vertical centering. Close button will be automatically appended inside.</p>
+
+<pre class="prettyprint linenums">
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 500px;
+  margin: 20px auto;
+}
+</pre>  
+
+                <p>3) Specify in the <code>data-src</code> attribute the CSS <strong>id</strong> of the element you want to show in the popup (#test-popup in our case).</p>
+
+<pre class="prettyprint linenums">
+&lt;i class="fa fa-plus mb-open-popup" data-type="inline" <span class="highlight">data-src="#test-popup"</span>&gt;&lt;/i&gt;
+</pre>
+                
+                <div class="alert alert-info">
+                    <h5>4. Ajax type</h5>
+                </div>
+
+                <p>To create such type of popup, first define the path to the file that you wish to display and select ajax type of the popup. Popup itself should be styled in exactly the same way as an inline popup type.</p>
+
+<pre class="prettyprint linenums">
+&lt;i class="fa fa-plus mb-open-popup" data-type="ajax" <span class="highlight">data-src="path-to-file.html"</span>&gt;&lt;/i&gt;
+</pre>                           
+                <div class="alert">
+                    <strong>Heads up!</strong> The path to the file that will be loaded should have the same origin (e.g. be on the same domain).
+                </div>
+                    
+                <hr>
+                <h5>Define a title</h5>
+                <hr>
+
+                <p>
+                    You can add a title so it can be shown in the popup below the content, just add the <code>title="some title"</code> attribute.
+                </p>
+
+<pre class="prettyprint linenums">
+&lt;i class="fa fa-plus mb-open-popup" data-src="http://goo.gl/Rbi9CB" <span class="highlight">data-title="some title"</span>&gt;&lt;/i&gt;
+</pre>                
+
+                <hr>
+
+            </section>
+            <!-- ========================= SECTION: POPUP >> END ========================= -->
+            
+
+            <!-- ========================= SECTION: SOME CONTENT >> START ========================= -->
+            <section id="content">
+                <div class="page-header">
+                    <h1>Some content</h1>
+                </div>
+            
+                <p>You can also add some content on each media box (besides the thumbnail) like some text, links, buttons or any HTML. You can just drop whatever you want inside the media boxes and give some CSS style to it.</p>
+
+                <p>I have added as part of the plugin some CSS styled content so you don't start from scratch and see what you can do, and this is the HTML markup for a nice content:</p>
+
+<pre class="prettyprint linenums">
+&lt;div class="media-box-content"&gt;
+    &lt;div class="media-box-title"&gt;Lamborghini "Aventador"&lt;/div&gt;
+    &lt;div class="media-box-date"&gt;December 10, 2013&lt;/div&gt;
+    &lt;div class="media-box-text"&gt;
+        Lorem ipsum dolor sit amet psico dell consecteture adipisicing elit. Adipisci, fugit, eveniet, ut exercitationem.
+    &lt;/div&gt;
+    &lt;div class="media-box-more"&gt; &lt;a href="#"&gt;Read More&lt;/a&gt; &lt;/div&gt;
+&lt;/div&gt;
+</pre>    
+                
+                <div class="alert">
+                     <strong>Heads up!</strong> the CSS classes used here don't contain any JS logic behind, it is just for CSS styling, nothing else.
+                </div>          
+
+                <p>Now you can drop this HTML markup inside a media box, usually this content is placed below the thumbnail like this:</p>
+
+<pre class="prettyprint linenums">
+&lt;!-- --------- MEDIA BOX MARKUP --------- --&gt;      
+&lt;div class="media-box category1"&gt;
+
+    &lt;div class="media-box-image"&gt;
+        &lt;div data-thumbnail="http://goo.gl/nzRWqf"&gt;&lt;/div&gt;
+
+        &lt;div class="thumbnail-overlay"&gt;
+            &lt;i class="fa fa-plus mb-open-popup" data-src="http://goo.gl/Rbi9CB"&gt;&lt;/i&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    <span class="highlight">&lt;div class="media-box-content"&gt;</span>
+        <span class="highlight">&lt;div class="media-box-title"&gt;Lamborghini "Aventador"&lt;/div&gt;</span>
+        <span class="highlight">&lt;div class="media-box-date"&gt;December 10, 2013&lt;/div&gt;</span>
+        <span class="highlight">&lt;div class="media-box-text"&gt;</span>
+            <span class="highlight">Lorem ipsum dolor sit amet psico dell consecteture adipisicing elit. Adipisci, fugit, eveniet, ut exercitationem.</span>
+        <span class="highlight">&lt;/div&gt;</span>
+        <span class="highlight">&lt;div class="media-box-more"&gt; &lt;a href="#"&gt;Read More&lt;/a&gt; &lt;/div&gt;</span>
+    <span class="highlight">&lt;/div&gt;</span>
+
+&lt;/div&gt;
+</pre>    
+
+                <hr>
+
+            </section>
+            <!-- ========================= SECTION: SOME CONTENT >> END ========================= -->
+
+
+             <!-- ========================= SECTION: FILTERING >> START ========================= -->
+            <section id="filtering">
+                <div class="page-header">
+                    <h1>Filtering</h1>
+                </div>
+                       
+                <p>
+                    The simplest way to filter items is with selectors, like CSS classes. For example, each meda box can have several identifying CSS classes: <code>category1</code>, <code>category2</code>, <code>category3</code>, etc.
+                </p>
+
+<pre class="prettyprint linenums">
+&lt;!-- The grid with media boxes --&gt;
+&lt;div id="grid"&gt;
+    
+    &lt;div class="media-box <span class="highlight">category1</span>"&gt;THE CONTENT&lt;/div&gt;
+    &lt;div class="media-box <span class="highlight">category2</span>"&gt;THE CONTENT&lt;/div&gt;
+    &lt;div class="media-box <span class="highlight">category1 category3</span>"&gt;THE CONTENT&lt;/div&gt;
+    &lt;div class="media-box <span class="highlight">category2 category3</span>"&gt;THE CONTENT&lt;/div&gt;
+    &lt;div class="media-box <span class="highlight">category3</span>"&gt;THE CONTENT&lt;/div&gt;
+    &lt;div class="media-box <span class="highlight">category1 category2 category3</span>"&gt;THE CONTENT&lt;/div&gt;
+
+&lt;/div&gt;
+</pre>       
+
+                <p>Then you target those CSS selectors with the <code>data-filter</code> attribute in the filter bar. You can put the filter bar anywhere in your site.</p>
+
+<pre class="prettyprint linenums">
+&lt;!-- The filter bar --&gt;
+&lt;ul class="media-boxes-filter" id="filter"&gt;
+  &lt;li&gt;&lt;a class="selected" href="#" <span class="highlight">data-filter="*"</span>&gt;All&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#" <span class="highlight">data-filter=".category1"</span>&gt;Category 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#" <span class="highlight">data-filter=".category2"</span>&gt;Category 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#" <span class="highlight">data-filter=".category3"</span>&gt;Category 3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#" <span class="highlight">data-filter=".category1, .category2"</span>&gt;Category 1 and 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#" <span class="highlight">data-filter=":not(.category2)"</span>&gt;not Category 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#" <span class="highlight">data-filter=".category3:not(.category2)"</span>&gt;Category 3 but not Category 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+                
+                <p>As you can see by default the <code>All</code> option is selected since it has the <code>class="selected"</code>, but you can change that just by moving the <code>class="selected"</code> to another filter.</p>
+
+                <hr>
+                <h5>Kinds of filters</h5>
+                <hr>
+
+                <p>You can make all kind of complicated filters</p>
+                
+                <ul class="filters">
+                    <li>
+                        <code><span class="string">"*"</span></code> will show all media boxes.
+                    </li>
+                    <li>
+                        <code><span class="string">".category1"</span></code> will show only the media boxes with the class <code>.category1</code>.
+                    </li>
+                    <li>
+                        <code><span class="string">".category1, .category2"</span></code> will show <code>.category1</code> <strong>and</strong> <code>.category2</code> media boxes.
+                    </li>
+                    <li>
+                        <code><span class="string">".category1.category2"</span></code> will show media boxes that have <strong>both</strong> <code>.category1</code> and <code>.category2</code> classes.
+                    </li>
+                    <li>
+                        <code><span class="string">":not(.category2)"</span></code> will show all media boxes <strong>except</strong> <code>.category2</code>
+                    </li>
+                    <li>
+                        <code><span class="string">".category3:not(.category2)"</span></code> will show the <code>.category3</code> that don't have <code>.category2</code>
+                    </li>
+                </ul>
+
+                <hr>
+                <h5>Specify the filter</h5>
+                <hr>
+
+                <p>By default the plugin will go ahead and look for an element with the <code>id="filter"</code> in order to use it as the container of the filters, then inside it will look for the elements with <code>data-filter</code> attribute so it can uses it as the filters. </p>
+
+                <p>But you can change the filter container with this Javascript option at the JS initialization (specify a different selector).</p>
+
+<pre class="prettyprint linenums">
+&lt;script&gt;
+    
+    $('#grid').mediaBoxes({
+        <span class="highlight">filterContainer: '#filter',</span>
+    }); 
+    
+&lt;/script&gt;
+</pre>                
+
+                <hr>
+                <h5>Use a select as filter</h5>
+                <hr>
+
+                <p>You can use a select with options to filter the grid, just checkout the following HTML markup for it</p>
+                
+<pre class="prettyprint linenums">
+&lt;select id="filter"&gt;
+  &lt;option class="selected" checked data-filter="*"&gt;All&lt;/option&gt;
+  &lt;option data-filter=".red"&gt;Red&lt;/option&gt;
+  &lt;option data-filter=".green"&gt;Green&lt;/option&gt;
+  &lt;option data-filter=".blue"&gt;Blue&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+
+                <hr />
+            
+            </section>
+            <!-- ========================= SECTION: FILTERING >> END ========================= -->
+
+
+            <!-- ========================= SECTION: SEARCHING >> START ========================= -->
+            <section id="searching">
+                <div class="page-header">
+                    <h1>Searching</h1>
+                </div>
+                
+                <p>First you must add an input text field so you can type what you want to search.</p>
+
+<pre class="prettyprint linenums">
+&lt;input type="text" id="search" class="media-boxes-search" placeholder="Search By Title"&gt;
+</pre>    
+
+                <p>
+                    Second you must target what element you want to search, for example if you want to target just the title in the example below you would do it like this <code>.media-box-title</code> 
+                </p>
+
+<pre class="prettyprint linenums">
+&lt;!-- The grid with media boxes --&gt;
+&lt;div id="grid"&gt;
+    
+    &lt;div class="media-box"&gt;
+        &lt;div <span class="highlight">class="media-box-title"</span>&gt;Blur&lt;/div&gt; 
+        THE CONTENT
+    &lt;/div&gt;
+    &lt;div class="media-box"&gt;
+        &lt;div <span class="highlight">class="media-box-title"</span>&gt;Architecture&lt;/div&gt; 
+        THE CONTENT
+    &lt;/div&gt;
+    &lt;div class="media-box"&gt;
+        &lt;div <span class="highlight">class="media-box-title"</span>&gt;Farm House&lt;/div&gt; 
+        THE CONTENT
+    &lt;/div&gt;
+    &lt;div class="media-box"&gt;
+        &lt;div <span class="highlight">class="media-box-title"</span>&gt;Plant&lt;/div&gt; 
+        THE CONTENT
+    &lt;/div&gt;
+    &lt;div class="media-box"&gt;
+        &lt;div <span class="highlight">class="media-box-title"</span>&gt;Madness Boat&lt;/div&gt; 
+        THE CONTENT
+    &lt;/div&gt;
+    &lt;div class="media-box"&gt;
+        &lt;div <span class="highlight">class="media-box-title"</span>&gt;Village&lt;/div&gt; 
+        THE CONTENT
+    &lt;/div&gt;
+
+&lt;/div&gt;
+</pre>       
+                
+                <div class="alert">
+                    <strong>Heads up!</strong> In this example the plugin will only search in the elements with the class "media-box-title" and decide what media boxes to show.
+                </div>
+
+                <p>And finally specify the input text field and the target of your desired in the Javascript initialization.</p>
+<pre class="prettyprint linenums">
+&lt;script&gt;
+    
+    $('#grid').mediaBoxes({
+        <span class="highlight">search: '#search',</span>
+        <span class="highlight">searchTarget: '.media-box-title',</span>
+    }); 
+    
+&lt;/script&gt;
+</pre>            
+
+                <hr>
+                <h5>Pretty search input text field</h5>
+                <hr>
+
+                <p>The plugin comes with a default search input text field, which has a search icon and a clear icon, you can use it just by doing the following HTML markup</p>
+
+<pre class="prettyprint linenums">
+&lt;div class="media-boxes-search"&gt;
+    &lt;span class="media-boxes-icon fa fa-search"&gt;&lt;/span&gt;
+    &lt;input type="text" id="search" placeholder="Search by title"&gt;
+    &lt;span class="media-boxes-clear fa fa-close"&gt;&lt;/span&gt;
+&lt;/div&gt;
+</pre>           
+                
+                <hr />
+            
+            </section>
+            <!-- ========================= SECTION: SEARCHING >> END ========================= -->
+
+
+            <!-- ========================= SECTION: SORTING >> START ========================= -->
+            <section id="sorting">
+                <div class="page-header">
+                    <h1>Sorting</h1>
+                </div>
+                
+                <p>First you must target what element you want to sort by, for example if you want to sort by the title and the text you would target <code>.media-box-title</code> and <code>.media-box-text</code></p>
+
+<pre class="prettyprint linenums">
+&lt;!-- The grid with media boxes --&gt;
+&lt;div id="grid"&gt;
+    
+    &lt;div class="media-box"&gt;
+        &lt;div <span class="highlight">class="media-box-title"</span>&gt;Blur&lt;/div&gt; 
+        &lt;div <span class="highlight">class="media-box-text"</span>&gt;THE TEXT&lt;/div&gt; 
+    &lt;/div&gt;
+    &lt;div class="media-box"&gt;
+        &lt;div <span class="highlight">class="media-box-title"</span>&gt;Architecture&lt;/div&gt; 
+        &lt;div <span class="highlight">class="media-box-text"</span>&gt;THE TEXT&lt;/div&gt; 
+    &lt;/div&gt;
+    &lt;div class="media-box"&gt;
+        &lt;div <span class="highlight">class="media-box-title"</span>&gt;Farm House&lt;/div&gt; 
+        &lt;div <span class="highlight">class="media-box-text"</span>&gt;THE TEXT&lt;/div&gt; 
+    &lt;/div&gt;
+    &lt;div class="media-box"&gt;
+        &lt;div <span class="highlight">class="media-box-title"</span>&gt;Plant&lt;/div&gt; 
+        &lt;div <span class="highlight">class="media-box-text"</span>&gt;THE TEXT&lt;/div&gt; 
+    &lt;/div&gt;
+    &lt;div class="media-box"&gt;
+        &lt;div <span class="highlight">class="media-box-title"</span>&gt;Madness Boat&lt;/div&gt; 
+        &lt;div <span class="highlight">class="media-box-text"</span>&gt;THE TEXT&lt;/div&gt; 
+    &lt;/div&gt;
+    &lt;div class="media-box"&gt;
+        &lt;div <span class="highlight">class="media-box-title"</span>&gt;Village&lt;/div&gt; 
+        &lt;div <span class="highlight">class="media-box-text"</span>&gt;THE TEXT&lt;/div&gt; 
+    &lt;/div&gt;
+
+&lt;/div&gt;
+</pre>  
+                       
+                <p>
+                    Second you must define the <code>getSortData</code> Javascript option with the targets you chose in the step before. <br>
+                    You will define <strong>keywords</strong> that will be use to sort by and its <strong>values</strong> that will the HTML element that you want the plugin to take into consideration. <br>
+                    For example:
+                </p>
+
+<pre class="prettyprint linenums">
+$('#grid').mediaBoxes({
+    getSortData: {
+        title: '.media-box-title', //When you sort by title, it will only look in the elements with the class "media-box-title"
+        text: '.media-box-text', //When you sort by text, it will only look in the elements with the class "media-box-text"
+    },
+});         
+</pre>       
+
+                <p>Third define the sorting drop down specifying the sorting keys in the <code>data-sort-by</code> attribute.</p>
+
+<pre class="prettyprint linenums">
+&lt;!-- The sorting drop down --&gt;
+&lt;div class="media-boxes-drop-down" id="sort"&gt;
+    &lt;div class="media-boxes-drop-down-header"&gt;
+    &lt;/div&gt;
+    &lt;ul class="media-boxes-drop-down-menu"&gt;
+        &lt;li&gt;&lt;a class="selected" href="#" <span class="highlight">data-sort-by="original-order"</span>&gt;Original Order&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#" <span class="highlight">data-sort-by="title"</span>&gt;Sort by Title&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#" <span class="highlight">data-sort-by="text"</span>&gt;Sort by Text&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+                <div class="alert">
+                    <strong>Heads up!</strong>
+                    the key <code>original-order</code> is for the default order, and you don't need to specify it in the <code>getSortData</code> option.
+                </div>
+                
+                <p>You can change the direction of the sorting (ascending or descending) and also if you which to toggle them. You need to use the <code>data-sort-ascending="false"</code> and <code>data-sort-toggle="true"</code> attribute, for example</p>
+
+<pre class="prettyprint linenums">
+&lt;li&gt;&lt;a href="#" data-sort-by="title" <span class="highlight">data-sort-ascending="false" data-sort-toggle="true"</span>&gt;Sort by Title&lt;/a&gt;&lt;/li&gt;
+</pre>
+
+
+                <p>And finally specify the sorting drop down in the Javascript initialization.</p>
+
+<pre class="prettyprint linenums">
+&lt;script&gt;
+    
+    $('#grid').mediaBoxes({
+        <span class="highlight">sortContainer: '#sort',</span>
+    }); 
+    
+&lt;/script&gt;
+</pre>           
+                
+                <div class="alert alert-danger">
+                    <strong>Important!</strong>
+                    The sorting may not apply correctly in the media boxes that are 2 ore more columns wide (Isotope Logic).
+                </div>
+
+                <div class="alert">
+                    <strong>Heads up!</strong>
+                    You can a more complex sorting, just use any sorting provided by <a href="http://isotope.metafizzy.co/sorting.html">Isotope v2</a>
+                </div>
+
+                <hr>
+                <h5>Sort order button</h5>
+                <hr>
+
+                <p>Also you can have a button that sets the sort order, you will need the following HTML markup, and if you do this the <code>data-sort-ascending="false"</code> and <code>data-sort-toggle="true"</code> attributes will be ignored</p>
+
+<pre class="prettyprint linenums">
+&lt;div class="media-boxes-sort"&gt;
+    &lt;div class="media-boxes-drop-down" id="sort"&gt;
+        &lt;div class="media-boxes-drop-down-header"&gt;&lt;/div&gt;
+        &lt;ul class="media-boxes-drop-down-menu"&gt;
+            &lt;li&gt;&lt;a href="#" data-sort-by="original-order" class="selected"&gt;Original Order&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#" data-sort-by="title"&gt;Sort by Title&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#" data-sort-by="categories"&gt;Sort by Categories&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;div class="media-boxes-sort-order"&gt;
+        &lt;span class="fa fa-chevron-up selected" data-sort-ascending="true"&gt;&lt;/span&gt;
+        &lt;span class="fa fa-chevron-down" data-sort-ascending="false"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;  
+</pre>                 
+
+                <hr />
+            
+            </section>
+            <!-- ========================= SECTION: SORTING >> END ========================= -->
+
+            <!-- ========================= SECTION: OPTIONS >> START ========================= -->
+            <section id="options">
+                <div class="page-header">
+                    <h1>Options</h1>
+                </div>
+                       
+                <p>
+                    Here you can see all the JS options available for the media boxes.
+                </p>
+
+                <table class="table table-stripped table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Option</th>
+                            <th>Type</th>    
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>boxesToLoadStart</code></td>
+                            <td>number</td>
+                            <td>8</td>
+                            <td>The number of boxes to load when it first loads the grid </td>
+                        </tr>
+                        <tr>
+                            <td><code>boxesToLoad</code></td>
+                            <td>number</td>
+                            <td>4</td>
+                            <td>The number of boxes to load when you click the load more button or when the "lazzy load" mode is triggered</td>
+                        </tr>
+                        <tr>
+                            <td><code>lazyLoad</code></td>
+                            <td>boolean</td>
+                            <td>true</td>
+                            <td>When you reach the bottom of the grid the plugin will try to load more media boxes (The bottom of the grid must hit the bottom of your browser window)</td>
+                        </tr>
+                        <tr>
+                            <td><code>horizontalSpaceBetweenBoxes</code></td>
+                            <td>number</td>
+                            <td>15</td>
+                            <td>The horizontal space between media boxes </td>
+                        </tr>
+                        <tr>
+                            <td><code>verticalSpaceBetweenBoxes</code></td>
+                            <td>number</td>
+                            <td>15</td>
+                            <td>The vertical space between media boxes</td>
+                        </tr>
+                        <tr>
+                            <td><code>columnWidth</code></td>
+                            <td>string or number</td>
+                            <td>'auto'</td>
+                            <td>The width of each column, if you set it to 'auto' it will use the <code>columns</code> option instead</td>
+                        </tr>
+                        <tr>
+                            <td><code>columns</code></td>
+                            <td>number</td>
+                            <td>4</td>
+                            <td>This will only work if you set the <code>columnWidth</code> to 'auto' and it is the number of columns you wish to display in the grid so it can adapt to its container automatically</td>
+                        </tr>
+                        <tr>
+                            <td><code>resolutions</code></td>
+                            <td>array</td>
+                            <td>
+                               <a data-target=".myModal" class="btn btn-mini" data-toggle="modal">click me</a>
+                            </td>
+                            <td>
+                                Here you define the <code>columnWidth</code>, the <code>columns</code>, the <code>horizontalSpaceBetweenBoxes</code> and the <code>verticalSpaceBetweenBoxes</code> for different resolutions, for example if for mobile resolutions (like phones) you want to show only 1 column of media boxes this is the place to configure it. You can have as many resolutions as you want or have none 
+                                <br>
+                                <a data-target=".myModal2" class="btn btn-mini" data-toggle="modal">I want an example!</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>multipleFilterLogic</code></td>
+                            <td>string</td>
+                            <td>'AND'</td>
+                            <td>It can be 'AND' or 'OR' depending on how you wish to combine the filters when you are using multiple</td>
+                        </tr>
+                        <tr>
+                            <td><code>filterContainer</code></td>
+                            <td>string</td>
+                            <td>'#filter'</td>
+                            <td>The HTML element that will be the container of the filters</td>
+                        </tr>
+                        <tr>
+                            <td><code>search</code></td>
+                            <td>string</td>
+                            <td>''</td>
+                            <td>The HTML element that will be the input text field</td>
+                        </tr>
+                        <tr>
+                            <td><code>searchTarget</code></td>
+                            <td>string</td>
+                            <td>'.media-box-title'</td>
+                            <td>The HTML elements that will be the target of the search feature</td>
+                        </tr>
+                        <tr>
+                            <td><code>sortContainer</code></td>
+                            <td>string</td>
+                            <td>''</td>
+                            <td>The HTML element that will be the container of the sorter</td>
+                        </tr>
+                        <tr>
+                            <td><code>getSortData</code></td>
+                            <td>string</td>
+                            <td><a data-target=".myModal5" class="btn btn-mini" data-toggle="modal">click me</a></td>
+                            <td>The sorting keys and values</td>
+                        </tr>
+                        <tr>
+                            <td><code>minBoxesPerFilter</code></td>
+                            <td>number</td>
+                            <td>0</td>
+                            <td>This is the minimum of media boxes per filter. If the number of boxes in a filter is less than the number specified here it will try to load more boxes from that filter category</td>
+                        </tr>
+                        <tr>
+                            <td><code>waitUntilThumbWithRatioLoads</code></td>
+                            <td>boolean</td>
+                            <td>true</td>
+                            <td>When the thumbnails got the ratio specified, if it's set to <strong>true</strong> it will wait until the thumbnail is loaded (showing a progress wheel) and then show the thumb, <strong>if not</strong> you will see the progress as it gets loaded</td>
+                        </tr>
+                        <tr>
+                            <td><code>waitForAllThumbsNoMatterWhat</code></td>
+                            <td>boolean</td>
+                            <td>false</td>
+                            <td>Even if the thumbnails got the ratio specified wait until all of them are loaded in order to show the grid layout and the content</td>
+                        </tr>
+                        <tr>
+                            <td><code>thumbnailOverlay</code></td>
+                            <td>boolean</td>
+                            <td>true</td>
+                            <td>Show the thumbnail overlay?</td>
+                        </tr>
+                        <tr>
+                            <td><code>overlayEffect</code></td>
+                            <td>string</td>
+                            <td>'fade'</td>
+                            <td>
+                                The overlay effect 
+                                <a data-target=".myModal3" class="btn btn-mini" data-toggle="modal">All the overlay effects!</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>overlaySpeed</code></td>
+                            <td>number</td>
+                            <td>200</td>
+                            <td>The speed of the overlay effect</td>
+                        </tr>
+                        <tr>
+                            <td><code>overlayEasing</code></td>
+                            <td>string</td>
+                            <td>'default'</td>
+                            <td>
+                                The easing of the overlay effect 
+                                <a data-target=".myModal4" class="btn btn-mini" data-toggle="modal">All the easing effects!</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>showOnlyLoadedBoxesInPopup</code></td>
+                            <td>boolean</td>
+                            <td>false</td>
+                            <td>
+                                In the popup show only the boxes that are loaded in the grid. It needs to be set to <code>false</code> for deeplinking.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>considerFilteringInPopup</code></td>
+                            <td>boolean</td>
+                            <td>true</td>
+                            <td>
+                                The popup take in consideration the filter, so it shows only boxes from the filter specified.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>deepLinkingOnPopup</code></td>
+                            <td>boolean</td>
+                            <td>true</td>
+                            <td>
+                                Activate deep linking for the popup, for a correct functionality you need to set to <code>false</code> the option <strong>showOnlyLoadedBoxesInPopup</strong> and also set an <code>id</code> to the grid container, for example <code>id="grid"</code>.
+                            </td>
+                        </tr>
+                         <tr>
+                            <td><code>deepLinkingOnFilter</code></td>
+                            <td>boolean</td>
+                            <td>true</td>
+                            <td>
+                                Activate deep linking for the filter, for a correct functionality you need to set to <code>false</code> the option <strong>showOnlyLoadedBoxesInPopup</strong> and also set an <code>id</code> to the grid container, for example <code>id="grid"</code>.
+                            </td>
+                        </tr>
+                         <tr>
+                            <td><code>deepLinkingOnSearch</code></td>
+                            <td>boolean</td>
+                            <td>false</td>
+                            <td>
+                                Activate deep linking for the search, for a correct functionality you need to set to <code>false</code> the option <strong>showOnlyLoadedBoxesInPopup</strong> and also set an <code>id</code> to the grid container, for example <code>id="grid"</code>.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>LoadingWord</code></td>
+                            <td>string</td>
+                            <td>'Loading...'</td>
+                            <td>The loading word</td>
+                        </tr>
+                        <tr>
+                            <td><code>loadMoreWord</code></td>
+                            <td>string</td>
+                            <td>'Load More'</td>
+                            <td>The load more word</td>
+                        </tr>
+                        <tr>
+                            <td><code>noMoreEntriesWord</code></td>
+                            <td>string</td>
+                            <td>'No More Entries'</td>
+                            <td>The no more entries word</td>
+                        </tr>
+                        <tr>
+                            <td><code>popup</code></td>
+                            <td>string</td>
+                            <td>'fancybox'</td>
+                            <td>
+                                Which popup you are going to use, either <code>'fancybox'</code> or <code>'magnificpopup'</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>magnificpopup</code></td>
+                            <td>array</td>
+                            <td>check options below</td>
+                            <td>
+                                The options you can use when using Magnific Popup
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>fancybox</code></td>
+                            <td>array</td>
+                            <td>check options below</td>
+                            <td>
+                                The options you can use when using Fancybox
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p>You can pass all the options to the <code>mediaBoxes</code> JS function like this (these are the default values)</p>
+
+<pre class="prettyprint linenums">
+&lt;script&gt;
+    
+    $('#grid').mediaBoxes({
+        boxesToLoadStart: 8,
+        boxesToLoad: 4,
+        minBoxesPerFilter: 0,
+        lazyLoad: true,
+        horizontalSpaceBetweenBoxes: 15,
+        verticalSpaceBetweenBoxes: 15,
+        columnWidth: 'auto',
+        columns: 4,
+        resolutions: [
+            {
+                maxWidth: 960,
+                columnWidth: 'auto',
+                columns: 3,
+            },
+            {
+                maxWidth: 650,
+                columnWidth: 'auto',
+                columns: 2,
+            },
+            {
+                maxWidth: 450,
+                columnWidth: 'auto',
+                columns: 1,
+            },
+        ],
+        multipleFilterLogic: 'AND',
+        filterContainer: '#filter',
+        search: '',
+        searchTarget: '.media-box-title',
+        sortContainer: '',
+        getSortData: {
+          title: '.media-box-title',
+          text: '.media-box-text',
+        }, 
+        waitUntilThumbWithRatioLoads: true, 
+        waitForAllThumbsNoMatterWhat: false, 
+        thumbnailOverlay: true, 
+        overlayEffect: 'fade', 
+        overlaySpeed: 200,
+        overlayEasing: 'default',
+        showOnlyLoadedBoxesInPopup: false,
+        considerFilteringInPopup: true, 
+        deepLinkingOnPopup: true,
+        deepLinkingOnFilter: true,
+        deepLinkingOnSearch: false,
+        LoadingWord: 'Loading...',
+        loadMoreWord: 'Load More',
+        noMoreEntriesWord: 'No More Entries',
+        popup: 'fancybox', // fancybox, magnificpopup, none
+        magnificpopup:  {
+            gallery: true,
+            alignTop: false,
+            preload: [0,2],    
+        },
+        fancybox :  {
+            loop                : false, // Enable infinite gallery navigation 
+            margin              : [44, 0], // Space around image, ignored if zoomed-in or viewport smaller than 800px
+            keyboard            : true, // Enable keyboard navigation
+            arrows              : true, // Should display navigation arrows at the screen edges
+            infobar             : false, // Should display infobar (counter and arrows at the top)
+            toolbar             : true, // Should display toolbar (buttons at the top)
+            buttons             :   [ // What buttons should appear in the top right corner.
+                                        'slideShow',
+                                        'fullScreen',
+                                        'thumbs',
+                                        'close'
+                                    ],
+            idleTime            : 3, // Detect "idle" time in seconds
+            protect             : false, // Disable right-click and use simple image protection for images
+            animationEffect     : 'zoom', // Open/close animation type, it could be: false, 'zoom', 'fade', 'zoom-in-out'
+            animationDuration   : 330, // Duration in ms for open/close animation
+            transitionEffect    : 'fade', // it could be: false, 'fade', 'slide', 'circular', 'tube', 'zoom-in-out', 'rotate'
+            transitionDuration  : 330, // Duration in ms for transition animation
+            slideShow           : { autoStart : false, speed : 4000 }, // slideshow settings
+            fullScreen          : { autoStart : false, }, // activate or deactivate fullscreen when open
+            thumbs              : { autoStart : false, hideOnClose : true },    // Display thumbnails on opening/closing
+            touch               : { vertical : true, momentum : true }, // Allow to drag content
+            compensateScrollbar : '.fancybox-compensate-for-scrollbar',
+        },
+    }); 
+    
+&lt;/script&gt;
+</pre>                
+
+                <hr />
+
+ 
+            </section>
+            <!-- ========================= SECTION: OPTIONS >> END ========================= -->
+
+            <!-- ========================= SECTION: METHODS >> START ========================= -->
+            <section id="methods">
+                <div class="page-header">
+                    <h1>Methods</h1>
+                </div>
+                
+                <div class="alert">
+                    <strong>Heads up!</strong>
+                    This section is for advanced customers that have some understanding of Javascript/jQuery.
+                </div>
+
+                <hr>
+                <h5>DESTROY</h5>
+                <hr>
+
+                <p>The following method will destroy the grid and put everything back as it was <strong>before</strong> it was initialized by the JS of the Media Boxes. In other words, it will put all the original HTML back as it was before the plugin started.</p>
+
+<pre class="prettyprint linenums">
+ $('#grid').mediaBoxes( 'destroy' ); 
+</pre>    
+
+                <hr>
+                <h5>INSERT</h5>
+                <hr>
+          
+                <p>Sometimes customers want to bring more boxes via Ajax or integrate Infinite scroll or some other purpose.</p>
+                <p>
+                    So here I will show you how to add media boxes to the grid outside the plugin with Javascript
+                </p>
+
+                <p>So here is the little snippet, <strong>pretty simple isn't?</strong></p>
+
+<pre class="prettyprint linenums">
+
+&lt;button&gt;LOAD MORE MEDIA BOXES!&lt;/button&gt;
+
+&lt;script&gt;
+
+    $('#grid').mediaBoxes(); 
+    
+    $('button').on('click', function(){
+        var box =   '&lt;div class="media-box Category1"&gt;'+
+                        'THE CONTENT'+
+                    '&lt;/div&gt;';
+
+        
+        $('#grid').mediaBoxes( 'insert', $(box), function(){
+            alert('Boxes Added!');
+        });  
+    });
+
+&lt;/script&gt;
+</pre>          
+                
+                <hr>
+                <h5>REFESH</h5>
+                <hr>
+
+                <p>Refresh the layout of the grid, for example if you add more text to a media-box and run this line of JS it will layout the boxes accordingly.</p>
+
+<pre class="prettyprint linenums">
+ $('#grid').mediaBoxes( 'refresh' ); 
+</pre>    
+
+                <hr>
+                <h5>RESIZE</h5>
+                <hr>
+
+                <p>If you are doing some advance adjustments, like setting a new width for the grid, you would need to run this method so the layout and all adjustments are recalculated.</p>
+
+<pre class="prettyprint linenums">
+ $('#grid').mediaBoxes( 'resize' ); 
+</pre>    
+
+                <hr>
+
+            </section>
+            <!-- ========================= SECTION: METHODS >> END ========================= -->
+
+
+             <!-- ========================= SECTION: HANDY STUFF >> START ========================= -->
+            <section id="handystuff">
+                <div class="page-header">
+                    <h1>Handy Stuff</h1>
+                </div>
+                
+                <p>If you want the overlay of an image to stay always visible (not only when you put the mouse over) then add the class of <code>overlay-always-visible</code>, it would looke like this:</p>
+
+<pre class="prettyprint linenums">
+
+&#60;div class="thumbnail-overlay <span class="highlight">overlay-always-visible</span>">
+    &#60;div class="media-box-title">Psico dell&#60;/div>
+    &#60;div class="media-box-text">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit culpa repellat sit reiciendis.
+    &#60;/div>
+&#60;/div>
+
+</pre>    
+                <p>If you want to align the text inside the thumbnail-overlay div, then use this CSS class <code>overlay-text-left</code> or this one <code>overlay-text-right</code>, for example: </p>
+
+<pre class="prettyprint linenums">
+
+&#60;div class="thumbnail-overlay overlay-always-visible <span class="highlight">overlay-text-left</span>">
+    &#60;div class="media-box-title">Psico dell&#60;/div>
+    &#60;div class="media-box-text">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit culpa repellat sit reiciendis.
+    &#60;/div>
+&#60;/div>
+
+</pre>                
+                <p>If you want your Youtube/Vimeo videos (iframe based) to load right in the grid, instead of in the popup, then do it like you do for the popup, and then just add this class <code>class="video-on-grid"</code> to the mb-open-popup element, for example:</p>
+
+<pre class="prettyprint linenums">
+
+&#60;div class="media-box-image">
+    &#60;div data-width="590" data-height="332" data-thumbnail="https://i.vimeocdn.com/video/148596367_590x332.jpg">&#60;/div>
+    
+    &#60;div class="thumbnail-overlay <span class="highlight">video-on-grid</span> mb-open-popup" data-type="iframe" data-popup="http://vimeo.com/22884674">
+        &#60;span class="fa fa-play media-box-play-button">&#60;/span>
+    &#60;/div>
+&#60;/div>
+
+</pre>   
+
+                <div class="alert">
+                    <strong>Heads up!</strong> just make sure that the <code>mb-open-popup</code> element is inside the <code>media-box-image</code> div, if its outside it may cause bugs!
+                </div> 
+
+                <hr>
+
+            </section>
+            <!-- ========================= SECTION: HANDY STUFF >> END ========================= -->
+
+        </div>
+        <!-- ========================= MAIN CONTAINER >> END ========================= -->
+     
+
+        <!-- loading javascripts -->
+		<script src="assets/js/jquery.js"></script> 
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/google-code-prettify/prettify.js"></script>
+        
+        <!-- init javascripts -->
+        <script src="assets/js/init.js"></script>
+
+
+
+    </body>
+    
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Modal -->
+        <div class="myModal modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Resolutions</h3>
+          </div>
+          <div class="modal-body">
+            <p>
+                [<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">maxWidth: 960,</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;columnWidth: 'auto',<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;columns: 3,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">maxWidth: 650,</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;columnWidth: 'auto',<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;columns: 2,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;horizontalSpaceBetweenBoxes: 10,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;verticalSpaceBetweenBoxes: 10,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">maxWidth: 450,</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;columnWidth: 'auto',<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;columns: 1,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;horizontalSpaceBetweenBoxes: 10,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;verticalSpaceBetweenBoxes: 10,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                ]
+            </p>
+          </div>
+        </div>
+
+
+         <!-- Modal2 -->
+        <div class="myModal2 modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">For example if you got this!</h3>
+          </div>
+          <div class="modal-body">
+<pre class="prettyprint linenums">
+[
+    {
+        <span class="highlight">maxWidth: 960,</span>
+        columnWidth: 'auto',
+        columns: 4,
+        horizontalSpaceBetweenBoxes: 5,
+        verticalSpaceBetweenBoxes: 5,
+    },
+]
+</pre>
+            <p>
+                 It means that if the width of the browser window (including the scroll bar) is 960 pixels or less the <code>columnWidth</code> will be 'auto', you will have 4 <code>columns</code> and 5px of space between your boxes
+            </p>
+          </div>
+        </div>
+
+
+         <!-- Modal3 -->
+        <div class="myModal3 modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">All the overlay effects!</h3>
+          </div>
+          <div class="modal-body">
+            <p>
+<pre class="prettyprint linenums">
+'push-up' 
+'push-down' 
+'push-up-100%' 
+'push-down-100%' 
+'reveal-top' 
+'reveal-bottom' 
+'reveal-top-100%' 
+'reveal-bottom-100%' 
+'direction-aware' 
+'direction-aware-fade' 
+'direction-right' 
+'direction-left' 
+'direction-top' 
+'direction-bottom' 
+'fade'
+</pre>
+            </p>
+          </div>
+        </div>
+
+
+        <!-- Modal4 -->
+        <div class="myModal4 modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">All the easing effects!</h3>
+          </div>
+          <div class="modal-body">
+            <p>
+<pre class="prettyprint linenums">
+'default'
+'easeInCubic'
+'easeOutCubic'
+'easeInOutCubic'
+'easeInCirc'
+'easeOutCirc'
+'easeInOutCirc'
+'easeInExpo'
+'easeOutExpo'
+'easeInOutExpo'
+'easeInQuad'
+'easeOutQuad'
+'easeInOutQuad'
+'easeInQuart'
+'easeOutQuart'
+'easeInOutQuart'
+'easeInQuint'
+'easeOutQuint'
+'easeInOutQuint'
+'easeInSine'
+'easeOutSine'
+'easeInOutSine'
+'easeInBack'
+'easeOutBack'
+'easeInOutBack'
+</pre>
+            </p>
+          </div>
+        </div>
+
+
+
+        <!-- Modal5 -->
+        <div class="myModal5 modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">getSortData</h3>
+          </div>
+          <div class="modal-body">
+<pre class="prettyprint linenums">
+{
+    title: '.media-box-title',
+    text: '.media-box-text',
+},
+</pre>

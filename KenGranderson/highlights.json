@@ -1,0 +1,444 @@
+{
+  "1991": [
+    {
+      "title": "KeyMapper",
+      "subTitle": "Windows Control Panel Keyboard Utility Applet",
+      "description": "Former German rocker Mike Neumann was selling a Windows Multilingual Fonts package through an Arizona company named Data-Cal, and used a shareware Windows font creation utility of mine (this was before TrueType) to convert his fonts.  Mike contacted me, and got Data-Cal to hire me remotely to build a Control Panel applet that worked with his fonts.",
+      "mediaUrls": [
+        "images/highlights/KeyMapper-Front.jpg"
+      ]
+    },
+    {
+      "title": "NoDOS",
+      "subTitle": "Windows Desktop Utility",
+      "description": "My second shareware program was called NoDOS, and it customized the Windows 3.0 Program Manager to display DOS programs like WordPerfect and Lotus 1-2-3 as different, customizable icons rather than them all displaying as the same gray 'DOS' icon when you switched out of them back into Windows. Data-Cal bought and packaged NoDOS from me and paid me a royalty for units sold through their catalog.",
+      "mediaUrls": [
+        "images/highlights/NoDOS-Front.jpg",
+        "images/highlights/NoDOS-Back.jpg"
+      ],
+      "postscript": "This functionality ended up being built into Windows 3.1."
+    }
+  ],
+  "1992": [
+    {
+      "title": "GrpIcon",
+      "subTitle": "Windows Desktop Utility",
+      "description": "My third and final shareware program, GrpIcon (pronounced 'Group-Icon') picked up where NoDOS left off by customizing the Program Groups insode the Windows Program Manager, which was not built into Windows 3.1. GrpIcon was picked up by PC Magazine Editor Brian Livingston, and included in his book Windows Gizmos, which was sold in book stores and CompUSAs across the USA.  It also ended up in at least one other book, Shareware Icones from France, which showed up in the mail one day. Windows Gizmos printed the entire Help file verbatim, including inspirational acknowledgements that were not only unapologetically black, but controversial to many.  Nevertheless, over 2000 people registered GrpIcon at $20 each, so I quit my QA testing job that was paying me $43,000 a year and started doing my own thing full time.",
+      "mediaUrls": [
+        "images/highlights/gizmos.jpg",
+        "images/highlights/Icones-Front.jpg",
+        "images/highlights/Icones-Back.jpg",
+        "images/highlights/gizmos1.jpg",
+        "images/highlights/gizmos2.jpg",
+        "images/highlights/gizmos3.jpg"
+      ]
+    },
+    {
+      "title": "Inner-City Software",
+      "subTitle": "Brains in the 'Hood",
+      "description": "\"Inner-City Software (code for Black Software Company) was established with the goal of 'Bringing Communities of Color into the Information Age,' and I sought out opportunities to create products and deliver technology services towards that objective. In 1992, the Boston Public Library published a book by Boston-area historian Robert Hayden titled 'African Americans in Boston: More Than 350 Years,' and a year or 2 later, I started negotiating with them to get the rights to digitize the text and images of the book as a searchable CD-ROM program, with the goal of giving it away to the Boston Public School system.",
+      "mediaUrls": [
+        "images/highlights/icslogo.png",
+        "images/highlights/icsweb.jpg",
+        "images/highlights/grpicon-page.jpg"
+      ]
+    }
+  ],
+  "1994": [
+    {
+      "title": "Afro-Am Culture Forum",
+      "subTitle": "CompuServe Afro-Am Culture Forum: Software Section",
+      "description": "I moderated the Software section of American Visions Magazine's Afro-American Culture Forum on CompuServe in the early 90s.",
+      "mediaUrls": [
+        "images/highlights/aacf.jpg"
+      ]
+    }
+  ],
+  "1995": [
+    {
+      "title": "African Americans in Boston: More Than 350 Years",
+      "subTitle": "CD-ROM Windows Desktop Educational Program",
+      "description": "\"I reasoned that the most practical way to generate interest in the black community about technology was to create culturally relevant software.  My first idea for a black software product was a screen saver featuring photos and audio clips from Malcolm X, but after creating a prototype, I abandoned the idea because the size of audio files was too impractical to deliver via diskettes, and CDs were too expensive for just a screen saver, and I did not have any ideas on how to contact Malcolm’s family, nor knew anyone who I felt could negotiate use of the material without coming out of pocket for a product that was before its time and more to expose people to the idea of black software than something that any real market research would have found a market for.",
+      "mediaUrls": [
+        "images/highlights/350years.jpg",
+        "images/highlights/350years.gif",
+        "P7yQ-CBORKo",
+        "images/highlights/banner1.jpg",
+        "images/highlights/banner2.jpg",
+        "images/highlights/banner3.jpg",
+        "images/highlights/bannerad-1.jpg",
+        "images/highlights/icsnew1.jpg",
+        "images/highlights/boston-globe-1995.jpg",
+        "0UOIPTglcaw",
+        "images/highlights/lizwalker.jpg",
+        "images/highlights/nyt3.jpg"
+      ]
+    },
+    {
+      "title": "Africana Libraries in the Information Age",
+      "subTitle": "Schomburg Center Presentation",
+      "description": "\"In January 1995, I demonstrated the completed 'African Americans in Boston' CD-ROM product to an audience of librarians at the Schomburg Center or Research in Black Culture.  At this same event, Professor Henry Louis Gates presented a concept video of a black encyclopedia, that he ultimately partnered with Microsoft with to become 'Encarta Africana' and Africana.com, which existed in the late 90s to mid 00s.  Despite not having the resources of Harvard or Microsoft, I have ensured that the '350 Years' content is available to the world up to this very day, on Blackfacts.com.",
+      "mediaUrls": [
+        "images/highlights/schomburg0.jpg",
+        "images/highlights/schomburg1.jpg",
+        "images/highlights/schomburg2.jpg"
+      ],
+      "postscript": "Yes, I made sure he knew what I was doing by meeting with him and showing him my completed product a month after the Schomburg event and expressing a desire to work with him on it, and yes, I am throwing shade."
+    },
+    {
+      "title": "Mobile Affirmations",
+      "subTitle": "Positive Text Messages to Your Mobile Phone",
+      "description": "Created for a black tech entrepreneur friend and associate in Baltimore, Mobile Affirmations was a premium SMS service that enabled churches and other organizations to send daily positive messages on a subscription basis to their constituents.",
+      "mediaUrls": [
+        "images/highlights/maffirmations.jpg"
+      ]
+    },
+    {
+      "title": "William Monroe Trotter Institute",
+      "mediaUrls": [
+        "images/highlights/trotter.jpg"
+      ]
+    }
+  ],
+  "1996": [
+    {
+      "title": "Blackside Productions (Creators of ‘Eyes On The Prize’)",
+      "mediaUrls": [
+        "images/highlights/breakthrough.jpg",
+        "images/highlights/blackside.jpg",
+        "images/highlights/immaw.jpg"
+      ]
+    },
+    {
+      "title": "Boston Blacks Online",
+      "description": "\"Although email based, BBO was a precursor to social networks like Facebook, where active, and often spirited debate could be found any hour of the day or night.  While my view into BBO was that of the moderator (aka Usually Benevolent Dictator), I have been told that BBO was responsible for a variety of friendships and business deals, as well as a few marriages and babies, and in recent years, I have had several people I never met in person then come up to me and thank me for introducing them to the online world via BBO."
+    },
+    {
+      "title": "Inner City Access",
+      "subTitle": "Urban Community Web Sites",
+      "description": "\"By 1996, the Internet was making inroads from the nerdverse to the rest of the world, so I looked for all of the local black tech folks I could find, and asked them to help me collect information about local businesses and organizations and put Boston’s communities of color on the digital map at the Urls I registered at Roxbury.com, Dorchester.com and Mattapan.com.",
+      "mediaUrls": [
+        "vnHePmZbYLM",
+        "fEYtaZIVUe8",
+        "images/highlights/bay-state-banner-1996.jpg",
+        "images/highlights/be1996.jpg",
+        "images/highlights/ica.gif",
+        "images/highlights/ica0.png",
+        "images/highlights/ica1.jpg",
+        "images/highlights/ica2.jpg",
+        "images/highlights/ica3.jpg",
+        "images/highlights/ica4.png",
+        "images/highlights/ica5.png"
+      ],
+      "postscript": "\"Inner-City Access Philosophy\nWe are socially conscious entrepreneurs working to improve our community’s social condition through the application of technology.\n \n“Besides the obvious technology component of our annual projects, the common concept behind our efforts is the focus on interest above access, content above hardware. We have seen too much energy put into getting people access to computers without giving them reasons to care that they have this access. We know of too many computers that people already have access to (in all the Boston Public Libraries, for a local example) that are gathering dust because people have not been given enough good reasons to stretch out of their comfort zone and deal with this new, unfamiliar thing called a computer. \n\nWe also have seen, all of our lives, that once a person desires something, s/he will find all sorts of ways to gain access to it, but if the desire is not there, access is meaningless. Therefore, our efforts to bring technology to the 'hood do not focus on how cool the technology is, but rather aim to show how the technology can be used as a tool to help people become better at whatever is important to them, give them more options, and ultimately improve their lives. By focusing on things that people are already interested in (like ourselves, our culture and history) and presenting the computer as a vehicle to find out more and feel better about ourselves, we are confident that we can help present the computer in a new and different light.”\n\n-- Kenneth Granderson\nPresident, Inner-City Software\n\""
+    },
+    {
+      "title": "Million Man March Local Organizing Committee",
+      "description": "\"I tried to digitize the MMM operation at both local and national levels.",
+      "mediaUrls": [
+        "images/highlights/mmmprop.jpg"
+      ]
+    }
+  ],
+  "1997": [
+    {
+      "title": "Black Facts Online",
+      "subTitle": "The Internet's First Black History Database",
+      "mediaUrls": [
+        "images/highlights/bfo.jpg",
+        "images/highlights/bfoscreen.gif",
+        "images/highlights/blackfacts-now.jpg"
+      ]
+    },
+    {
+      "title": "Boston Vegetarian Society",
+      "mediaUrls": [
+        "images/highlights/bvs.jpg"
+      ]
+    },
+    {
+      "title": "CityLine - Intro to Computers",
+      "mediaUrls": [
+        "images/highlights/intro.jpg",
+        "GY05SsnL71I"
+      ]
+    },
+    {
+      "title": "Microsoft MVP Award",
+      "mediaUrls": [
+        "images/highlights/mvp.jpg"
+      ]
+    },
+    {
+      "title": "MIT Community Fellows Program",
+      "mediaUrls": [
+        "images/highlights/fellows.jpg"
+      ]
+    },
+    {
+      "title": "Taunton Daily Gazette",
+      "mediaUrls": [
+        "images/highlights/taunton-daily-gazette0.jpg",
+        "images/highlights/taunton-daily-gazette1.jpg"
+      ]
+    },
+    {
+      "title": "Urban Hang Suite",
+      "subTitle": "Urban Online Networking",
+      "description": "Social Network Site for Urban Professionals in the DC Area",
+      "mediaUrls": [
+        "images/highlights/uhs.jpg"
+      ]
+    }
+  ],
+  "1998": [
+    {
+      "title": "Black and White Business Profile Award",
+      "mediaUrls": [
+        "images/highlights/bwboston-bpa.jpg",
+        "images/highlights/bwboston.jpg"
+      ]
+    },
+    {
+      "title": "Commonwealth Magazine",
+      "mediaUrls": [
+        "images/highlights/commonwealth0.jpg",
+        "images/highlights/commonwealth1.jpg"
+      ]
+    },
+    {
+      "title": "Congressional Black Caucus Foundation Web Site",
+      "description": "http://web.archive.org/web/19980208165632/http://www.cbcfnet.org:80/",
+      "mediaUrls": [
+        "images/highlights/cbcf.jpg"
+      ]
+    },
+    {
+      "title": "Minority Business of the Year",
+      "mediaUrls": [
+        "images/highlights/mbofyear.jpg"
+      ]
+    },
+    {
+      "title": "The Boston Foundation Web Site",
+      "mediaUrls": [
+        "images/highlights/tbf.jpg"
+      ]
+    },
+    {
+      "title": "WebTV",
+      "mediaUrls": [
+        "images/highlights/webtv.jpg"
+      ]
+    }
+  ],
+  "1999": [
+    {
+      "title": "Bessemer Venture Partners",
+      "mediaUrls": [
+        "images/highlights/bvp.jpg"
+      ]
+    },
+    {
+      "title": "Boston's Empowerment Zone",
+      "mediaUrls": [
+        "images/highlights/ezinfo.jpg",
+        "images/highlights/gorepic1.jpg",
+        "images/highlights/empzone.jpg"
+      ]
+    },
+    {
+      "title": "Broward Alliance",
+      "description": "I traveled as far as Broward County, Florida to address a business alliance on using technology to enhance their small businesses,",
+      "mediaUrls": [
+        "images/highlights/broward.jpg"
+      ]
+    },
+    {
+      "title": "Honorary Doctorate, Salem State University",
+      "mediaUrls": [
+        "images/highlights/salem-state.jpg",
+        "images/highlights/salem-state2.jpg",
+        "images/highlights/salem-state-luncheon.jpg",
+        "images/highlights/duty-opportunity.pdf"
+      ]
+    }
+  ],
+  "2000": [
+    {
+      "title": "AfterMeeting",
+      "mediaUrls": [
+        "images/highlights/aftermeeting.jpg"
+      ]
+    },
+    {
+      "title": "AirBeat",
+      "mediaUrls": [
+        "images/highlights/airbeat.png",
+        "images/highlights/nescaum.jpg",
+        "images/highlights/airbeat-site.jpg"
+      ]
+    },
+    {
+      "title": "Youth Achievers",
+      "mediaUrls": [
+        "images/highlights/youthachieversaward.jpg"
+      ]
+    }
+  ],
+  "2001": [
+    {
+      "title": "Bay State Banner",
+      "mediaUrls": [
+        "images/highlights/banner.jpg",
+        "images/highlights/baystatebanner.jpg"
+      ]
+    },
+    {
+      "title": "Boston Oil Consumers Alliance",
+      "mediaUrls": [
+        "images/highlights/boca.jpg"
+      ]
+    },
+    {
+      "title": "Boston Parent Organizing Network",
+      "description": "\"The Boston Parent Organizing Network (BPON) supports and advocates for the improvement of the Boston Public Schools.  Every day, parents, and community members are getting involved at every level, from meeting with a child’s teacher to helping shape major policy decisions.  They are helping to change the culture of education in Boston into a richly diverse and democratic one.",
+      "mediaUrls": [
+        "images/highlights/bpon.jpg"
+      ]
+    },
+    {
+      "title": "Champion of Freedom",
+      "mediaUrls": [
+        "images/highlights/champion.jpg"
+      ]
+    },
+    {
+      "title": "Nellie Mae Education Foundation",
+      "mediaUrls": [
+        "images/highlights/nmef.jpg",
+        "images/highlights/nmef1.jpg"
+      ]
+    }
+  ],
+  "2002": [
+    {
+      "title": "Adam Clayton Powell web site",
+      "mediaUrls": [
+        "images/highlights/acp.jpg"
+      ]
+    },
+    {
+      "title": "East Harbor Community Development Corporation",
+      "mediaUrls": [
+        "images/highlights/ehcdc.jpg"
+      ]
+    },
+    {
+      "title": "MOBE Award",
+      "mediaUrls": [
+        "images/highlights/mobe.jpg"
+      ]
+    },
+    {
+      "title": "Northeastern University School of Education",
+      "mediaUrls": [
+        "images/highlights/nued.jpg"
+      ]
+    },
+    {
+      "title": "Rachel Abroms Designs",
+      "mediaUrls": [
+        "images/highlights/rachelabroms.jpg"
+      ]
+    },
+    {
+      "title": "Roxbury.com",
+      "mediaUrls": [
+        "images/highlights/2002 - roxbury-presentation-grandopening2.ppsx",
+        "images/highlights/rox2002.jpg",
+        "images/highlights/roxbury.jpg",
+        "images/highlights/roxbury0.jpg",
+        "images/highlights/roxbury-herald.jpg",
+        "images/highlights/roxbury-proclamation.jpg",
+        "images/highlights/roxbury-self-running-promo.pps",
+        "images/highlights/herald2002.jpg"
+      ]
+    },
+    {
+      "title": "Wayland Diversity Network",
+      "mediaUrls": [
+        "images/highlights/wayland.jpg"
+      ]
+    }
+  ],
+  "2003": [
+    {
+      "title": "BizInSite",
+      "mediaUrls": [
+        "images/highlights/bizinsite.jpg"
+      ]
+    },
+    {
+      "title": "BOND (Boston Organization of Nutritionists and Dieticians of Color)",
+      "mediaUrls": [
+        "images/highlights/bond.jpg"
+      ]
+    },
+    {
+      "title": "CBN",
+      "mediaUrls": [
+        "images/highlights/cbn.jpg"
+      ]
+    },
+    {
+      "title": "CDC of Boston",
+      "mediaUrls": [
+        "images/highlights/bostoncdc.jpg"
+      ]
+    },
+    {
+      "title": "MMEC",
+      "mediaUrls": [
+        "images/highlights/mmec.jpg"
+      ]
+    },
+    {
+      "title": "MSBM",
+      "mediaUrls": [
+        "images/highlights/msbm.jpg"
+      ]
+    },
+    {
+      "title": "UIF",
+      "mediaUrls": [
+        "images/highlights/uif.jpg"
+      ]
+    },
+    {
+      "title": "Warp Insurance Application",
+      "mediaUrls": [
+        "images/highlights/warp.png"
+      ]
+    }
+  ],
+  "2013": [
+    {
+      "title": "Government of Saint Lucia Web Site",
+      "mediaUrls": [
+        "images/highlights/stlucia.png"
+      ]
+    }
+  ],
+  "2017": [
+    {
+      "title": "Blackfacts.com Reboot",
+      "mediaUrls": [
+        "images/highlights/bfo0.jpg",
+        "images/highlights/bfo1.jpg",
+        "images/highlights/bfod.jpg",
+        "images/highlights/fotd-widget.png"
+      ]
+    }
+  ]
+}

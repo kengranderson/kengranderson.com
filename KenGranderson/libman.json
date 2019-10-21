@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "jquery@3.4.1",
+      "destination": "lib/jquery/"
+    },
+    {
+      "library": "jquery-easing@1.4.1",
+      "destination": "lib/jquery-easing/"
+    },
+    {
+      "library": "twitter-bootstrap@3.4.1",
+      "destination": "lib/twitter-bootstrap/"
+    },
+    {
+      "library": "waypoints@4.0.1",
+      "destination": "lib/waypoints/"
+    },
+    {
+      "library": "stellar.js@0.6.2",
+      "destination": "lib/stellar.js/"
+    },
+    {
+      "library": "modernizr@2.8.3",
+      "destination": "lib/modernizr/"
+    },
+    {
+      "library": "magnific-popup.js@1.1.0",
+      "destination": "lib/magnific-popup.js/"
+    },
+    {
+      "library": "jquery-migrate@3.1.0",
+      "destination": "lib/jquery-migrate/"
+    }
+  ]
+}

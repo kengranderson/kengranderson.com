@@ -1,0 +1,10 @@
+
+=> IF YOU PURCHASED A NORMAL LICENSE IGNORE THIS FILE COMPLETELY!
+
+
+=> IF YOU PURCHASED AN EXTENDED LICENSES (OR HAVE PLANS TO) THEN READ THE NEXT THING:
+
+If you will use fancybox as the popup in your commercial product then you need to purchase the fancybox commercial license according to their terms.
+you can do so here: http://fancyapps.com/fancybox/3/#license
+
+If you will use Magnific Popup as the popup (instead of fancybox) then you are good to go, you don’t have to buy anything else! (Remember that Magnific Popup is also included in the plugin)
