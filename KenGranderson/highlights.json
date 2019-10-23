@@ -72,7 +72,8 @@
         "images/highlights/boston-globe-1995.jpg",
         "images/highlights/lizwalker.jpg",
         "images/highlights/nyt3.jpg"
-      ]
+      ],
+      "postscript": "So I worked with the Boston Public Library to get the rights to digitally reproduce and distribute their 1992 book 'African Americans in Boston: More tThan 350 Years,' with the ultimate goal of getting it into the Boston Public School system so that children of color (and others) could grow up seeing black people represented in this new technology."
     },
     {
       "title": "Africana Libraries in the Information Age",
@@ -95,6 +96,7 @@
     },
     {
       "title": "William Monroe Trotter Institute",
+      "subTitle": "Urban Think Tankl in UMass Boston",
       "mediaUrls": [
         "images/highlights/trotter.jpg"
       ]
@@ -102,7 +104,9 @@
   ],
   "1996": [
     {
-      "title": "Blackside Productions (Creators of ‘Eyes On The Prize’)",
+      "title": "Blackside Productions",
+      "subTitle": "Creators of ‘Eyes On The Prize’",
+      "description": "For several years, Inner-City Software did Blackside's web sites that promoted their documentaries and the business operations they created behind some of them, like 'Breakthrough: The Changing Face of Science in America,' which featured scientists of color and had curricula products marketed to educational institutions.",
       "mediaUrls": [
         "images/highlights/breakthrough.jpg",
         "images/highlights/blackside.jpg",
@@ -111,6 +115,7 @@
     },
     {
       "title": "Boston Blacks Online",
+      "subTitle": "Over 6000 Stong, from Coast to Coast and More",
       "description": "\"Although email based, BBO was a precursor to social networks like Facebook, where active, and often spirited debate could be found any hour of the day or night.  While my view into BBO was that of the moderator (aka Usually Benevolent Dictator), I have been told that BBO was responsible for a variety of friendships and business deals, as well as a few marriages and babies, and in recent years, I have had several people I never met in person then come up to me and thank me for introducing them to the online world via BBO."
     },
     {
@@ -134,7 +139,8 @@
     },
     {
       "title": "Million Man March Local Organizing Committee",
-      "description": "\"I tried to digitize the MMM operation at both local and national levels.",
+      "subTitle": "Proposal to Connect the Local Organizing Committees Nationally",
+      "description": "The MMM Local Organizing Committees that formed after the 1995 Million Man March met on a quarterly basis in several locations across the country, and back in these days of expensive long distance phone costs, did not communicate much even at a regional level.  I proposed to connect the LOCs across the country for free by setting up email listservs and web sites for them.  I got my proposal as far as the Chicago Baptist minister who was running the organization, but I think that his lack of understanding of the idea (despite the pictures in the proposal) prevented him from understanding what a sea change this could have brought to activist communication across the nation.",
       "mediaUrls": [
         "images/highlights/mmmprop.jpg"
       ]
@@ -144,6 +150,7 @@
     {
       "title": "Black Facts Online",
       "subTitle": "The Internet's First Black History Database",
+      "description": "Originally started as Inner-City Software's 1997 Black Community Technology Awareness project, Blackfacts.com is the world's first online Black History database and the only one that has been running continuously from its launch in February 1997 to the present day.  The #1 Google search result for 'black facts,' blackfacts.com has served hundreds of millions of Black Facts to millions of visitors across the globe.",
       "mediaUrls": [
         "images/highlights/bfo.jpg",
         "images/highlights/bfoscreen.gif",
@@ -152,12 +159,16 @@
     },
     {
       "title": "Boston Vegetarian Society",
+      "subTitle": "Bringing Healthy Eating to the 'Hood",
+      "description": "While having been a vegetarian since the early 1990s, it has always been a personal choice rather than a major part of my identity or politics.  Nevertheless, as I had the fastest connection in the area and plenty of machines to spare, I hosted the Boston Vegetarian Society's web site for a while, and when they were looking for a new location for their annual Veggie Food Fest, recommended the Reggie Lewis Track Center in Roxbury, where the annual event has remained for over two decades.",
       "mediaUrls": [
         "images/highlights/bvs.jpg"
       ]
     },
     {
       "title": "CityLine - Intro to Computers",
+      "subTitle": "First Boston TV Technology Presentation by Black People",
+      "description": "In these early years of personal computer usage growing in the home, I did this 'introduction to Computers' segment on Boston's CityLine program, which was the first time in Boston television history where black people discussed and informed the public about computers.",
       "mediaUrls": [
         "GY05SsnL71I",
         "images/highlights/intro.jpg"
@@ -165,18 +176,23 @@
     },
     {
       "title": "Microsoft MVP Award",
+      "subTitle": "Probably the First Black Microsoft Most Valued Professional",
+      "description": "Awarded for helping the MS tech community with FrontPage, for which Microsoft purchased Vermeer Technologies for $160MM.  I had been using FrontPage for 2 years, for the Inner City Access Project and showed hundreds of folks how to use it to create cutting edge web pages.",
       "mediaUrls": [
         "images/highlights/mvp.jpg"
       ]
     },
     {
       "title": "MIT Community Fellows Program",
+      "subTitle": "Did Research on Online Communities",
+      "description": "And applied that learning to establishing Roxbury.com.",
       "mediaUrls": [
         "images/highlights/fellows.jpg"
       ]
     },
     {
       "title": "Taunton Daily Gazette",
+      "subTitle": "Article from suburban newspaper",
       "mediaUrls": [
         "images/highlights/taunton-daily-gazette0.jpg",
         "images/highlights/taunton-daily-gazette1.jpg"
@@ -201,6 +217,7 @@
     },
     {
       "title": "Commonwealth Magazine",
+      "subTitle": "The Technology Evangelist",
       "mediaUrls": [
         "images/highlights/commonwealth0.jpg",
         "images/highlights/commonwealth1.jpg"
@@ -208,13 +225,14 @@
     },
     {
       "title": "Congressional Black Caucus Foundation Web Site",
-      "description": "http://web.archive.org/web/19980208165632/http://www.cbcfnet.org:80/",
+      "description": "I was a panelist on the 1995 CBCF Conference workshop 'Towards Inclusive Software,' and hosted the CBCF web site for a couple of years.",
       "mediaUrls": [
         "images/highlights/cbcf.jpg"
       ]
     },
     {
       "title": "Minority Business of the Year",
+      "subTitle": "From UMass Boston Small Business",
       "mediaUrls": [
         "images/highlights/mbofyear.jpg"
       ]
@@ -227,6 +245,7 @@
     },
     {
       "title": "WebTV",
+      "subTitle": "$100 Set-Top Box for Those who Could not afford a Computer",
       "mediaUrls": [
         "images/highlights/webtv.jpg"
       ]
@@ -241,6 +260,7 @@
     },
     {
       "title": "Boston's Empowerment Zone",
+      "subTitle": "Online Directory of Busineses throughout Boston's Emppowerment Zone",
       "mediaUrls": [
         "images/highlights/ezinfo.jpg",
         "images/highlights/gorepic1.jpg",
@@ -249,30 +269,36 @@
     },
     {
       "title": "Broward Alliance",
+      "subTitle": "Teaching Professionals in Broward County Florida How to Use Computers to Grow Their Businesses",
       "description": "I traveled as far as Broward County, Florida to address a business alliance on using technology to enhance their small businesses,",
       "mediaUrls": [
         "images/highlights/broward.jpg"
       ]
     },
     {
-      "title": "Honorary Doctorate, Salem State University",
+      "title": "Doctor of Humane Letters, Salem State College",
+      "subTitle": "For Establishing Pioneering Online Services that Introduced Boston's Communities of Color to Computers and the Internet",
       "mediaUrls": [
         "images/highlights/salem-state.jpg",
         "images/highlights/salem-state2.jpg",
         "images/highlights/salem-state-luncheon.jpg",
+        "images/highlights/salem-state-plaque.jpg",
         "images/highlights/duty-opportunity.pdf"
-      ]
+      ],
+      "postscript": "The PDF file is the full text of my brief address at the Honoree's Luncheon."
     }
   ],
   "2000": [
     {
-      "title": "AfterMeeting",
+      "title": "AfterMeeting.com",
+      "subTitle": "Post Conference Professional Networking Site",
       "mediaUrls": [
         "images/highlights/aftermeeting.jpg"
       ]
     },
     {
       "title": "AirBeat",
+      "subTitle": "Monitoring and Publishing Air Quality Data in Roxbury Since 2000",
       "mediaUrls": [
         "images/highlights/airbeat.png",
         "images/highlights/nescaum.jpg",
@@ -281,6 +307,7 @@
     },
     {
       "title": "Youth Achievers",
+      "subTitle": "Responsible Corporate Citizen Award",
       "mediaUrls": [
         "images/highlights/youthachieversaward.jpg"
       ]
@@ -289,6 +316,7 @@
   "2001": [
     {
       "title": "Bay State Banner",
+      "subTitle": "Boston's Black Newspaper - One of a Fraction Online in 2001 with Our Online Publishing System",
       "mediaUrls": [
         "images/highlights/banner.jpg",
         "images/highlights/baystatebanner.jpg"
@@ -296,6 +324,7 @@
     },
     {
       "title": "Boston Oil Consumers Alliance",
+      "subTitle": "Helping Folks Go Green a Decade Before It Was a 'Thing'",
       "mediaUrls": [
         "images/highlights/boca.jpg"
       ]
@@ -309,12 +338,14 @@
     },
     {
       "title": "Champion of Freedom",
+      "subTitle": "Annual Award from the Freedom House",
       "mediaUrls": [
         "images/highlights/champion.jpg"
       ]
     },
     {
       "title": "Nellie Mae Education Foundation",
+      "subTitle": "The Student Loan Folks",
       "mediaUrls": [
         "images/highlights/nmef.jpg",
         "images/highlights/nmef1.jpg"
@@ -324,6 +355,7 @@
   "2002": [
     {
       "title": "Adam Clayton Powell web site",
+      "subTitle": "Created for the Family in conjunction with the program 'Keep The Faith'.",
       "mediaUrls": [
         "images/highlights/acp.jpg"
       ]
@@ -354,6 +386,7 @@
     },
     {
       "title": "Roxbury.com",
+      "subTitle": "Once again WAY ahead of its time, I put the neighborhood of Roxbury online with a world-class online community presence that could still be current today.",
       "mediaUrls": [
         "kocxeo1Txk0",
         "images/highlights/2002 - roxbury-presentation-grandopening2.ppsx",
@@ -363,7 +396,8 @@
         "images/highlights/roxbury-proclamation.jpg",
         "images/highlights/roxbury-self-running-promo.pps",
         "images/highlights/herald2002.jpg"
-      ]
+      ],
+      "postscript": "Be sure to look at the presentations - one was a self-running demo from the grand opening, the other is a tour with audio voice-over (sorry about the low volume).  Keep in mind this was all done in 2002."
     },
     {
       "title": "Wayland Diversity Network",
@@ -375,6 +409,7 @@
   "2003": [
     {
       "title": "BizInSite",
+      "subTitle": "Economic development site for urban businesses in Ohio",
       "mediaUrls": [
         "images/highlights/bizinsite.jpg"
       ]
@@ -386,59 +421,50 @@
       ]
     },
     {
-      "title": "CBN",
+      "title": "Boston Economic Development Organizations",
+      "subTitle": "Providing Funding for Companies that Didn't Need It",
+      "description": "CDC of Boston, Community Business Network, Mass Micro Enterprise Coalition, Minority, Micro Enterprise, Small Business in Mass, and Urban Initiative Fund.  Never got a dime of financing from any of them.  I remember meeting with one of them and being told that they were looking for companies in the $8-$12 million in revenue range.  I replied that if I had kind of revenue, I would not have been looking for financing.",
       "mediaUrls": [
-        "images/highlights/cbn.jpg"
-      ]
-    },
-    {
-      "title": "CDC of Boston",
-      "mediaUrls": [
-        "images/highlights/bostoncdc.jpg"
-      ]
-    },
-    {
-      "title": "MMEC",
-      "mediaUrls": [
-        "images/highlights/mmec.jpg"
-      ]
-    },
-    {
-      "title": "MSBM",
-      "mediaUrls": [
-        "images/highlights/msbm.jpg"
-      ]
-    },
-    {
-      "title": "UIF",
-      "mediaUrls": [
+        "images/highlights/bostoncdc.jpg",
+        "images/highlights/cbn.jpg",
+        "images/highlights/mmec.jpg",
+        "images/highlights/msbm.jpg",
         "images/highlights/uif.jpg"
-      ]
+      ],
+      "postscript": "I also asked if there were any businesses in urban Boston at the time at all that had that level of revenue, and never got an answer."
     },
     {
-      "title": "Warp Insurance Application",
+      "title": "Warp Portfolio Management Application",
+      "subTitle": "An intranet-based project portfolio management system built for a major insurance company.  Could have been a major product if we had the connections.",
       "mediaUrls": [
         "images/highlights/warp.png"
-      ]
+      ],
+      "postscript": "Take a good look at the screen shot - this is a web application, created with Microsoft's Classic ASP technology, not a desktop program."
     }
   ],
   "2013": [
     {
       "title": "Government of Saint Lucia Web Site",
+      "subTitle": "The offical web site of the Government of Saint Lucia",
+      "description": "The GOSL web site enables the Government of Saint Lucia to deliver timely and accurate information regarding government announcements, forms and national news to its 180,000 citizens.  Before the web site, residents would often risk 90-minute bus rides from one end of the island to the other to discover that a government office was closed that day.",
       "mediaUrls": [
         "images/highlights/stlucia.png"
-      ]
+      ],
+      "postscript": "I am the sole architect, developer and support person for the site since its launch in 2013."
     }
   ],
   "2017": [
     {
       "title": "Blackfacts.com Reboot",
+      "subTitle": "The World's #1 Black History Site, Conceived, Created, Coded and Powered by Black Expertise",
+      "description": "After two decades of Blackfacts running as a community information site, in collaboration with my longtime friend and business associate <a target=\"_blank\" href=\"https://intellitech.net\">Dale Dowdie</a>, we decided to evolve Blackfacts into a sustainable business that would grow into becoming The Black Wikipedia.  So we gave it a face lift, found images for most of the Black Facts, linked the Black Facts with 2 Artifical Intelligence systems, and started building features like membership, commerce, special-interest virtual sites and educational applications to establish Blackfacts as not only the longest running and one of the Internet's most popular Black History sites, but a site that is uniquely qualified as being built on world-class technology built By Us, For Us, and 100% Owned By Us.",
       "mediaUrls": [
         "images/highlights/bfo0.jpg",
         "images/highlights/bfo1.jpg",
         "images/highlights/bfod.jpg",
         "images/highlights/fotd-widget.png"
-      ]
+      ],
+      "postscript": "If you want to find out about our educational or organizational products, affiliate programs, have products or services that you want to offer in our Wakanda Marketplace, or want to connect with us on other levels, please contact me at <a href=\"mailto:ken@blackfacts.com\">ken@blackfacts.com</a>."
     }
   ]
 }
