@@ -51,7 +51,8 @@
       "description": "I moderated the Software section of American Visions Magazine's Afro-American Culture Forum on CompuServe in the early 90s.",
       "mediaUrls": [
         "images/highlights/aacf.jpg"
-      ]
+      ],
+      "postscript": "AACF and NetNoir were the first online spaces for people of color."
     }
   ],
   "1995": [
@@ -96,7 +97,7 @@
     },
     {
       "title": "William Monroe Trotter Institute",
-      "subTitle": "Urban Think Tankl in UMass Boston",
+      "subTitle": "Urban Think Tank in UMass Boston",
       "mediaUrls": [
         "images/highlights/trotter.jpg"
       ]
@@ -389,13 +390,18 @@
       "subTitle": "Once again WAY ahead of its time, I put the neighborhood of Roxbury online with a world-class online community presence that could still be current today.",
       "mediaUrls": [
         "kocxeo1Txk0",
-        "images/highlights/2002 - roxbury-presentation-grandopening2.ppsx",
         "images/highlights/roxbury.jpg",
-        "images/highlights/roxbury0.jpg",
         "images/highlights/roxbury-herald.jpg",
         "images/highlights/roxbury-proclamation.jpg",
-        "images/highlights/roxbury-self-running-promo.pps",
-        "images/highlights/herald2002.jpg"
+        "images/highlights/herald2002.jpg",
+        "images/highlights/rox-lead.jpg",
+        "images/highlights/rox-events.jpg",
+        "images/highlights/rox-business.jpg",
+        "images/highlights/rox-news.jpg",
+        "images/highlights/rox-discussions.jpg",
+        "images/highlights/rox-events2.jpg",
+        "images/highlights/2002 - roxbury-presentation-grandopening2.ppsx",
+        "images/highlights/roxbury-self-running-promo.pps"
       ],
       "postscript": "Be sure to look at the presentations - one was a self-running demo from the grand opening, the other is a tour with audio voice-over (sorry about the low volume).  Keep in mind this was all done in 2002."
     },
