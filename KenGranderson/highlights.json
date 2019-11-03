@@ -472,5 +472,16 @@
       ],
       "postscript": "If you want to find out about our educational or organizational products, affiliate programs, have products or services that you want to offer in our Wakanda Marketplace, or want to connect with us on other levels, please contact me at <a href=\"mailto:ken@blackfacts.com\">ken@blackfacts.com</a>."
     }
+  ],
+  "2019": [
+    {
+      "title": "Black Software",
+      "subTitle": "The Internet & Racial Justice, from the AfroNet to Black Lives Matter ",
+      "description": "Described as one of the 'Vanguard' of Black Technologists who helped lay the foundation for today's ubiquitous use of the Internet in today's black activism.",
+      "mediaUrls": [
+        "images/highlights/black-software-book.png"
+      ],
+      "postscript": "While the book says that the Vanguard cashed out, gave up or moved on, I am still here and still creating world-class technology For Us, By Us."
+    }
   ]
 }
