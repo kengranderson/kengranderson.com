@@ -256,6 +256,7 @@
 
                     $.each(items, function (index, item) {
                         var itemHtml = '<li class="animate-box timeline-' + (alt++ % 2 ? 'i' : 'u') + 'nverted">' +
+                            '<a name="' + item.hash + '"></a>' +
                             '<div class="timeline-badge"><i class="icon-suitcase"></i></div>' +
                             '<div class="timeline-panel">' +
                             '<div class="timeline-heading">' +
