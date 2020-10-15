@@ -173,6 +173,15 @@
       ]
     },
     {
+      "hash": "nsbe",
+      "title": "NSBE National Conference Presentation",
+      "subTitle": "VB For Fun And Profit",
+      "description": "Presentation I gave at the 1997 National Society of Black Engineers National Conference on using the Visual Basic programming language to build commercial or hobby application.  Gave away copies of VB valued at several hundred dollars that I got from Microsoft.",
+      "mediaUrls": [
+        "images/highlights/VB-For-Fun-And-Profit.ppt"
+      ]
+    },
+    {
       "hash": "bvs",
       "title": "Boston Vegetarian Society",
       "subTitle": "Bringing Healthy Eating to the 'Hood",
@@ -271,10 +280,11 @@
     },
     {
       "hash": "webtv",
-      "title": "WebTV",
-      "subTitle": "$100 Set-Top Box for Those who Could not afford a Computer",
+      "title": "Inner-City Software promotes WebTV as an affordable way for inner-city residents to get online",
+      "subTitle": "WebTV was a $100 Set-Top Box for those who could not afford a Computer.  This box put folks online with just a phone line and TV set. NO COMPUTER NEEDED, !  <a target=\"_blank\" href=\"https://links.blackfacts.com/webtv\">CLICK HERE</a> to see our 1997 presentation that was archived by the good people at the Wayback Machine!",
       "mediaUrls": [
-        "images/highlights/webtv.jpg"
+        "images/highlights/webtv.jpg",
+        "images/highlights/webtv-headline.png"
       ]
     }
   ],
@@ -368,7 +378,7 @@
     {
       "hash": "bpon",
       "title": "Boston Parent Organizing Network",
-      "description": "\"The Boston Parent Organizing Network (BPON) supports and advocates for the improvement of the Boston Public Schools.  Every day, parents, and community members are getting involved at every level, from meeting with a child’s teacher to helping shape major policy decisions.  They are helping to change the culture of education in Boston into a richly diverse and democratic one.",
+      "description": "The Boston Parent Organizing Network (BPON) supports and advocates for the improvement of the Boston Public Schools.  Every day, parents, and community members are getting involved at every level, from meeting with a child’s teacher to helping shape major policy decisions.  They are helping to change the culture of education in Boston into a richly diverse and democratic one.",
       "mediaUrls": [
         "images/highlights/bpon.jpg"
       ]
@@ -538,12 +548,30 @@
   ],
   "2020": [
     {
+      "hash": "wpfw",
+      "title": "Blackfacts.com - Creating The Future of Black History",
+      "subTitle": "WPFW 89.3 FM - Hosted by Jamila Bey",
+      "description": "Jamila Bey interviews Blackfacts.com Founder Ken Granderson as he describes how Blackfacts is 'Creating the Future of Black History'",
+      "mediaUrls": [
+        "fg9Yt0jMK6U"
+      ]
+    },
+    {
       "hash": "juneteenth",
       "title": "Juneteenth 2020 Presentation for Blacks At Microsoft",
       "subTitle": "Blackfacts and The Wakanda Technology Platform - Technology By Us For Us About Us",
       "description": "25 Years of Black Technology Creation from the Internet Pioneers behind Blackfacts.com, the Internet's First and Largest Black History Encyclopedia and Global Black News Source.",
       "mediaUrls": [
         "IVyhelsKC34"
+      ]
+    },
+    {
+      "hash": "bit",
+      "title": "Blacks In Technology - BITTechTalk Episode #125",
+      "subTitle": "Blackfacts.com – Telling and Protecting The Stories Of Our Culture For The Future",
+      "description": "<div><img src=\"images/highlights/bit-techtalk.jpg\" style=\"width:100%;height:auto;\" /></div>We know, we know, this podcast is almost 2 hours. Don't worry it's well worth the listen, so sit back, grab a cup your favorite beverage and be ready to be inspired!<br/>On this episode of the Blacks In Technology BIT Tech Talk podcast, Greg sits down with Ken Granderson and Dale Dowdie of Blackfacts, the Internet’s first Black History Encyclopedia, serving hundreds of millions of Black History facts to its global audience.<br/>BlackFacts.com endeavors to become the premiere online repository of black culture both nationally and internationally. Dale and Ken are two brilliant tech pioneers who have been in the tech entrepreneurship game since it started.<br/><a target=\"_blank\" href=\"https://www.blacksintechnology.net/bittechtalk-ep-125-blackfacts-com-telling-and-protecting-the-stories-of-our-culture-for-the-future/\">CLICK HERE TO LISTEN</a>",
+      "mediaUrls": [
+        "images/highlights/bit-techtalk.jpg"
       ]
     }
   ]
