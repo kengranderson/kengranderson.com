@@ -23,6 +23,15 @@
   ],
   "1992": [
     {
+      "hash": "yomama",
+      "title": "The Yo Mama Snaps Program",
+      "subTitle": "Windows Desktop Utility",
+      "description": "The Yo Mama Snaps Program was a silly way to keep myself motivated to trudge through learning how to be a better C/C++ developer.  I took a set of jokes and made a little Windows 3.1 program that had scores of jokes available at the click of a button jokes that were both categorized and rated, so you could omit the more offensive ones from ever appearing as you wished.  The program is still described and downloadable from http://www.pimpdaddy.com/yomama/yomama-program.shtml",
+      "mediaUrls": [
+        "images/highlights/yo-momma-jokes-program-screen.gif"
+      ]
+    },
+    {
       "hash": "grpicon",
       "title": "GrpIcon",
       "subTitle": "Windows Desktop Utility",
@@ -572,6 +581,27 @@
       "description": "<div><img src=\"images/highlights/bit-techtalk.jpg\" style=\"width:100%;height:auto;\" /></div>We know, we know, this podcast is almost 2 hours. Don't worry it's well worth the listen, so sit back, grab a cup your favorite beverage and be ready to be inspired!<br/>On this episode of the Blacks In Technology BIT Tech Talk podcast, Greg sits down with Ken Granderson and Dale Dowdie of Blackfacts, the Internet’s first Black History Encyclopedia, serving hundreds of millions of Black History facts to its global audience.<br/>BlackFacts.com endeavors to become the premiere online repository of black culture both nationally and internationally. Dale and Ken are two brilliant tech pioneers who have been in the tech entrepreneurship game since it started.<br/><a target=\"_blank\" href=\"https://www.blacksintechnology.net/bittechtalk-ep-125-blackfacts-com-telling-and-protecting-the-stories-of-our-culture-for-the-future/\">CLICK HERE TO LISTEN</a>",
       "mediaUrls": [
         "images/highlights/bit-techtalk.jpg"
+      ]
+    }
+  ],
+  "2021": [
+    {
+      "hash": "slice-of-mit",
+      "title": "Slice of MIT",
+      "subTitle": "MIT Alumni Association Article",
+      "description": "Interview for the MIT Alumni Association, available at <a target=\"_blank\" \"https://alum.mit.edu/slice/building-online-home-black-history\">https://alum.mit.edu/slice/building-online-home-black-history</a>. Was on the Home Page of the site for 2 days!",
+      "mediaUrls": [
+        "images/highlights/slice-homepage.jpg",
+        "images/highlights/slice-article.jpg"
+      ]
+    },
+    {
+      "hash": "twik",
+      "title": "That's When I Knew Podcast",
+      "subTitle": "Podcast Interview",
+      "description": "Founder & CTO of Blackfacts.com, Ken Granderson, joins us on That’s When I Knew for a casual chat around:<br/>Growing up in the Bed-Stuy neighborhood of Brooklyn New York in the 70s/80s and not seeing many white-collar jobs.<br/>Getting into MIT and discovering a passion for computer science/technology at an early age.<br/>The inspiration behind starting Blackfacts, the first online encyclopedia for black history, and how they are building the technological infrastructure to capture information about black people wherever it's coming from and deliver it back in an organized and effective way.<br/>Advice to younger black professionals: 'controlling the narrative', 'chasing your passion not money', 'doing work to push the culture forward' and several other gems from Ken's 25 year+ career journey.<br/><a target=\"_blank\" \"https://www.twikpodcast.com/podcast/episode/4d287f44/203-controlling-the-narrative-with-ken-granderson\"https://www.twikpodcast.com/podcast/episode/4d287f44/203-controlling-the-narrative-with-ken-granderson</a>",
+      "mediaUrls": [
+        "images/highlights/twik.jpg"
       ]
     }
   ]
