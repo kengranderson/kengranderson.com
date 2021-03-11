@@ -575,6 +575,15 @@
       ]
     },
     {
+      "hash": "jsonpath",
+      "title": "Using JsonPath to Map Data From Any API",
+      "subTitle": "Presentation for the Black Code Collective",
+      "description": "In this 16-minute presentation for the Black Code Collective, Blackfacts' Co-Founder / CTO Ken Granderson shows how to map data from third-party Json APIs to the data schemas required for your application.",
+      "mediaUrls": [
+        "MUv_ARaRg-k"
+      ]
+    },
+    {
       "hash": "bit",
       "title": "Blacks In Technology - BITTechTalk Episode #125",
       "subTitle": "Blackfacts.com – Telling and Protecting The Stories Of Our Culture For The Future",
@@ -603,6 +612,45 @@
       "mediaUrls": [
         "images/highlights/twik.jpg"
       ]
+    },
+    {
+      "hash": "twentyfiveyears",
+      "title": "25 Years of Teching While Black",
+      "subTitle": "Presentation for The Future Is Now Conference",
+      "description": "Blackfacts Founders Ken Granderson and Dale Dowdie discuss their unique history of 25 Years of being Unapologetically Black Technology Professionals and Entrepreneurs who have:<ul><li>Created boxed software products</li><li>Written code for NASA</li><li>Sold software online since the early 90s</li><li>Created Educational Software on Black History since 1995</li><li>Put Black Communities online in the mid-90s</li><li>Put Black Newspapers online since 2001</li><li>Built Technology Products for Fortune 100 Companies</li><li>Put the Government of a Caribbean Nation online in 2013</li><li>Hired dozens  and Launched the Careers of Several Independent Black Technologists</li><li>Created the World's First and Largest Black History Encyclopedia in 1997</li><li>Created a Content Management and Syndication Platform that is 100% Black Conceived, Created, Coded and Owned</li><li>And more...</li></ul>",
+      "mediaUrls": [
+        "hKqgzSuS6xQ"
+      ]
+    },
+    {
+      "hash": "leveragingsocialmedia",
+      "title": "Leveraging Social Media's 4 Billion Users",
+      "subTitle": "NNPA / Zenger News 2021 Conference",
+      "description": "<p>In this half-hour session at the National Newspaper Publishers Association / Zenger News 2021 Conference in February, BlackFacts.com CEO Dale Dowdie and CTO Ken Granderson share tips on how they organically grew and maintain a Social Media following of 200,000 for BlackFacts without external investors or staff – just some software tools and a part-time consultant.</p><p>We also describe how we are rebooting the Ethnic News Syndicate Platform we built that put Boston’s Bay State Banner online in 2001 to help grassroots and professional journalists, modern-day griots and other Truth-Tellers self-publish and syndicate their content across the globe for free or even at a profit.</p>",
+      "mediaUrls": [
+        "aGQSuBu1Aq8"
+      ]
+    },
+    {
+      "hash": "microsoftdiversity",
+      "title": "26 Years of Diversity Technology Solutions",
+      "subTitle": "(Built on the Microsoft Stack)",
+      "description": "<p>This presentation done for a Microsoft engineering team showcases Diversity Technology Solutions we have created since 1995, built using tools and servers from Microsoft.</p><p>It also provides information on some behind-the-scenes things that Microsoft did to support and enable our Diversity Technology efforts, decades before it was trendy for companies to be viewed as 'Socially Conscious.'</p>",
+      "mediaUrls": [
+        "https://docs.blackfacts.com/kengranderson/26-Years-Of-Diversity-Tech-Solutions.pdf",
+        "https://docs.blackfacts.com/kengranderson/26-Years-Of-Diversity-Tech-Solutions.ppsx"
+      ],
+      "postscript": "These are just PDF and PowerPoint shows - the video of the presentation is coming soon."
+    },
+    {
+      "hash": "innovationshowcase",
+      "title": "Innovation Showcase TV (Newton, MA USA)",
+      "subTitle": "Innovation Showcase features and highlights a range of groundbreaking efforts throughout the state. The main purpose of this ongoing series is to inform viewers about exciting innovations and creative individuals across the fields of business, science, technology, education, and the arts.",
+      "description": "Blackfacts Founders Ken Granderson and Dale Dowdie discuss their unique history of 25 Years of creating Diversity Technology Solutions 20+ years ahead of their time in the Boston area, and their current initiatives to empower grassroots journalists and businesses to leverage the full power of today's technologies.",
+      "mediaUrls": [
+        "https://newtv.org/innovation-showcase"
+      ],
+      "postscript": "Video coming soon."
     }
   ]
 }
