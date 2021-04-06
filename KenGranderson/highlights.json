@@ -104,15 +104,6 @@
       "postscript": "Yes, I made sure he knew what I was doing by meeting with him and showing him my completed product a month after the Schomburg event and expressing a desire to work with him on it, and yes, I am throwing shade."
     },
     {
-      "hash": "mobile",
-      "title": "Mobile Affirmations",
-      "subTitle": "Positive Text Messages to Your Mobile Phone",
-      "description": "Created for a black tech entrepreneur friend and associate in Baltimore, Mobile Affirmations was a premium SMS service that enabled churches and other organizations to send daily positive messages on a subscription basis to their constituents.",
-      "mediaUrls": [
-        "images/highlights/maffirmations.jpg"
-      ]
-    },
-    {
       "hash": "trotter",
       "title": "William Monroe Trotter Institute",
       "subTitle": "Urban Think Tank in UMass Boston",
@@ -514,6 +505,17 @@
         "images/highlights/warp.png"
       ],
       "postscript": "Take a good look at the screen shot - this is a web application, created with Microsoft's Classic ASP technology, not a desktop program."
+    }
+  ],
+  "2005": [
+    {
+      "hash": "mobile",
+      "title": "Mobile Affirmations",
+      "subTitle": "Positive Text Messages to Your Mobile Phone",
+      "description": "Created for a black tech entrepreneur friend and associate in Baltimore, Mobile Affirmations was a premium SMS service that enabled churches and other organizations to send daily positive messages on a subscription basis to their constituents.",
+      "mediaUrls": [
+        "images/highlights/maffirmations.jpg"
+      ]
     }
   ],
   "2013": [
