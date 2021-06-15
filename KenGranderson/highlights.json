@@ -600,7 +600,7 @@
       "hash": "slice-of-mit",
       "title": "Slice of MIT",
       "subTitle": "MIT Alumni Association Article",
-      "description": "Interview for the MIT Alumni Association, available at <a target=\"_blank\" \"https://alum.mit.edu/slice/building-online-home-black-history\">https://alum.mit.edu/slice/building-online-home-black-history</a>. Was on the Home Page of the site for 2 days!",
+      "description": "Interview for the MIT Alumni Association, available at <a target=\"_blank\" href=\"https://alum.mit.edu/slice/building-online-home-black-history\">https://alum.mit.edu/slice/building-online-home-black-history</a>. Was on the Home Page of the site for 2 days!",
       "mediaUrls": [
         "images/highlights/slice-homepage.jpg",
         "images/highlights/slice-article.jpg"
@@ -610,7 +610,7 @@
       "hash": "twik",
       "title": "That's When I Knew Podcast",
       "subTitle": "Podcast Interview",
-      "description": "Founder & CTO of Blackfacts.com, Ken Granderson, joins us on That’s When I Knew for a casual chat around:<br/>Growing up in the Bed-Stuy neighborhood of Brooklyn New York in the 70s/80s and not seeing many white-collar jobs.<br/>Getting into MIT and discovering a passion for computer science/technology at an early age.<br/>The inspiration behind starting Blackfacts, the first online encyclopedia for black history, and how they are building the technological infrastructure to capture information about black people wherever it's coming from and deliver it back in an organized and effective way.<br/>Advice to younger black professionals: 'controlling the narrative', 'chasing your passion not money', 'doing work to push the culture forward' and several other gems from Ken's 25 year+ career journey.<br/><a target=\"_blank\" \"https://www.twikpodcast.com/podcast/episode/4d287f44/203-controlling-the-narrative-with-ken-granderson\"https://www.twikpodcast.com/podcast/episode/4d287f44/203-controlling-the-narrative-with-ken-granderson</a>",
+      "description": "Founder & CTO of Blackfacts.com, Ken Granderson, joins us on That’s When I Knew for a casual chat around:<br/>Growing up in the Bed-Stuy neighborhood of Brooklyn New York in the 70s/80s and not seeing many white-collar jobs.<br/>Getting into MIT and discovering a passion for computer science/technology at an early age.<br/>The inspiration behind starting Blackfacts, the first online encyclopedia for black history, and how they are building the technological infrastructure to capture information about black people wherever it's coming from and deliver it back in an organized and effective way.<br/>Advice to younger black professionals: 'controlling the narrative', 'chasing your passion not money', 'doing work to push the culture forward' and several other gems from Ken's 25 year+ career journey.<br/><a target=\"_blank\" href=\"https://www.twikpodcast.com/podcast/episode/4d287f44/203-controlling-the-narrative-with-ken-granderson\">https://www.twikpodcast.com/podcast/episode/4d287f44/203-controlling-the-narrative-with-ken-granderson</a>",
       "mediaUrls": [
         "images/highlights/twik.jpg"
       ]
