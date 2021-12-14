@@ -188,7 +188,7 @@
                 <div class="row animate-box">
                     <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
                         <h2><a name="highlights">Highlights</a></h2>
-                        <small>(Click on thumbnail images to see full-sized pictures and view videos and PDF files. <br/>Presentations will download when you click their tuhmbnails.)</small>
+                        <small>(Click on thumbnail images to see full-sized pictures and view videos and PDF files. <br/>Presentations will download when you click their thumbnails.)</small>
                     </div>
                 </div>
                 <div class="row">
@@ -375,6 +375,17 @@
                         gallery: { enabled: true },
                         showCloseBtn: false
                     });
+
+                    if (location.hash) {
+                        var hash = location.hash.substring(1),
+                            $anchor = $('[name="' + hash + '"]');
+
+                        if ($anchor.length) {
+                            //var y = $anchor.offset().top;
+                            //$('body').scrollTop(y);
+                            $anchor[0].scrollIntoView();
+                        }
+                    }
                 });
             });
 
