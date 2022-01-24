@@ -577,6 +577,15 @@
       ]
     },
     {
+      "hash": "news",
+      "title": "Wakanda News Service",
+      "subTitle": "Global Black News Headlines from 200 Sources, across 35 Nations",
+      "description": "Our News Headlines services features headlines from Black and aligned online publications across the globe at <a target=\"_blank\" href=\"https://blackfacts.com/news\">https://blackfacts.com/news</a>.",
+      "mediaUrls": [
+        "images/highlights/news-animation.gif"
+      ]
+    },
+    {
       "hash": "jsonpath",
       "title": "Using JsonPath to Map Data From Any API",
       "subTitle": "Presentation for the Black Code Collective",
@@ -651,6 +660,51 @@
       "description": "In this half-hour interview, we show some of the pioneering work we did at the dawn of the Internet Age putting Communities of Color online since 1996, why we created BlackFacts, the world's First Online Black History Encyclopedia, and how we have evolved it into an advanced content aggregation, classification and syndication system that stands alone in the space of Technology created By Us, For Us, About Us, and Owned By Us.<br/><br/>We also share our vision of using our technology platform to power Black schools, organizations and businesses across the Diaspora.<br/>Hosted by Jay Sugarman of https://newtv.org<br/>'Jay talks with Ken Granderson and Dale Dowdie. Ken and Dale are the founders of BlackFacts.com, an extensive platform for information about Black history and culture. Ken serves as the Chief Technology Officer and Dale is the CEO.<br/>During the program, we’ll be learning why and how BlackFacts.com came about and how it’s grown, developed, and operates today.<br/>We’ll go on a behind-the-scenes tour, and, in the process, come to better understand and appreciate the breadth and depth of the site’s resources and information.'",
       "mediaUrls": [
         "E8DcDalW65Q"
+      ]
+    },
+    {
+      "hash": "crowdfunding",
+      "title": "BlackFacts First Crowdfunding Campaign",
+      "subTitle": "Thanks to FundBlackFounders and the JLH Social Impact Fund",
+      "description": "BlackFacts engaged in its first external fundraising initiative with FundBlackFounders and the Jrue and Lauren Holiday Social Impact Fund at <a target=\"_blank\" href=\"https://fundblackfounders.com/blackfacts\">https://fundblackfounders.com/blackfacts</a>",
+      "mediaUrls": [
+        "WgQFn5l8AyE"
+      ]
+    },
+    {
+      "hash": "diversitywidgets",
+      "title": "Diversity Web Widgets",
+      "subTitle": "BlackFacts Diversity Web Widgets are an innovative and unique way for educational institutions and diversity-friendly companies to share information about the achievements of communities of color.",
+      "description": "The Widgets play our Diversity Videos on any web site with just 2 lines of code.",
+      "mediaUrls": [
+        "images/highlights/widgets-animation.gif"
+      ]
+    },
+    {
+      "hash": "blackfactsminute",
+      "title": "The World's Only Source of Online Black History Videos for Every Day of the Year",
+      "subTitle": "1-minute videos that cover a Black History Event for Every Calendar Day",
+      "description": "In keeping with our habit of being the Industry's most Prolific and Advanced Black Technology Innovators, BlackFacts recently finshed our complete year's worth of videos for every day of the yesr, in a series called the black Facts Minute™.",
+      "mediaUrls": [
+        "images/highlights/blackfacts-minute-animation.gif"
+      ]
+    }
+  ],
+  "2022": [
+    {
+      "hash": "hbcu-showcase",
+      "title": "HBCU Showcase Video Series (Coming Soon!)",
+      "description": "Videos, Historical Articles and Current News on all 102 US Historically Black Colleges and Universities",
+      "mediaUrls": [
+        "FwOX0kHrcXQ"
+      ]
+    },
+    {
+      "hash": "saytheirnames",
+      "title": "BlackFacts Say Their Names (Coming Soon!)",
+      "description": "An Interactive, Digital, Multimedia Memorial to Black Victims of Racial Violence",
+      "mediaUrls": [
+        "images/highlights/saytheirnames.jpg"
       ]
     }
   ]
