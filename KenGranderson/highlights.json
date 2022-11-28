@@ -701,6 +701,22 @@
   ],
   "2022": [
     {
+      "hash": "blackfacts-for-schools",
+      "title": "BlackFacts For Schools",
+      "description": "Our BlackFacts For Schools offering provides schools with full access to our growing collection of over 800 original Black History Videos in 13 series, including our 'Black Facts Minute' videos for every day of the year.",
+      "mediaUrls": [
+        "jUDoAJBH_bg"
+      ]
+    },
+    {
+      "hash": "futuready",
+      "title": "BlackFacts at the Schomburg Center: Teaching Black and Diverse Community Histories Using Technology",
+      "description": "This is the presentation BlackFacts Co-Founder Ken Granderson delivered at the Schomburg Center for Research in Black Culture on October 21, 2022 for Silicon Harlem's Future:ady Conference. It shows how the two Black Technologists behind BlackFacts have been delivering Black History content to the Internet continuously for 25 years, and how we are ensuring that Black History will always be available to anyone with an Internet connection and a screen, regardless of US politics, the budgets of organizations or the whims of investors.",
+      "mediaUrls": [
+        "ukTPrkUyBoA"
+      ]
+    },
+    {
       "hash": "hbcu-showcase",
       "title": "HBCU Showcase Video Series (Coming Soon!)",
       "description": "Videos, Historical Articles and Current News on all 102 US Historically Black Colleges and Universities",
@@ -714,6 +730,14 @@
       "description": "An Interactive, Digital, Multimedia Memorial to Black Victims of Racial Violence",
       "mediaUrls": [
         "images/highlights/saytheirnames.jpg"
+      ]
+    },
+    {
+      "hash": "myneighborhoodsnyc",
+      "title": "MyNeighborhoods.NYC - Your Neighborhood Online, Controlled and Owned by Your Neighbors (Coming Soon!)",
+      "description": "The Latest Project from Community Technology Visionary / Pioneer Ken Granderson, who put Boston’s Urban Communities online in 2002. MyNeighborhoods.NYC puts the power to tell the world about Your Neighborhood in the hands of regular people, not billionaires and venture capitalists. It is a 2023 take on what I already did in 2002 for Boston's Roxbury community. Local News and Blogs, Events, Free Business Listings, Social Media Posts, Virtual Block Association, Neighborhood Watch and more, managed via a Web3 token-based governance model. Protoype will be NYC-based, but can be replicated in any city or town where the Internet is accessible. Check out the 2002 Roxbury walkthrough to see what we did 20 years ago.",
+      "mediaUrls": [
+        "0zmQYdmHCMQ"
       ]
     }
   ]
