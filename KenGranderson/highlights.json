@@ -264,6 +264,15 @@
       ]
     },
     {
+      "hash": "qln",
+      "title": "Quality of Life Network",
+      "description": "The Quality of Life Network was the brainchild of my friends York Eggleston and Jeff Einstein, and provided online discussions and live chats connecting Internet users passionate about World Peace, Human Rights, the Environment, Child Issues, Heath Care, Nutrition, Spirituality, Animal Rights and Racial, Ethnic and Social Harmony.",
+      "mediaUrls": [
+        "images/highlights/qln.png",
+        "images/highlights/qln-screen.png"
+      ]
+    },
+    {
       "hash": "umass",
       "title": "Minority Business of the Year",
       "subTitle": "From UMass Boston Small Business",
@@ -711,7 +720,7 @@
     {
       "hash": "futuready",
       "title": "BlackFacts at the Schomburg Center: Teaching Black and Diverse Community Histories Using Technology",
-      "description": "This is the presentation BlackFacts Co-Founder Ken Granderson delivered at the Schomburg Center for Research in Black Culture on October 21, 2022 for Silicon Harlem's Future:ady Conference. It shows how the two Black Technologists behind BlackFacts have been delivering Black History content to the Internet continuously for 25 years, and how we are ensuring that Black History will always be available to anyone with an Internet connection and a screen, regardless of US politics, the budgets of organizations or the whims of investors.",
+      "description": "This is the presentation I delivered at the Schomburg Center for Research in Black Culture on October 21, 2022 for Silicon Harlem's Future:ady Conference. It shows how the two Black Technologists behind BlackFacts have been delivering Black History content to the Internet continuously for 25 years, and how we are ensuring that Black History will always be available to anyone with an Internet connection and a screen, regardless of US politics, the budgets of organizations or the whims of investors.",
       "mediaUrls": [
         "ukTPrkUyBoA"
       ]
@@ -731,13 +740,26 @@
       "mediaUrls": [
         "images/highlights/saytheirnames.jpg"
       ]
+    }
+  ],
+  "2023": [
+    {
+      "hash": "linknyc",
+      "title": "BlackFacts puts Black History on the streets of New York City!",
+      "description": "In partnership with LinkNYC, BlackFacts is putting Black History on LinkNYC's 2,000 Wi-Fi kiosks across NYC with our Black Facts Of The Day™.",
+      "mediaUrls": [
+        "zpeAO6qspTk",
+        "iY6oiXmKQ74",
+        "sAdIRkbyASg",
+        "VB0gU0zNEIA"
+      ]
     },
     {
-      "hash": "myneighborhoodsnyc",
-      "title": "MyNeighborhoods.NYC - Your Neighborhood Online, Controlled and Owned by Your Neighbors (Coming Soon!)",
-      "description": "The Latest Project from Community Technology Visionary / Pioneer Ken Granderson, who put Boston’s Urban Communities online in 2002. MyNeighborhoods.NYC puts the power to tell the world about Your Neighborhood in the hands of regular people, not billionaires and venture capitalists. It is a 2023 take on what I already did in 2002 for Boston's Roxbury community. Local News and Blogs, Events, Free Business Listings, Social Media Posts, Virtual Block Association, Neighborhood Watch and more, managed via a Web3 token-based governance model. Protoype will be NYC-based, but can be replicated in any city or town where the Internet is accessible. Check out the 2002 Roxbury walkthrough to see what we did 20 years ago.",
+      "hash": "diversitychat",
+      "title": "Ken Granderson on Diversity Chat with Dr. Rochelle Newton",
+      "description": "In this interview, I discuss my background and the motivations behind BlackFacts.com.",
       "mediaUrls": [
-        "0zmQYdmHCMQ"
+        "-NV07ZtOXas"
       ]
     }
   ]
