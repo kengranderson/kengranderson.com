@@ -141,7 +141,7 @@
         "images/highlights/bay-state-banner-1996.jpg",
         "images/highlights/be1996.jpg",
         "images/highlights/ica.gif",
-        "images/highlights/ica0.png",
+        "images/highlights/ica.png",
         "images/highlights/ica1.jpg",
         "images/highlights/ica2.jpg",
         "images/highlights/ica3.jpg",
@@ -278,6 +278,14 @@
       "subTitle": "From UMass Boston Small Business",
       "mediaUrls": [
         "images/highlights/mbofyear.jpg"
+      ]
+    },
+    {
+      "hash": "blackpages",
+      "title": "New England Black Pages",
+      "description": "Another First, the New England Black Pages was the Internet's first Searchable Black Business Directory, which listed businesses in several New England states.",
+      "mediaUrls": [
+        "images/highlights/blackpages.jpg"
       ]
     },
     {
@@ -705,6 +713,15 @@
       "description": "In keeping with our habit of being the Industry's most Prolific and Advanced Black Technology Innovators, BlackFacts recently finshed our complete year's worth of videos for every day of the yesr, in a series called the black Facts Minute™.",
       "mediaUrls": [
         "images/highlights/blackfacts-minute-animation.gif"
+      ]
+    },
+    {
+      "hash": "ethics",
+      "title": "Ethics in AI - Just Because We CAN, Does It Mean We SHOULD?",
+      "subTitle": "A Panel Discussion on AI Ethics, Conducted During of Silicon Harlem's Annual Conference'",
+      "description": "Two years before the arrival of Generative AI for the masses, I conducted this panel of AI, Ethics and Technology experts on concerns and challenges and opportunities from the emergence of AI. Panelists were Reneé Cummings, AI expert and data scientist out of the University of Virginia who focuses on the impact of AI for underserved communities, Humanist Chaplain, President of Harvard Chaplains and New York Times bestselling author Greg Epstein, and David Ryan Polgar, founder and executive director of All Tech is Human an international organization of thousands of individuals committed to using technology for good.",
+      "mediaUrls": [
+        "dLpPIiCFhe4"
       ]
     }
   ],
