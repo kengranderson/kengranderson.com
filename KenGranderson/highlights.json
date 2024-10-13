@@ -1,4 +1,14 @@
 {
+  "1963": [
+    {
+      "hash": "unapologetic",
+      "title": "Unapologetically Black Technology",
+      "description": "As you can see below, you could spend hours here covering my 33 years of delivering technology solutions for communities of color, but if you just have a few minutes, check out this 3½ minute video I call 'Unapologetically Black Technology' that covers the highlights of my pioneering and innovative work since the early 1990s.",
+      "mediaUrls": [
+        "3aw2cTFvy20"
+      ]
+    }
+  ],
   "1991": [
     {
       "hash": "keymapper",
@@ -710,7 +720,7 @@
       "hash": "blackfactsminute",
       "title": "The World's Only Source of Online Black History Videos for Every Day of the Year",
       "subTitle": "1-minute videos that cover a Black History Event for Every Calendar Day",
-      "description": "In keeping with our habit of being the Industry's most Prolific and Advanced Black Technology Innovators, BlackFacts recently finshed our complete year's worth of videos for every day of the yesr, in a series called the black Facts Minute™.",
+      "description": "In keeping with our habit of being the Industry's most Prolific and Advanced Black Technology Innovators, BlackFacts recently finished our complete year's worth of videos for every day of the yesr, in a series called the black Facts Minute™.",
       "mediaUrls": [
         "images/highlights/blackfacts-minute-animation.gif"
       ]
@@ -749,20 +759,12 @@
       "mediaUrls": [
         "FwOX0kHrcXQ"
       ]
-    },
-    {
-      "hash": "saytheirnames",
-      "title": "BlackFacts Say Their Names (Coming Soon!)",
-      "description": "An Interactive, Digital, Multimedia Memorial to Black Victims of Racial Violence",
-      "mediaUrls": [
-        "images/highlights/saytheirnames.jpg"
-      ]
     }
   ],
   "2023": [
     {
-      "hash": "linknyc",
-      "title": "BlackFacts puts Black History on the streets of New York City!",
+      "hash": "linknyc-2023",
+      "title": "2023 - BlackFacts puts Black History on the streets of New York City!",
       "description": "In partnership with LinkNYC, BlackFacts is putting Black History on LinkNYC's 2,000 Wi-Fi kiosks across NYC with our Black Facts Of The Day™.",
       "mediaUrls": [
         "zpeAO6qspTk",
@@ -801,16 +803,106 @@
       ]
     },
     {
-      "hash": "schools-app-2023",
-      "title": "BlackFacts For Schools App",
-      "description": "The 2023 update of BlackFacts For Schools features a mobile-friendly web application that puts the power of teaching Black History into the palms of the hands of educators or parents (for homeschooling) with classroom exercises, quizzes, writing prompts and teacher talking points for our videos. Enables you to create a Black History class for any day of the year within minutes!",
+      "hash": "diversityschoolhouse",
+      "title": "Diversity Schoolhouse",
+      "description": "Diversity Schoolhouse™ is the 2023 update of BlackFacts For Schools, featuring a mobile-friendly Teacher's Portal that Empowers teachers to teach Black History and ethnic studies from any Internet connected device, from the smart boards on their school walls to the smartphones in their hands. Diversity Schoolhouse augments our 1500+ episode video library with classroom exercises, quizzes, writing prompts and teacher talking points, making it a powerful educator resource for creating classes for any day of the year within minutes.  We have recently added 20-week Lesson Plans convering several centuries of African-American, Latin-American, Asian-American, Native American and Caribbean History, and are in 75 schools in 14 states across the USA.",
       "mediaUrls": [
-        "aR6OVK8JNoU",
-        "images/highlights/Slide1.JPG",
-        "images/highlights/Slide7.JPG",
-        "images/highlights/Slide10.JPG",
-        "images/highlights/Slide16.JPG",
-        "images/highlights/blackfacts-for-schools-banner.jpg"
+        "85Mgprzb1gQ",
+        "images/highlights/portal.jpeg",
+        "images/highlights/table-1.jpg",
+        "images/highlights/us-states.jpeg",
+        "images/highlights/testimonial1.jpeg",
+        "images/highlights/testimonial-1.jpeg",
+        "images/highlights/caribbean-course.jpeg",
+        "images/highlights/latino-course.jpeg",
+        "images/highlights/native-course.jpeg",
+        "images/highlights/chicago-ps.jpeg",
+        "images/highlights/nyc-approved.jpeg",
+        "images/highlights/dsh-ca.jpg",
+        "images/highlights/dsh-mn.jpg",
+        "images/highlights/dsh-ny.jpg"
+      ]
+    }
+  ],
+  "2024": [
+    {
+      "hash": "linknyc-2024",
+      "title": "BlackFacts puts Black History BACK on NYC streets AGAIN for Black History Month 2024!",
+      "description": "Our third project with LinkNYC put Black Facts on LinkNYC again for Black History Month 2024 with the Defenders of Equity Series!",
+      "mediaUrls": [
+        "MC-1HjB3Y-A",
+        "liE52_VimVU",
+        "dTZWeUjwTSc",
+        "bUApeOBxAWg"
+      ]
+    },
+    {
+      "hash": "massrec",
+      "title": "Massachusetts Recovery Education Collaborative (REC) Platform",
+      "description": "The REC Platform is a custom Learning Management System used by over 1000 addiction recovery coaches in Massachusetts who have received online and offline recovery coach trainings. It is a multi-role based system that manages all aspects of the trainings from setup and facilitator assignment participant registration, custom workflows and more. The Platform is built on WordPress, with customizations done at plugin, code and database levels.",
+      "mediaUrls": [
+        "images/highlights/rec-calendar.jpg"
+      ]
+    }
+  ],
+  "Visionary Projects": [
+    {
+      "hash": "ai-urban-impact",
+      "title": "AI for Urban Community Impact: Empowering Change with Software Solutions",
+      "description": "This initiative focuses on using software-based technology solutions to uplift low- to moderate-income urban communities. It highlights the importance of AI, showing how generative AI and advanced technologies can empower marginalized groups to create new business ventures, expand educational opportunities, and improve economic prospects. Unlike hardware-focused initiatives, this project emphasizes that impactful change can be achieved with minimal resources, making it accessible to communities often left behind by technological advances.",
+      "mediaUrls": [
+        "images/highlights/AI_for_Urban_Community_Impact.pdf",
+        "images/highlights/AI_in_Classroom_Workshop.pdf",
+        "images/highlights/AI-4-Good-Workshop-Series-1-Pager.pdf"
+      ]
+    },
+    {
+      "hash": "civicchat",
+      "title": "CivicChat: Transforming Civic Engagement with AI and Mobile Technologies",
+      "description": "CivicChat is a mobile-first platform designed to educate and empower citizens to participate in their government. Through the use of AI, speech recognition, and multi-language support, CivicChat provides real-time insights on voting records, policy stances, and comparisons between elected officials and the user’s positions on key issues. Built with transparency in mind, CivicChat seeks to inspire informed civic engagement by making political education accessible to all, with the goal of promoting a thriving democracy.",
+      "mediaUrls": [
+        "Megwnz6Ocdo",
+        "images/civicchat-demo.jpg",
+        "images/highlights/CivicChat_Funding.pdf"
+      ]
+    },
+    {
+      "hash": "voting-while-black",
+      "title": "Voting While Black: Empowering Grassroots Political Engagement with AI",
+      "description": "Voting While Black is an innovative platform designed to engage grassroots organizations and help them mobilize their constituents using technology. Leveraging gamification and Artificial Intelligence (AI), the platform provides a dynamic environment where users can participate in political activities such as voter registration drives, candidate fundraising, and door-knocking campaigns. Organizations can track their progress and promote friendly competition to enhance political efficacy. The platform encourages meaningful participation, including initiatives like 'Souls to the Polls,' aimed at boosting voter turnout.",
+      "mediaUrls": [
+        "THPNL_9rrm4"
+      ]
+    },
+    {
+      "hash": "say-their-names",
+      "title": "Say Their Names: An Interactive Multimedia Memorial for Victims of State and Racial Violence",
+      "description": "Say Their Names is a powerful interactive memorial that allows visitors to honor victims of state and racial violence. Visitors can participate by recording themselves saying the names of victims and optionally adding locations to create an interactive map. The platform also features curated news articles about each victim's story, deepening the memorial experience. Through Timbuktu widget technology, these memorials can be displayed on 3rd party websites. In addition, Say Their Names can be used to fundraise for organizations such as the Innocence Project and National Action Network. A new 'StoryKeeper' Speech Recognition module, integrated with the Timbuktu Content Engine, powers this feature on BlackFacts.com and the Diversity Schoolhouse platform.",
+      "mediaUrls": [
+        "images/highlights/saytheirnames.jpg"
+      ]
+    },
+    {
+      "hash": "musa-marketplace",
+      "title": "Musa Marketplace: Empowering Black and Minority Businesses with Advanced Technology",
+      "description": "Musa Marketplace is the latest e-commerce and online community business technology project from the BlackFacts team, who has been pioneering Black business directories online since 1998. Musa Marketplace is designed to empower Black and minority-owned businesses by enhancing their digital presence. It offers features for businesses without websites, integrating them with social media and promoting them on third-party sites. For businesses with existing web presences, Musa Marketplace supports advertising and e-commerce on external platforms. The marketplace is built with cutting-edge technology, including crypto-backed loyalty programs, location-based functionality, mobile-first design, multilingual speech recognition, and generative AI to create the most advanced, interactive, and intelligent business directory in the industry. While starting in the United States, the vision is to extend the platform throughout the diaspora, bringing businesses into the global digital economy.",
+      "mediaUrls": [
+        "images/highlights/marketplace.gif",
+        "images/highlights/ica5.png",
+        "images/highlights/blackpages.jpg",
+        "images/highlights/empzone.jpg",
+        "images/highlights/ezinfo.jpg",
+        "images/highlights/gorepic1.jpg",
+        "images/highlights/bostoncdc.jpg",
+        "images/highlights/cbn.jpg",
+        "images/highlights/msbm.jpg",
+        "images/highlights/mmec.jpg",
+        "images/highlights/uif.jpg",
+        "images/highlights/roxbury-herald.jpg",
+        "images/highlights/rox-business.jpg",
+        "images/highlights/bizinsite.jpg",
+        "images/highlights/Ujamaa-Community-Platform.jpg",
+        "images/highlights/marketplace3.jpg"
       ]
     }
   ]

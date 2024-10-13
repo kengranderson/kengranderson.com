@@ -305,7 +305,7 @@
             }
 
             function showInLightbox(ext) {
-                return ext === null ? true : /(\.gif)|(\.jpg)|(\.png)/.test(ext);
+                return ext === null ? true : /(\.gif)|(\.jpe?g)|(\.png)/.test(ext);
             }
 
             function renderMediaUrl(mediaUrl, ext) {
@@ -321,6 +321,7 @@
                     switch (ext) {
                         case '.gif':
                         case '.jpg':
+                        case '.jpeg':
                         case '.png':
                             html = '<a href="' + mediaUrl + '">' +
                                 '<img class="img-responsive" src="' + mediaUrl + '" />' +
