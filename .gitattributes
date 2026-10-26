@@ -1,0 +1,2 @@
+# Shell scripts run on Linux (GitHub Actions, the web host); keep LF endings on Windows checkouts.
+*.sh text eol=lf

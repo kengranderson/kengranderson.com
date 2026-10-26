@@ -2,6 +2,13 @@
 
 Date: October 25, 2026
 
+> **Author:** Ken Granderson (decisions from a ChatGPT voice session)  
+> **Last updated:** 2026-10-25  
+> **Copyright:** © 2026 Ken Granderson  
+> **Tool authored:** ChatGPT (voice brainstorm); committed verbatim by Claude Code  
+> **Audience:** Claude Code and other AI agents maintaining this repository  
+> **Status:** Active  
+>
 > Recorded verbatim from Ken Granderson's handoff message to Claude (project thread, 2026-10-25), with Markdown formatting added. Content unchanged.
 
 ## Immediate instruction

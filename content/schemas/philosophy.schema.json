@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kengranderson.com/schemas/philosophy.schema.json",
+  "title": "Philosophy record",
+  "description": "A principle, writing, or reflection. One file per item at content/philosophy/<id>.json. No taxonomy yet; that waits for the source document review.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "status",
+    "title",
+    "sources"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "id": {
+      "$ref": "common.schema.json#/$defs/id"
+    },
+    "status": {
+      "$ref": "common.schema.json#/$defs/status"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string",
+      "description": "One or two plain sentences."
+    },
+    "body": {
+      "type": "string",
+      "description": "Longer text. Plain text or simple HTML, as in highlights.json."
+    },
+    "related": {
+      "$ref": "common.schema.json#/$defs/related"
+    },
+    "media": {
+      "$ref": "common.schema.json#/$defs/media"
+    },
+    "sources": {
+      "$ref": "common.schema.json#/$defs/sources"
+    },
+    "approval": {
+      "$ref": "common.schema.json#/$defs/approval"
+    },
+    "editorNotes": {
+      "$ref": "common.schema.json#/$defs/editorNotes"
+    },
+    "originalDate": {
+      "$ref": "common.schema.json#/$defs/partialDate"
+    }
+  },
+  "if": {
+    "properties": {
+      "status": {
+        "const": "published"
+      }
+    },
+    "required": [
+      "status"
+    ]
+  },
+  "then": {
+    "required": [
+      "approval",
+      "summary",
+      "sources"
+    ],
+    "properties": {
+      "sources": {
+        "type": "array",
+        "minItems": 1
+      }
+    }
+  }
+}

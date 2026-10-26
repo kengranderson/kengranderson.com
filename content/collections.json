@@ -1,0 +1,8 @@
+{
+  "$comment": "Registry of content collections. Each record is one JSON file at content/<directory>/<id>.json, validated against its schema. Add a collection here (plus a schema) to extend the content model.",
+  "collections": [
+    { "name": "work", "directory": "work", "schema": "https://kengranderson.com/schemas/work.schema.json" },
+    { "name": "philosophy", "directory": "philosophy", "schema": "https://kengranderson.com/schemas/philosophy.schema.json" },
+    { "name": "events", "directory": "events", "schema": "https://kengranderson.com/schemas/event.schema.json" }
+  ]
+}

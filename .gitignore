@@ -340,3 +340,8 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+# Site build tooling
+node_modules/
+/dist/
+/dist-*/

@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kengranderson.com/schemas/common.schema.json",
+  "title": "Shared definitions for KenGranderson.com content records",
+  "$defs": {
+    "id": {
+      "description": "Stable identifier. Lowercase kebab-case, and must match the file name without .json. Never change it once published; other records link to it.",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "maxLength": 80
+    },
+    "partialDate": {
+      "description": "A date at the precision actually known: YYYY, YYYY-MM, or YYYY-MM-DD. Do not invent precision.",
+      "type": "string",
+      "pattern": "^[0-9]{4}(-(0[1-9]|1[0-2])(-(0[1-9]|[12][0-9]|3[01]))?)?$"
+    },
+    "status": {
+      "description": "draft: work in progress, never published. review: ready for Ken's review, never published. published: approved for the public site (requires approval).",
+      "enum": ["draft", "review", "published"]
+    },
+    "reference": {
+      "description": "A link to another record as <collection>/<id>, for example work/my-bed-stuy.",
+      "type": "string",
+      "pattern": "^[a-z0-9-]+/[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "related": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/reference" },
+      "uniqueItems": true
+    },
+    "media": {
+      "description": "Supporting media. Use path for files inside the KenGranderson site folder (checked at build time) or url for external media.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "path": { "type": "string", "minLength": 1, "pattern": "^[^/\\\\].*$" },
+          "url": { "type": "string", "pattern": "^https://" },
+          "youtube": { "type": "string", "pattern": "^[A-Za-z0-9_-]{11}$" },
+          "caption": { "type": "string" }
+        },
+        "oneOf": [
+          { "required": ["path"] },
+          { "required": ["url"] },
+          { "required": ["youtube"] }
+        ]
+      }
+    },
+    "sources": {
+      "description": "Provenance: where the information in this record comes from, so it can be verified.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["description"],
+        "properties": {
+          "description": { "type": "string", "minLength": 1 },
+          "path": { "type": "string", "minLength": 1 },
+          "url": { "type": "string", "pattern": "^https://" },
+          "verified": { "type": "boolean", "description": "true only when someone has checked the claim against this source." }
+        }
+      }
+    },
+    "approval": {
+      "description": "Who approved publication, and when. Required for status published.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["approvedBy", "approvedOn"],
+      "properties": {
+        "approvedBy": { "type": "string", "minLength": 1 },
+        "approvedOn": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" }
+      }
+    },
+    "editorNotes": {
+      "description": "Internal notes for editors and agents. Stripped from published output.",
+      "type": "string"
+    }
+  }
+}

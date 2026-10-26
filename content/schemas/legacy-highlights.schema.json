@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kengranderson.com/schemas/legacy-highlights.schema.json",
+  "title": "Legacy highlights timeline (KenGranderson/highlights.json)",
+  "description": "Shape of the existing timeline file read by index.html. Keys are year headings (or a label such as 'Visionary Projects'); values are entries in display order. Edited by hand since the generatejson database export was retired.",
+  "type": "object",
+  "additionalProperties": {
+    "type": "array",
+    "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["hash", "title"],
+      "properties": {
+        "hash": { "type": "string", "minLength": 1, "description": "Anchor name used for #links to this entry." },
+        "title": { "type": "string", "minLength": 1 },
+        "subTitle": { "type": "string" },
+        "description": { "type": "string" },
+        "mediaUrls": {
+          "type": "array",
+          "description": "Site-relative file paths, https URLs, or bare YouTube video ids.",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "postscript": { "type": "string" }
+      }
+    }
+  }
+}

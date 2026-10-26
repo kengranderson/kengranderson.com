@@ -1,0 +1,21 @@
+{
+  "name": "kengranderson-site",
+  "private": true,
+  "description": "Validation and build tooling for KenGranderson.com.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "validate": "node tools/site/validate.mjs",
+    "build": "node tools/site/build.mjs",
+    "build:preview": "node tools/site/build.mjs --drafts --out dist-preview",
+    "serve": "node tools/site/serve.mjs",
+    "serve:preview": "node tools/site/serve.mjs --dir dist-preview",
+    "test": "node --test tools/site/test/*.test.mjs",
+    "check": "npm test && npm run validate && npm run build"
+  },
+  "devDependencies": {
+    "ajv": "8.17.1"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "../schemas/event.schema.json",
+  "id": "roxbury-com-grand-opening-presentation",
+  "status": "draft",
+  "kind": "presentation",
+  "title": "Roxbury.com grand opening presentation",
+  "date": "2002",
+  "media": [
+    {
+      "path": "images/highlights/2002 - roxbury-presentation-grandopening2.ppsx",
+      "caption": "PowerPoint show (file name refers to the grand opening)"
+    },
+    {
+      "path": "images/highlights/roxbury-self-running-promo.pps",
+      "caption": "PowerPoint show (file name refers to a self-running promo)"
+    }
+  ],
+  "sources": [
+    {
+      "description": "Existing site timeline, KenGranderson/highlights.json, year 2002, entry 'roxbury' (media list and postscript).",
+      "path": "KenGranderson/highlights.json",
+      "verified": false
+    }
+  ],
+  "editorNotes": "EXAMPLE DRAFT created to exercise the workflow. Only the year (2002) and the two presentation files come from the existing site. The highlights postscript says one file was a self-running demo from the grand opening and the other a tour with voice-over; which is which, the exact date, location, and Ken's role are unverified."
+}

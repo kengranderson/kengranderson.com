@@ -1,1 +1,0 @@
-This project is for Ken Granderson's personal website. Its purpose is to keep track of his work, his philosophy, and related materials, using the processes he has developed and is revising to manage his websites.

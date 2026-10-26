@@ -1,0 +1,79 @@
+# BlackFacts repository declaration (schema: blackfacts/tools framework/project.schema.yml)
+frameworkVersion: "1.0.0-draft.3"
+project:
+  name: "kengranderson"
+  repository: "kengranderson/kengranderson"
+  description: "Ken Granderson's personal website (kengranderson.com), maintained by AI agents through GitHub. The root README.md is also Ken's GitHub profile README."
+  owner: "Ken Granderson"
+
+components:
+  - name: "website"
+    path: "KenGranderson"
+    type: "web-ui"
+    languages: ["html", "javascript", "css"]
+    frameworks: ["jquery", "bootstrap-3"]
+    packageManagers: []
+    build:
+      command: "npm run build"
+    run:
+      command: "npm run serve"
+      url: "http://localhost:8080/"
+    test:
+      commands: []
+    verificationProfiles: ["web-ui"]
+  - name: "content"
+    path: "content"
+    type: "other"
+    languages: ["json"]
+    frameworks: ["json-schema-2020-12"]
+    packageManagers: []
+    build:
+      command: "npm run validate"
+    run:
+      command: ""
+      url: ""
+    test:
+      commands: ["npm run validate"]
+    verificationProfiles: []
+  - name: "site-tooling"
+    path: "tools"
+    type: "cli"
+    languages: ["javascript", "bash", "powershell"]
+    frameworks: ["node-22"]
+    packageManagers: ["npm"]
+    build:
+      command: "npm ci"
+    run:
+      command: "npm run check"
+      url: ""
+    test:
+      commands: ["npm test"]
+    verificationProfiles: ["cli"]
+
+standards:
+  exceptions:
+    - id: "owner-is-ken"
+      rule: "docs/file-headers.md Owner: Black Facts Educational Foundation"
+      exception: "File headers name Owner: Ken Granderson because this is his personal site. Pending Ken's confirmation (docs/decisions.md D-07)."
+    - id: "kickoff-handoff-path"
+      rule: "Handoffs live under docs/handoffs/<tool>/"
+      exception: "The 2026-10-25 kickoff handoff lives at docs/handoffs/ root because Ken specified that exact path. New handoffs use docs/handoffs/<tool>/."
+    - id: "single-remote"
+      rule: "docs/conventions.md: every repository has a TFS and a GitHub remote"
+      exception: "GitHub is the only remote in use; the TFS publishing process is legacy and not migrated (kickoff handoff, section D)."
+
+environment:
+  requiredVariables: []
+  externalDependencies:
+    - "GitHub Actions secrets DEPLOY_SSH_KEY, DEPLOY_KNOWN_HOSTS and variables DEPLOY_HOST, DEPLOY_PORT, DEPLOY_USER, DEPLOY_PATH, SITE_URL, DEPLOY_ENABLED, DEPLOY_DRY_RUN, DEPLOY_DELETE (names only; see docs/publishing-workflow.md)"
+    - "Web host reachable over SSH with rsync (planned: Bluehost shared hosting)"
+
+documentation:
+  architecture: ["docs/repository-audit.md", "content/README.md"]
+  decisions: ["docs/decisions.md"]
+  runbooks: ["docs/publishing-workflow.md"]
+
+quality:
+  accessibility: ""
+  performance: {}
+  supportedPlatforms: ["modern desktop and mobile browsers"]

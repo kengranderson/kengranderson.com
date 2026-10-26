@@ -1,0 +1,18 @@
+{
+  "$schema": "../schemas/philosophy.schema.json",
+  "id": "breaking-down-information-silos",
+  "status": "draft",
+  "title": "Breaking down information silos",
+  "summary": "Helping communities discover each other's activities, and making information available before opportunities have passed.",
+  "related": [
+    "work/my-bed-stuy"
+  ],
+  "sources": [
+    {
+      "description": "Ken Granderson's kickoff handoff: the My Bed-Stuy community calendar 'illustrates a particularly important philosophy'.",
+      "path": "docs/handoffs/2026-10-25-chatgpt-voice-to-claude-kengranderson-kickoff.md",
+      "verified": false
+    }
+  ],
+  "editorNotes": "EXAMPLE DRAFT created to exercise the workflow. The summary paraphrases one sentence of the handoff and is not final language about Ken's beliefs. No philosophy taxonomy is implied; that waits for the review of the GrpIcon help file and Duty and Opportunity."
+}
