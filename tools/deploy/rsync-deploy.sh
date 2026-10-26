@@ -1,14 +1,18 @@
 #!/usr/bin/env bash
 # Author: Claude Code for Ken Granderson
-# Owner: Ken Granderson
+# Owner: Black Facts Educational Foundation
+# Canonical source: blackfacts/tools devops/static-site-publish (copy updates from there)
 # Last Updated: 2026-10-26
 # Purpose: Publish a built static site folder to a server over SSH with rsync, then confirm
-#          the published build manifest matches. Works on shared hosting (no sudo, no services).
+#          the live site serves the expected commit. Works on shared hosting (no sudo, no services).
 #          Application-neutral: everything comes from environment variables.
 #
 # Required: DEPLOY_HOST, DEPLOY_USER, DEPLOY_PATH (absolute folder on the server, e.g. /home/<user>/public_html)
 # Optional: DEPLOY_PORT (22), DEPLOY_SOURCE (dist), DEPLOY_DRY_RUN (true), DEPLOY_DELETE (false),
-#           DEPLOY_SSH_KEY_FILE (ssh default), DEPLOY_KNOWN_HOSTS_FILE (ssh default), SITE_URL, EXPECTED_COMMIT
+#           DEPLOY_SSH_KEY_FILE (ssh default), DEPLOY_KNOWN_HOSTS_FILE (ssh default),
+#           VERIFY_URL (a published file that contains the commit id, e.g. https://example.org/build-manifest.json),
+#           EXPECTED_COMMIT (the commit VERIFY_URL must contain; required when VERIFY_URL is set)
+# If DEPLOY_SOURCE/build-manifest.json exists and says "includesDrafts": true, the publish is refused.
 #
 # Dry run is the default. Set DEPLOY_DRY_RUN=false to change anything on the server.
 set -euo pipefail
@@ -28,14 +32,17 @@ case "$DEPLOY_PATH" in
   *) fail "DEPLOY_PATH must be an absolute path, got '$DEPLOY_PATH'" ;;
 esac
 case "$DEPLOY_PATH" in
-  / | /home | /home/ | /home/*/ | /home/"$DEPLOY_USER") fail "DEPLOY_PATH '$DEPLOY_PATH' is too broad; point it at the site's web folder" ;;
+  / | /home | /home/ | /home[0-9] | /home[0-9]/ | /home/*/ | /home[0-9]/*/ | */"$DEPLOY_USER" | */"$DEPLOY_USER"/) fail "DEPLOY_PATH '$DEPLOY_PATH' is too broad; point it at the site's web folder" ;;
 esac
 [[ "$DEPLOY_PORT" =~ ^[0-9]+$ ]] || fail "DEPLOY_PORT must be a number"
 
+[[ -d "$DEPLOY_SOURCE" ]] || fail "$DEPLOY_SOURCE not found; run the build first"
 manifest="$DEPLOY_SOURCE/build-manifest.json"
-[[ -f "$manifest" ]] || fail "$manifest not found; run the build first"
-if grep -q '"includesDrafts": true' "$manifest"; then
+if [[ -f "$manifest" ]] && grep -q '"includesDrafts": true' "$manifest"; then
   fail "refusing to publish a preview build that includes draft content"
+fi
+if [[ -n "${VERIFY_URL:-}" && -z "${EXPECTED_COMMIT:-}" ]]; then
+  fail "VERIFY_URL is set, so EXPECTED_COMMIT is required"
 fi
 
 ssh_opts=(-p "$DEPLOY_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes)
@@ -67,14 +74,12 @@ if [[ "$DEPLOY_DRY_RUN" != "false" ]]; then
   exit 0
 fi
 
-if [[ -n "${SITE_URL:-}" ]]; then
-  url="${SITE_URL%/}/build-manifest.json"
-  echo "deploy: confirming $url"
-  published=$(curl --fail --silent --show-error --location --retry 3 --retry-delay 5 "$url")
-  expected="${EXPECTED_COMMIT:-$(sed -n 's/.*"commit": "\([^"]*\)".*/\1/p' "$manifest" | head -n1)}"
-  if ! grep -q "\"commit\": \"$expected\"" <<<"$published"; then
-    fail "the site at $SITE_URL does not report commit $expected; check the folder the domain serves"
+if [[ -n "${VERIFY_URL:-}" ]]; then
+  echo "deploy: confirming $VERIFY_URL"
+  published=$(curl --fail --silent --show-error --location --retry 3 --retry-delay 5 "$VERIFY_URL")
+  if ! grep -qF "$EXPECTED_COMMIT" <<<"$published"; then
+    fail "$VERIFY_URL does not contain commit $EXPECTED_COMMIT; check which folder the domain serves"
   fi
-  echo "deploy: $SITE_URL is serving commit $expected"
+  echo "deploy: $VERIFY_URL reports commit $EXPECTED_COMMIT"
 fi
 echo "deploy: done"

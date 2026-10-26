@@ -35,7 +35,7 @@ Commit with a message that says what changed, push the branch, and open a pull r
 
 Merge the pull request. The push to `master` runs the workflow again and, once publishing is switched on, the **Publish to server** job builds the same commit and rsyncs `dist/` to the server. Only changed files are sent.
 
-It then fetches `SITE_URL/build-manifest.json` and fails unless the live site reports the merged commit. That is the confirmation of what was published; the job summary shows the files transferred.
+It then fetches `VERIFY_URL` (`https://kengranderson.com/build-manifest.json`) and fails unless the live site reports the merged commit. That is the confirmation of what was published; the job summary shows the files transferred.
 
 To confirm later from anywhere: open `https://kengranderson.com/build-manifest.json` and compare `source.commit` with the latest commit on `master`.
 
@@ -46,6 +46,16 @@ Manual runs: Actions > Site > Run workflow, on `master`. "Dry run" is ticked by 
 Update `.blackfacts/CURRENT.md` if the state of the project changed, and note any decision in `docs/decisions.md`.
 
 ---
+
+## Fastest path: one command
+
+On a Windows workstation, paste this one line into PowerShell. It does everything below that can be automated: installs Git, Node.js and the GitHub CLI if missing, signs you in to GitHub, gets or updates the repository, installs the workflow file, builds and opens a local preview, and walks you through the server key. It asks before turning on dry-run publishing and before merging PR #1. Re-running it is safe.
+
+```powershell
+& ([scriptblock]::Create((Invoke-RestMethod 'https://raw.githubusercontent.com/kengranderson/kengranderson/claude/project-thread-rhxstz/tools/deploy/Start-StaticSiteSetup.ps1'))) -ProfilePath 'https://raw.githubusercontent.com/kengranderson/kengranderson/claude/project-thread-rhxstz/tools/deploy/site-setup.json'
+```
+
+After PR #1 is merged, the same line works with `master` in place of `claude/project-thread-rhxstz` (both places). Settings are in `tools/deploy/site-setup.json`. The script is the shared tool from blackfacts/tools `devops/static-site-publish`; the copies in `tools/deploy/` are what GitHub Actions runs.
 
 ## One-time: install the workflow file
 
@@ -60,7 +70,7 @@ Bluehost's menus change; these are the standard cPanel steps. If a menu name dif
 3. **Create the deploy key and read the server's host key.** On your workstation, one command:
 
    ```powershell
-   & C:\Users\ken\source\repos\kengranderson\tools\deploy\Initialize-DeployAccess.ps1 -DeployHost <ip-or-host> -DeployUser <cpanel-user> -DeployPath <full-folder-path>
+   & C:\Users\ken\source\repos\kengranderson\tools\deploy\Initialize-DeployAccess.ps1 -Repository kengranderson/kengranderson -SiteUrl https://kengranderson.com -VerifyUrl https://kengranderson.com/build-manifest.json -DeployHost <ip-or-host> -DeployUser <cpanel-user> -DeployPath <full-folder-path>
    ```
 
    It creates `~/.ssh/kengranderson_deploy` (a key used only by GitHub Actions), saves the server's host key next to it, and prints the public key.
@@ -68,7 +78,7 @@ Bluehost's menus change; these are the standard cPanel steps. If a menu name dif
 5. **Test and store the settings**, again one command (needs the GitHub CLI, `gh auth login` once):
 
    ```powershell
-   & C:\Users\ken\source\repos\kengranderson\tools\deploy\Initialize-DeployAccess.ps1 -DeployHost <ip-or-host> -DeployUser <cpanel-user> -DeployPath <full-folder-path> -TestConnection -SetGitHub
+   & C:\Users\ken\source\repos\kengranderson\tools\deploy\Initialize-DeployAccess.ps1 -Repository kengranderson/kengranderson -SiteUrl https://kengranderson.com -VerifyUrl https://kengranderson.com/build-manifest.json -DeployHost <ip-or-host> -DeployUser <cpanel-user> -DeployPath <full-folder-path> -TestConnection -SetGitHub
    ```
 
    It confirms the login, that rsync exists, and that the folder exists, then stores the secrets and variables below. Without `-SetGitHub` it prints them so you can add them by hand under GitHub > the repo > Settings > Secrets and variables > Actions.
@@ -81,7 +91,8 @@ Bluehost's menus change; these are the standard cPanel steps. If a menu name dif
 | Variable | `DEPLOY_PORT` | `22` unless Bluehost says otherwise |
 | Variable | `DEPLOY_USER` | cPanel username |
 | Variable | `DEPLOY_PATH` | Full folder path, e.g. `/home1/<user>/public_html` |
-| Variable | `SITE_URL` | `https://kengranderson.com` (or a test URL before DNS moves) |
+| Variable | `SITE_URL` | `https://kengranderson.com` |
+| Variable | `VERIFY_URL` | `https://kengranderson.com/build-manifest.json` (or the same file at a test URL before DNS moves) |
 
 Nothing in the repository ever holds these values.
 
@@ -97,7 +108,7 @@ To stop publishing at any time, set `DEPLOY_ENABLED` to `false` or delete it.
 
 Optional extra gate: Settings > Environments > `production` > Required reviewers = Ken. Every publish then waits for a click in GitHub.
 
-Until DNS for kengranderson.com points at Bluehost, a live publish only updates the Bluehost folder; the public site does not change. Set `SITE_URL` to a URL that reaches that folder (Bluehost offers a temporary URL) so the post-publish check works, then change it to `https://kengranderson.com` at cutover.
+Until DNS for kengranderson.com points at Bluehost, a live publish only updates the Bluehost folder; the public site does not change. Set `VERIFY_URL` to `build-manifest.json` at a URL that reaches that folder (Bluehost offers a temporary URL) so the post-publish check works, then change it to `https://kengranderson.com/build-manifest.json` at cutover.
 
 ## What runs where
 
@@ -109,6 +120,7 @@ Until DNS for kengranderson.com points at Bluehost, a live publish only updates 
 | Preview server | `tools/site/serve.mjs` |
 | Publish | `tools/deploy/rsync-deploy.sh` (dry run unless `DEPLOY_DRY_RUN=false`; refuses preview builds) |
 | Key setup | `tools/deploy/Initialize-DeployAccess.ps1` |
+| Workstation setup | `tools/deploy/Start-StaticSiteSetup.ps1` with `tools/deploy/site-setup.json` |
 
 The build is deterministic: the same commit always produces byte-identical output and the same manifest.
 

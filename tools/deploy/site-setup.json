@@ -1,0 +1,14 @@
+{
+  "_comment": "Settings for Start-StaticSiteSetup.ps1 (blackfacts/tools devops/static-site-publish). No secrets here.",
+  "Repository": "kengranderson/kengranderson",
+  "Branch": "claude/project-thread-rhxstz",
+  "PullRequest": 1,
+  "PendingWorkflow": "tools/ci/site.yml",
+  "CheckCommand": "npm run check",
+  "PreviewBuildCommand": "npm run build:preview",
+  "ServeCommand": "npm run serve:preview",
+  "PreviewUrl": "http://localhost:8080/",
+  "SiteUrl": "https://kengranderson.com",
+  "VerifyUrl": "https://kengranderson.com/build-manifest.json",
+  "ControlPanelUrl": "https://my.bluehost.com/"
+}

@@ -1,15 +1,16 @@
 <#
 Author: Claude Code for Ken Granderson
-Owner: Ken Granderson
+Owner: Black Facts Educational Foundation
+Canonical source: blackfacts/tools devops/static-site-publish (copy updates from there)
 Last Updated: 2026-10-26
 Purpose: One-time setup for GitHub Actions publishing over SSH. Creates a dedicated deploy key,
          reads the server's host key, optionally tests the connection, and optionally stores the
          GitHub secrets and variables with the gh CLI. Never switches publishing on.
 
 .EXAMPLE
-& C:\Users\ken\source\repos\kengranderson\tools\deploy\Initialize-DeployAccess.ps1 -DeployHost 203.0.113.10 -DeployUser kenuser -DeployPath /home/kenuser/public_html
+& C:\Users\Ken\source\repos\Wakanda.Tools\devops\static-site-publish\Initialize-DeployAccess.ps1 -Repository owner/site -DeployHost 203.0.113.10 -DeployUser siteuser -DeployPath /home/siteuser/public_html
 .EXAMPLE
-& C:\Users\ken\source\repos\kengranderson\tools\deploy\Initialize-DeployAccess.ps1 -DeployHost 203.0.113.10 -DeployUser kenuser -DeployPath /home/kenuser/public_html -TestConnection -SetGitHub
+& C:\Users\Ken\source\repos\Wakanda.Tools\devops\static-site-publish\Initialize-DeployAccess.ps1 -Repository owner/site -DeployHost 203.0.113.10 -DeployUser siteuser -DeployPath /home/siteuser/public_html -SiteUrl https://example.org -TestConnection -SetGitHub
 #>
 
 [CmdletBinding()]
@@ -17,10 +18,11 @@ param(
     [Parameter(Mandatory)] [string]$DeployHost,
     [Parameter(Mandatory)] [string]$DeployUser,
     [Parameter(Mandatory)] [string]$DeployPath,
+    [Parameter(Mandatory)] [ValidatePattern('^[^/\s]+/[^/\s]+$')] [string]$Repository,
     [int]$Port = 22,
-    [string]$SiteUrl = 'https://kengranderson.com',
-    [string]$KeyPath = (Join-Path $HOME '.ssh/kengranderson_deploy'),
-    [string]$Repository = 'kengranderson/kengranderson',
+    [string]$SiteUrl,
+    [string]$VerifyUrl,
+    [string]$KeyPath,
     [switch]$TestConnection,
     [switch]$SetGitHub
 )
@@ -32,6 +34,10 @@ function Require-Command([string]$Name) {
     if (-not (Get-Command $Name -ErrorAction SilentlyContinue)) {
         throw "$Name was not found. Install the OpenSSH client (Windows: Settings > Optional features > OpenSSH Client)."
     }
+}
+
+if (-not $KeyPath) {
+    $KeyPath = Join-Path (Join-Path $HOME '.ssh') (($Repository.Split('/')[1]) + '_deploy')
 }
 
 Require-Command ssh-keygen
@@ -87,8 +93,9 @@ $variables = [ordered]@{
     DEPLOY_PORT = "$Port"
     DEPLOY_USER = $DeployUser
     DEPLOY_PATH = $DeployPath
-    SITE_URL    = $SiteUrl
 }
+if ($SiteUrl) { $variables['SITE_URL'] = $SiteUrl.TrimEnd('/') }
+if ($VerifyUrl) { $variables['VERIFY_URL'] = $VerifyUrl }
 
 if ($SetGitHub) {
     Require-Command gh
@@ -102,7 +109,7 @@ if ($SetGitHub) {
         & gh variable set $name --repo $Repository --body $variables[$name]
         if ($LASTEXITCODE -ne 0) { throw "gh variable set $name failed" }
     }
-    Write-Host 'Done. Publishing is still OFF. See docs/publishing-workflow.md to switch on dry runs, then live publishing.'
+    Write-Host 'Done. Publishing is still OFF. Set DEPLOY_ENABLED=true for dry runs, then DEPLOY_DRY_RUN=false for live publishing (see the static-site-publish README).'
 } else {
     Write-Host ''
     Write-Host "=== Add in GitHub: $Repository > Settings > Secrets and variables > Actions ==="
