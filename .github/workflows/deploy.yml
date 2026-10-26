@@ -9,7 +9,7 @@ name: Deploy to Bluehost
 
 on:
   push:
-    branches: [master]
+    branches: [master, claude/github-actions-deploy]   # TEMPORARY: registers the workflow; removed in the next commit
     paths:
       - KenGranderson/**
       - scripts/build-site.sh
