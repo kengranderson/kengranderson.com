@@ -1,0 +1,9 @@
+{
+  "name": "kengranderson-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist/server && node prerender.mjs",
+    "build:production": "SITE_MODE=production npm run build"
+  }
+}
