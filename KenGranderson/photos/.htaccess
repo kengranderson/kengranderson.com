@@ -1,0 +1,2 @@
+# Apache twin of web.config: list folder contents (IIS directoryBrowse).
+Options +Indexes
