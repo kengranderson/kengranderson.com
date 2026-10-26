@@ -11,7 +11,7 @@ push to master → Actions: scripts/build-site.sh builds _site and checks it
               → checks <site URL>/wakanda-deploy.json shows the new commit
 ```
 
-- Workflow: `.github/workflows/deploy.yml` (until it is moved there, it waits in [deploy/deploy.workflow.yml](deploy/deploy.workflow.yml))
+- Workflow: [.github/workflows/deploy.yml](.github/workflows/deploy.yml)
 - Shared tool and full docs: [blackfacts/tools devops/shared-hosting-deploy](https://github.com/blackfacts/tools/tree/main/devops/shared-hosting-deploy)
 - What is live: open `<site URL>/wakanda-deploy.json` (commit, time, run link)
 
@@ -23,12 +23,7 @@ The build fails on invalid `highlights.json` or a page `index.html` links to tha
 
 ## One-time setup (Ken, on Musa)
 
-0. Move the workflow into place with your own git login (Claude's cloud GitHub access cannot add workflow files):
-   ```powershell
-   git fetch origin; git checkout claude/github-actions-deploy
-   git mv deploy/deploy.workflow.yml .github/workflows/deploy.yml
-   git commit -m "Turn on the Bluehost deploy workflow"; git push
-   ```
+0. The workflow is in place (`.github/workflows/deploy.yml`, moved 2026-10-26 with Ken's git login).
 1. In PowerShell, from your blackfacts/tools clone, `devops\shared-hosting-deploy`:
    ```powershell
    .\Setup-DeployKey.ps1 -SshAlias <your bluehost alias> -DiscoverOnly
