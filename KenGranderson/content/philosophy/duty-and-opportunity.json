@@ -1,0 +1,26 @@
+{
+  "slug": "duty-and-opportunity",
+  "title": "Duty and Opportunity",
+  "order": 1,
+  "publish": "review",
+  "dek": "As delivered at the Commencement Luncheon of Salem State College's 189th Commencement Exercises, the day I received an honorary Doctor of Humane Letters.",
+  "date": "1999-05-22",
+  "dateLabel": "May 22, 1999",
+  "place": "Salem, MA",
+  "readingTime": "~4 min read",
+  "source": "images/highlights/duty-opportunity.pdf",
+  "excerpt": "Excerpt. The opening thank-yous are in the original PDF. Text unchanged from 1999.",
+  "copyright": "© 1999 Kenneth A. Granderson",
+  "paragraphs": [
+    "I said earlier that I do not work to seek the validation or approval of others. The two forces that drive me each day to work to achieve more and more and do better than my best are named Duty and Opportunity.",
+    "In case you had not noticed, I am a Black man. I realize that some of us live in a color-blind world, but unfortunately, neither I nor the vast majority of Black people on this planet have that luxury.",
+    "So as a Black man who is in the most dynamic industry on the planet, an industry created by other misfits of society, an industry that is redefining the rules of business, society and opportunity, but an industry that has no significant Black presence in its leadership, my Opportunity and Duty to stand up and be counted is clear.",
+    "My experiences in this industry have proven to me that the Opportunity to make a global impact is real and absolutely attainable. Without the benefits of external financing, family or business contacts, I have been able to do business on an international basis since the early 90’s.",
+    { "pullQuote": "I am just one link in a chain that stretches into forever", "accent": "in both directions." },
+    "As far as Duty, I know that the freedoms and opportunities I take for granted were paid for by the blood of millions who have preceded me, and that I am just one link in a chain that stretches into forever in both directions. I have benefited greatly from this chain, and I have no right to break it.",
+    "As future Black generations see themselves represented in all industries and vocations, they will emulate that which they see and those outside the Black community will recognize that we all are, in the words of this country’s founders “created equal.” It is just our experiences and societal problems that make us unequal.",
+    { "strong": "This is my Opportunity, this is my Duty, and I accept this task willingly and with great humility." }
+  ],
+  "practice": ["inner-city-software", "blackfacts", "roxbury", "my-bed-stuy"],
+  "event": "1999/salem"
+}

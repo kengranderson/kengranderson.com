@@ -343,3 +343,5 @@ healthchecksdb
 
 # Built site (scripts/build-site.sh)
 _site/
+# Built React site (web/)
+web/dist/

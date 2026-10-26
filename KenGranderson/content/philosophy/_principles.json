@@ -1,0 +1,10 @@
+{
+  "note": "The list of principles, in order. An essay file in this folder with the same slug makes the entry a link. Categories are not final.",
+  "principles": [
+    { "slug": "duty-and-opportunity", "title": "Duty and Opportunity" },
+    { "slug": "technological-self-determination", "title": "Technological self-determination" },
+    { "slug": "techie-chagulia", "title": "Techie-chagulia" },
+    { "slug": "outcomes-over-income", "title": "Outcomes over income" },
+    { "slug": "ownership", "title": "Ownership" }
+  ]
+}

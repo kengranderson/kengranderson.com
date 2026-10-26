@@ -2,9 +2,12 @@
 # Author: Claude Code for Ken Granderson
 # Owner: Black Facts Educational Foundation
 # Last Updated: 2026-10-26
-# Purpose: Assemble the publishable site into _site (the same set build.cmd copies)
-#          and check it before deploy. Broken JSON or a missing page fails the build;
+# Purpose: Assemble the publishable site into _site: the legacy folders build.cmd copies,
+#          then the new React site from web/ (pre-built to static HTML) on top.
+#          The old one-page site stays reachable as classic.html.
+#          Broken JSON, a failed web build or a missing linked file fails the build;
 #          a missing highlight image is only a warning.
+#          SITE_MODE=production hides drafts and editorial flags (default: preview).
 #
 # Usage: scripts/build-site.sh [output-folder]   (default: _site)
 set -euo pipefail
@@ -23,11 +26,21 @@ for f in "${FILES[@]}"; do cp -a "$SRC/$f" "$OUT/$f"; done
 # IIS-only settings do nothing on Apache; their .htaccess twins ship instead.
 find "$OUT" -iname web.config -delete
 
+# New site: web/ renders every page to HTML at build time (see web/README.md).
+mv "$OUT/index.html" "$OUT/classic.html"
+if [[ -f "$ROOT/web/package-lock.json" ]]; then npm ci --prefix "$ROOT/web" --no-audit --no-fund; else npm install --prefix "$ROOT/web" --no-audit --no-fund; fi
+npm run build --prefix "$ROOT/web"
+cp -a "$ROOT/web/dist/site/." "$OUT/"
+
 fail=0
 python3 -m json.tool "$OUT/highlights.json" >/dev/null || { echo "FAIL highlights.json is not valid JSON"; fail=1; }
-while IFS= read -r ref; do
-  [[ -e "$OUT/$ref" ]] || { echo "FAIL index.html links to missing $ref"; fail=1; }
-done < <(grep -o '\(src\|href\)="[^"#:?]*"' "$OUT/index.html" | sed 's/^[a-z]*="//; s/"$//; s#^/##' | grep -v "[' +]" | grep . | sort -u)
+# Every local src/href in every page must exist (paths are relative to the page's own folder).
+while IFS= read -r page; do
+  dir="$(dirname "$page")"
+  while IFS= read -r ref; do
+    [[ -e "$dir/$ref" ]] || { echo "FAIL ${page#$OUT/} links to missing $ref"; fail=1; }
+  done < <(grep -o '\(src\|href\)="[^"#:?]*"' "$page" | sed 's/^[a-z]*="//; s/"$//' | grep -v "^/\|[' +]" | grep . | sort -u)
+done < <(find "$OUT" -maxdepth 4 -name '*.html' -not -path '*/capri-service-manual/*' -not -path '*/kendudeism/*' -not -path '*/lib/*' -not -path '*/share/*' -not -path '*/media/*' -not -path '*/photos/*' -not -path '*/images/*')
 missing=0
 while IFS= read -r ref; do
   [[ -e "$OUT/$ref" ]] || { echo "WARN highlights.json names missing image $ref"; missing=$((missing + 1)); }
