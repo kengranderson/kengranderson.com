@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist/server && node prerender.mjs",
-    "build:production": "SITE_MODE=production npm run build"
+    "build:production": "SITE_MODE=production npm run build",
+    "check:fit": "node scripts/check-fit.mjs"
   },
   "dependencies": {
     "@fontsource/anton": "5.1.0",

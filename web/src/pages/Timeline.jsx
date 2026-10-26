@@ -108,7 +108,7 @@ export default function Timeline(props) {
         <section key={y.id} id={y.id} className="band band--year">
           <div className="wrap tl-year">
             <div className="tl-year__head">
-              <h2 className={`tl-year__label${y.id === years[0].id ? '' : ''}`}>{y.label}</h2>
+              <h2 className={`tl-year__label${/^\d{4}$/.test(y.label) ? '' : ' tl-year__label--words'}`}>{y.label}</h2>
               <span className="mono">{y.entries.length} {y.entries.length === 1 ? 'entry' : 'entries'}</span>
             </div>
             <div className="tl-year__entries">
