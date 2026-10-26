@@ -66,7 +66,7 @@ jobs:
         run: scripts/build-site.sh _site
 
       - name: Deploy
-        uses: blackfacts/tools/devops/shared-hosting-deploy@9452595f87a5fa48940ec015796f4f72ac044267   # blackfacts/tools PR branch; switch to @main once merged
+        uses: ./.wakanda/shared-hosting-deploy
         with:
           source: _site
           site: kengranderson
