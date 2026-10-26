@@ -11,6 +11,13 @@ export function useHref() {
   return (path) => (path == null ? null : /^(https?:|mailto:|#)/.test(path) ? path : rel + path);
 }
 
+// HTML written inside highlights.json (descriptions, postscripts) uses site-root paths
+// like images/x.jpg; point them back at the root from whatever folder the page is in.
+export function useRelHtml() {
+  const { rel } = useSite();
+  return (html) => html && html.replace(/(src|href)="(?![a-z][a-z0-9+.-]*:|#|\/)/gi, `$1="${rel}`);
+}
+
 export function Link({ to, className, children, ...rest }) {
   const href = useHref();
   if (to == null) return <span className={className ? `${className} is-pending` : 'is-pending'} {...rest}>{children}</span>;

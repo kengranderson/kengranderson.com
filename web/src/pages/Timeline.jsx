@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Page } from '../components/Layout.jsx';
-import { DocLink, useHref, Video } from '../components/ui.jsx';
+import { DocLink, useHref, useRelHtml, Video } from '../components/ui.jsx';
 
 function Entry({ e, open }) {
   const href = useHref();
+  const relHtml = useRelHtml();
   return (
     <details id={e.id} className="tl-entry" open={open || undefined}>
       <summary className="tl-entry__summary">
@@ -15,7 +16,7 @@ function Entry({ e, open }) {
         <span className="tl-entry__toggle" aria-hidden="true"></span>
       </summary>
       <div className="tl-entry__body">
-        {e.description && <div className="prose" dangerouslySetInnerHTML={{ __html: e.description }}></div>}
+        {e.description && <div className="prose" dangerouslySetInnerHTML={{ __html: relHtml(e.description) }}></div>}
         {e.media.some((m) => m.kind === 'video') && (
           <div className="tl-videos">{e.media.filter((m) => m.kind === 'video').map((m) => <Video key={m.youtube} id={m.youtube} title={e.title} />)}</div>
         )}
@@ -29,7 +30,7 @@ function Entry({ e, open }) {
         {e.media.some((m) => m.kind === 'doc') && (
           <div className="evidence-list">{e.media.filter((m) => m.kind === 'doc').map((m) => <DocLink key={m.src} {...m} />)}</div>
         )}
-        {e.postscript && <p className="postscript">P.S. <span dangerouslySetInnerHTML={{ __html: e.postscript }}></span></p>}
+        {e.postscript && <p className="postscript">P.S. <span dangerouslySetInnerHTML={{ __html: relHtml(e.postscript) }}></span></p>}
         <a href={`#${e.id}`} className="permalink mono">#{e.id} · permanent link</a>
       </div>
     </details>

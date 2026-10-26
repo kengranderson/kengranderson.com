@@ -1,10 +1,11 @@
 import { Page } from '../components/Layout.jsx';
-import { Chip, DocLink, Draft, Exhibit, Link, Needs, Verify, Video } from '../components/ui.jsx';
+import { Chip, DocLink, Draft, Exhibit, Link, Needs, useRelHtml, Verify, Video } from '../components/ui.jsx';
 
 // A project page is its work record plus the timeline entries it points to;
 // the entries supply the evidence (video, screenshots, clippings, documents).
 export default function Project(props) {
   const { project: p, entries, lineage, principles, prev, next } = props;
+  const relHtml = useRelHtml();
   const media = entries.flatMap((e) => e.media.map((m) => ({ ...m, entry: e })));
   const videos = media.filter((m) => m.kind === 'video');
   const images = media.filter((m) => m.kind === 'image');
@@ -50,7 +51,7 @@ export default function Project(props) {
               <article key={e.id} className="stack">
                 <h2 className="h2">{e.title} <span className="mono muted">{e.year}</span></h2>
                 {e.subTitle && <p className="body-lg em">{e.subTitle}</p>}
-                {e.description && <div className="prose" dangerouslySetInnerHTML={{ __html: e.description }}></div>}
+                {e.description && <div className="prose" dangerouslySetInnerHTML={{ __html: relHtml(e.description) }}></div>}
                 {e.postscript && <p className="postscript">P.S. {e.postscript}</p>}
                 <Link to={e.path} className="text-cta">In the archive: #{e.id} →</Link>
               </article>
@@ -115,10 +116,10 @@ export default function Project(props) {
 
       {(prev || next) && (
         <section className="band band--flush">
-          <div className="wrap pager">
+          <div className="wrap"><div className="pager">
             {prev ? <Link to={prev.path} className="pager__item"><span className="mono muted">← Previous · {prev.start ?? ''}</span><span className="h3">{prev.title}</span></Link> : <span></span>}
             {next ? <Link to={next.path} className="pager__item pager__item--next"><span className="mono muted">Next · {next.start ?? ''} →</span><span className="h3">{next.title}</span></Link> : <span></span>}
-          </div>
+          </div></div>
         </section>
       )}
     </Page>

@@ -12,7 +12,7 @@
   --muted: #555555;
   --flag: #FFF2CC;
 
-  --f-display: "Anton", Impact, "Arial Narrow", sans-serif;
+  --f-display: "Anton", "Arial Narrow", "Roboto Condensed", Impact, sans-serif;
   --f-text: "Source Serif 4", Georgia, serif;
   --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
 
@@ -44,9 +44,10 @@ button { font: inherit; }
 .em { font-style: italic; }
 .kicker { font: 600 13px/1.4 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; }
 .kicker--plain { font-weight: 500; display: flex; flex-wrap: wrap; gap: 4px; }
-.display { font: 400 clamp(52px, 7.4vw, 112px)/.92 var(--f-display); text-transform: uppercase; }
+.display { font: 400 clamp(44px, 7.4vw, 112px)/.92 var(--f-display); text-transform: uppercase; }
 .display--md { font-size: clamp(44px, 6vw, 88px); }
-.display--xl { font-size: clamp(60px, 10vw, 140px); line-height: .86; }
+.display--xl { font-size: clamp(48px, 10vw, 140px); line-height: .86; }
+.display, .h1, .h2, .door__title, .card__title, .tl-year__label { overflow-wrap: break-word; }
 .h1 { font: 400 clamp(36px, 4.4vw, 56px)/1 var(--f-display); text-transform: uppercase; }
 .h2 { font: 400 clamp(30px, 3.4vw, 44px)/1.02 var(--f-display); text-transform: uppercase; }
 .h3 { font: 400 clamp(22px, 2.4vw, 32px)/1.05 var(--f-display); text-transform: uppercase; }
@@ -75,6 +76,7 @@ button { font: inherit; }
 .section-rule { border-bottom: var(--rule); padding-bottom: 12px; }
 .split { display: flex; flex-wrap: wrap; gap: 48px; align-items: center; }
 .split__side { flex: 1 1 340px; min-width: 0; }
+.split__side .h1 { font-size: clamp(30px, 3vw, 44px); }
 .split__main { flex: 999 1 540px; min-width: 0; }
 .with-aside { display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start; }
 .with-aside__main { flex: 999 1 600px; min-width: 0; }
@@ -148,7 +150,7 @@ button { font: inherit; }
 .hero__text { flex: 999 1 600px; min-width: 0; display: flex; flex-direction: column; gap: 28px; }
 .hero__text .lede { max-width: 38ch; }
 .signage { flex: 1 1 320px; min-width: 0; aspect-ratio: 4 / 3; background: var(--ink); color: var(--paper); border: 8px solid var(--red); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 24px; text-align: center; }
-.signage__text { font: 400 34px/1 var(--f-display); text-transform: uppercase; }
+.signage__text { font: 400 clamp(24px, 2.4vw, 34px)/1 var(--f-display); text-transform: uppercase; max-width: 100%; }
 .signage__note { font-size: 14px; color: #E6E6E6; }
 
 .flagship { display: flex; flex-wrap: wrap; border: var(--rule); background: var(--paper); }

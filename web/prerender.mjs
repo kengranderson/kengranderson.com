@@ -29,9 +29,6 @@ for (const p of list) {
 ${MODE === 'preview' ? '<meta name="robots" content="noindex">\n' : ''}<meta property="og:title" content="${esc(p.title)}">
 <meta property="og:description" content="${esc(p.description)}">
 <link rel="icon" href="${p.rel}images/brand/ken-logo-pixel.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
 ${css}
 </head>
 <body>

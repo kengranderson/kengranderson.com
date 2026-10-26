@@ -1,5 +1,7 @@
 // Build-time only: reads the JSON content and turns it into the props each page renders.
 // Nothing here ships to the browser; each page gets just its own props, embedded in its HTML.
+import fs from 'node:fs';
+import path from 'node:path';
 import highlightsRaw from '../../KenGranderson/highlights.json';
 import site from '../../KenGranderson/content/site.json';
 import principlesFile from '../../KenGranderson/content/philosophy/_principles.json';
@@ -14,6 +16,10 @@ const visible = (rec) => MODE === 'preview' || rec.publish === 'published';
 function yearId(key) {
   return /^\d{4}$/.test(key) ? key : key.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 }
+
+// The build runs from web/ (npm run build), so the legacy site folder is one level up.
+const SITE_DIR = path.resolve(process.cwd(), '../KenGranderson');
+const exists = (src) => /^https?:/.test(src) || fs.existsSync(path.join(SITE_DIR, src));
 
 function mediaItem(src) {
   const ext = (/\.(\w+)$/.exec(src) || [])[1]?.toLowerCase() || null;
@@ -41,7 +47,11 @@ export const timeline = Object.entries(highlightsRaw).map(([key, items]) => ({
       subTitle: item.subTitle || null,
       description: item.description || null,
       postscript: item.postscript || null,
-      media: (item.mediaUrls || []).map(mediaItem)
+      media: (item.mediaUrls || []).map(mediaItem).filter((m) => {
+        if (m.kind === 'video' || exists(m.src)) return true;
+        console.warn(`WARN highlights.json ${key}/${item.hash} names missing file ${m.src}: left out`);
+        return false;
+      })
     };
   })
 }));
