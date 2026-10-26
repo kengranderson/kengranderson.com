@@ -401,3 +401,16 @@ a.intent--dark:hover { background: #222; color: var(--paper); }
 .elsewhere > * { display: flex; justify-content: space-between; align-items: center; min-height: 60px; border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; }
 .elsewhere strong { display: block; font-size: 19px; }
 .elsewhere small { font: 12px var(--f-mono); color: var(--muted); }
+
+/* ---------- story ---------- */
+.journey li { gap: 6px; }
+.journey__link { color: var(--paper); font-size: 13px; }
+.journey__link:hover { color: var(--paper); }
+.chapter { display: flex; flex-wrap: wrap; gap: 16px 48px; align-items: flex-start; border-top: var(--rule); padding-top: 24px; }
+.chapter__head { flex: 1 1 240px; max-width: 300px; display: flex; flex-direction: column; gap: 8px; }
+.chapter__evidence { list-style: none; padding: 0; margin-top: 8px; border-top: 1px solid var(--line); }
+.chapter__body { flex: 999 1 520px; }
+.chapter__greeting { font: 600 clamp(20px, 1.8vw, 24px)/1.3 var(--f-text); }
+.chapter__slot { min-height: 140px; }
+.chapter__signoff { font: 400 28px/1 var(--f-display); text-transform: uppercase; color: var(--red); }
+@media (max-width: 960px) { .chapter__head { max-width: none; } }

@@ -16,17 +16,18 @@ const root = path.resolve(process.argv[2] || path.join(path.dirname(new URL(impo
 const WIDTHS = [360, 390, 768, 1024, 1440];
 const HEADINGS = 'h1, h2, h3, .display, .door__title, .card__title, .tl-year__label, .pullquote p, .intent__title, .signage__text, .lineage__title, .lineage-card strong, .row__title, .features strong, .plaque__title, .brand__name, .site-footer__motto > span';
 
-// Every page the React build wrote (one index.html per route), plus the home page.
+// Every page the React build wrote: read from web/dist/site, so new sections are checked automatically.
 function routes() {
+  const site = path.join(path.dirname(new URL(import.meta.url).pathname), '../dist/site');
   const out = [];
   const walk = (dir, rel) => {
     for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
-      if (e.isDirectory() && ['work', 'timeline', 'philosophy', 'connect'].includes(rel.split('/')[0] || e.name)) walk(path.join(dir, e.name), `${rel}${e.name}/`);
-      else if (e.name === 'index.html' && rel) out.push(rel);
+      if (e.isDirectory() && e.name !== 'assets') walk(path.join(dir, e.name), `${rel}${e.name}/`);
+      else if (e.name === 'index.html') out.push(rel);
     }
   };
-  walk(root, '');
-  return ['', ...out.sort()];
+  walk(site, '');
+  return out.sort();
 }
 
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.woff2': 'font/woff2', '.woff': 'font/woff', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.gif': 'image/gif', '.svg': 'image/svg+xml' };
