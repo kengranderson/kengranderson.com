@@ -12,6 +12,7 @@ push to master → Actions: scripts/build-site.sh builds _site and checks it
 ```
 
 - Workflow: [.github/workflows/deploy.yml](.github/workflows/deploy.yml)
+- The deploy action is a copy kept in [.wakanda/shared-hosting-deploy](.wakanda/shared-hosting-deploy) (a repo under a personal GitHub account cannot use an action from the private blackfacts/tools repo). Refresh it with `scripts/sync-deploy-action.sh <path to blackfacts/tools clone>`.
 - Shared tool and full docs: [blackfacts/tools devops/shared-hosting-deploy](https://github.com/blackfacts/tools/tree/main/devops/shared-hosting-deploy)
 - What is live: open `<site URL>/wakanda-deploy.json` (commit, time, run link)
 
