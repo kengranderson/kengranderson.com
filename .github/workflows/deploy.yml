@@ -12,6 +12,7 @@ on:
     branches: [master]
     paths:
       - KenGranderson/**
+      - web/**
       - scripts/build-site.sh
       - .github/workflows/deploy.yml
   workflow_dispatch:
@@ -60,9 +61,17 @@ jobs:
             exit 1
           fi
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
 
       - name: Build and check
+        env:
+          SITE_MODE: preview
         run: scripts/build-site.sh _site
 
       - name: Deploy
