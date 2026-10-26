@@ -27,6 +27,7 @@ Newest last. "Proposed" means an agent chose it to keep work moving and Ken can 
 
 ## Waiting on Ken
 
+0. **Install the workflow file**: move `tools/ci/site.yml` to `.github/workflows/site.yml` (one commit with Ken's credentials; see `tools/ci/README.md`).
 1. **Server details** for the Bluehost account: host or IP, SSH username, and the folder kengranderson.com is served from.
 2. **Activation**: approve turning on dry runs, then live publishing.
 3. **Cutover**: whether kengranderson.com's DNS moves to Bluehost, and when. Nothing here touches DNS.

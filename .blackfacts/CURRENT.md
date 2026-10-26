@@ -14,6 +14,7 @@ Make the agent-driven publishing workflow operational: request -> agent -> PR ->
 - Validation, deterministic build, local preview, and the gated SSH/rsync publish job exist (branch `claude/project-thread-rhxstz`, pending merge).
 - Three example draft records exist (work, philosophy, event). Nothing is published from `content/` yet.
 - The home page still reads `KenGranderson/highlights.json`, unchanged.
+- The workflow file is parked at `tools/ci/site.yml` (the cloud agent's token cannot write `.github/workflows/`); it must be moved into `.github/workflows/` with Ken's credentials.
 - No server is configured. Deploy variables and secrets are not set.
 
 ## Verification
@@ -31,7 +32,7 @@ Make the agent-driven publishing workflow operational: request -> agent -> PR ->
 
 ## Exact Next Action
 
-After merge: Ken sets up Bluehost SSH and runs `tools/deploy/Initialize-DeployAccess.ps1` (steps in `docs/publishing-workflow.md`), then sets `DEPLOY_ENABLED=true` for a dry run.
+Install the workflow file (`tools/ci/README.md`). After merge: Ken sets up Bluehost SSH and runs `tools/deploy/Initialize-DeployAccess.ps1` (steps in `docs/publishing-workflow.md`), then sets `DEPLOY_ENABLED=true` for a dry run.
 
 ## Read First Next Session
 

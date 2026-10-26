@@ -47,6 +47,10 @@ Update `.blackfacts/CURRENT.md` if the state of the project changed, and note an
 
 ---
 
+## One-time: install the workflow file
+
+The agent that built this could not write to `.github/workflows/` (GitHub requires a token with the `workflow` permission for that). The workflow is parked at `tools/ci/site.yml`; moving it into place is one commit with your own credentials, described in `tools/ci/README.md`. Until then, nothing runs in GitHub Actions.
+
 ## One-time server setup (Bluehost)
 
 Bluehost's menus change; these are the standard cPanel steps. If a menu name differs, the Bluehost help search for "SSH access" finds the current one.
@@ -99,7 +103,7 @@ Until DNS for kengranderson.com points at Bluehost, a live publish only updates 
 
 | Piece | File |
 |---|---|
-| Workflow | `.github/workflows/site.yml` |
+| Workflow | `.github/workflows/site.yml` (parked at `tools/ci/site.yml` until installed; see below) |
 | Validate | `tools/site/validate.mjs` |
 | Build | `tools/site/build.mjs` (output `dist/`, plus `dist/data/content.json` and `dist/build-manifest.json`) |
 | Preview server | `tools/site/serve.mjs` |

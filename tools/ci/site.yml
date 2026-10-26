@@ -1,0 +1,116 @@
+# Author: Claude Code for Ken Granderson
+# Owner: Ken Granderson
+# Last Updated: 2026-10-26
+# Purpose: Validate and build KenGranderson.com on pull requests and pushes to master; publish over SSH
+#          from master only when deployment has been switched on (see docs/publishing-workflow.md).
+
+name: Site
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run: show what would change on the server without changing it'
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Validate and build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Test tooling
+        run: npm test
+      - name: Validate content
+        run: npm run validate
+      - name: Build
+        run: npm run build
+      - name: Summarize
+        run: |
+          {
+            echo '### Build'
+            echo '```'
+            node -e "const m=require('./dist/build-manifest.json');console.log(JSON.stringify({source:m.source,includesDrafts:m.includesDrafts,records:m.records,fileCount:m.fileCount,totalBytes:m.totalBytes,legacyWarnings:m.legacyWarnings},null,2))"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Keep generated content and manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-content
+          path: |
+            dist/build-manifest.json
+            dist/data/
+          retention-days: 14
+
+  deploy:
+    name: Publish to server
+    needs: build
+    # Off until the repository variable DEPLOY_ENABLED is 'true'. Even then, every run is a dry run
+    # until DEPLOY_DRY_RUN is 'false' (or a manual run unticks "Dry run").
+    if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request' && vars.DEPLOY_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: ${{ vars.SITE_URL }}
+    concurrency:
+      group: deploy-production
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Prepare SSH identity
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          if [ -z "$DEPLOY_SSH_KEY" ] || [ -z "$DEPLOY_KNOWN_HOSTS" ]; then
+            echo "::error::Secrets DEPLOY_SSH_KEY and DEPLOY_KNOWN_HOSTS must be set. See docs/publishing-workflow.md."
+            exit 1
+          fi
+          install -m 600 /dev/null "$RUNNER_TEMP/deploy_key"
+          printf '%s\n' "$DEPLOY_SSH_KEY" > "$RUNNER_TEMP/deploy_key"
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > "$RUNNER_TEMP/known_hosts"
+      - name: Publish
+        env:
+          DEPLOY_HOST: ${{ vars.DEPLOY_HOST }}
+          DEPLOY_PORT: ${{ vars.DEPLOY_PORT || '22' }}
+          DEPLOY_USER: ${{ vars.DEPLOY_USER }}
+          DEPLOY_PATH: ${{ vars.DEPLOY_PATH }}
+          DEPLOY_DELETE: ${{ vars.DEPLOY_DELETE || 'false' }}
+          DEPLOY_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && format('{0}', inputs.dry_run) || (vars.DEPLOY_DRY_RUN == 'false' && 'false' || 'true') }}
+          DEPLOY_SSH_KEY_FILE: ${{ runner.temp }}/deploy_key
+          DEPLOY_KNOWN_HOSTS_FILE: ${{ runner.temp }}/known_hosts
+          SITE_URL: ${{ vars.SITE_URL }}
+          EXPECTED_COMMIT: ${{ github.sha }}
+        shell: bash
+        run: tools/deploy/rsync-deploy.sh 2>&1 | tee "$RUNNER_TEMP/deploy.log"
+      - name: Summarize
+        if: always()
+        run: |
+          {
+            echo '### Publish'
+            echo '```'
+            grep -E '^deploy:|Number of regular files transferred|Total transferred file size' "$RUNNER_TEMP/deploy.log" || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Remove SSH identity
+        if: always()
+        run: rm -f "$RUNNER_TEMP/deploy_key"

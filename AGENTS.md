@@ -25,7 +25,7 @@ This repository is Ken Granderson's personal website, a living record of his wor
 | `content/` | JSON source records (work, philosophy, events) and their schemas. |
 | `tools/site/` | Validate, build, preview server, and tests (Node 22, one dependency: ajv). |
 | `tools/deploy/` | SSH/rsync publish script and the one-time deploy key setup script. |
-| `.github/workflows/site.yml` | CI: validate and build on every PR and push to master; gated publish from master. |
+| `.github/workflows/site.yml` | CI: validate and build on every PR and push to master; gated publish from master. Until installed, it is parked at `tools/ci/site.yml` (see `tools/ci/README.md`). |
 | `docs/` | Audit, workflow, decisions, and `docs/handoffs/` for tool-to-tool handoffs. |
 
 ## Everyday commands
