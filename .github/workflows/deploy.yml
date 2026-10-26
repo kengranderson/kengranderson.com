@@ -1,0 +1,83 @@
+# Author: Claude Code for Ken Granderson
+# Owner: Black Facts Educational Foundation
+# Last Updated: 2026-10-26
+# Build the site and publish it to Bluehost shared hosting over SSH.
+# The deploy step is the shared tool in blackfacts/tools
+# (devops/shared-hosting-deploy); this file only holds what is specific to this site.
+# Setup and day-to-day use: DEPLOY.md.
+name: Deploy to Bluehost
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - KenGranderson/**
+      - scripts/build-site.sh
+      - .github/workflows/deploy.yml
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: Only report what would change
+        type: boolean
+        default: true
+      adopt:
+        description: First deploy into a folder that already has files (backs it up, keeps them)
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+# One deploy at a time; a newer push waits instead of cancelling a half-done upload.
+concurrency:
+  group: deploy-bluehost-preview
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    environment:
+      name: bluehost-preview
+      url: ${{ vars.DEPLOY_URL }}
+    steps:
+      - name: Check deploy settings
+        env:
+          HOST: ${{ vars.DEPLOY_HOST }}
+          USER_: ${{ vars.DEPLOY_USER }}
+          PATH_: ${{ vars.DEPLOY_PATH }}
+          HAS_KEY: ${{ secrets.DEPLOY_SSH_KEY != '' }}
+          HAS_KNOWN: ${{ secrets.DEPLOY_KNOWN_HOSTS != '' }}
+        run: |
+          missing=()
+          [[ -n "$HOST" ]] || missing+=("variable DEPLOY_HOST")
+          [[ -n "$USER_" ]] || missing+=("variable DEPLOY_USER")
+          [[ -n "$PATH_" ]] || missing+=("variable DEPLOY_PATH")
+          [[ "$HAS_KEY" == true ]] || missing+=("secret DEPLOY_SSH_KEY")
+          [[ "$HAS_KNOWN" == true ]] || missing+=("secret DEPLOY_KNOWN_HOSTS")
+          if (( ${#missing[@]} )); then
+            echo "::error::The bluehost-preview environment is missing: ${missing[*]}. See DEPLOY.md."
+            exit 1
+          fi
+
+      - uses: actions/checkout@v4
+
+      - name: Build and check
+        run: scripts/build-site.sh _site
+
+      - name: Deploy
+        uses: ./.wakanda/shared-hosting-deploy
+        with:
+          source: _site
+          site: kengranderson
+          host: ${{ vars.DEPLOY_HOST }}
+          user: ${{ vars.DEPLOY_USER }}
+          port: ${{ vars.DEPLOY_PORT || '22' }}
+          path: ${{ vars.DEPLOY_PATH }}
+          ssh-key: ${{ secrets.DEPLOY_SSH_KEY }}
+          known-hosts: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+          url: ${{ vars.DEPLOY_URL }}
+          verify-paths: highlights.json css/style.css
+          verify-insecure: ${{ vars.DEPLOY_VERIFY_INSECURE || 'false' }}
+          dry-run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry-run && 'true' || 'false' }}
+          adopt: ${{ github.event_name == 'workflow_dispatch' && inputs.adopt && 'true' || 'false' }}

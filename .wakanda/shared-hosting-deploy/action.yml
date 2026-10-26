@@ -1,0 +1,127 @@
+# Author: Claude Code for Ken Granderson
+# Owner: Black Facts Educational Foundation
+# Last Updated: 2026-10-26
+name: Wakanda shared-hosting deploy
+description: >-
+  Publish a built static site into a folder on Linux shared hosting (Bluehost and
+  similar) over SSH with rsync, then prove it over HTTP. No sudo, systemd or nginx.
+  See devops/shared-hosting-deploy/README.md in blackfacts/tools.
+inputs:
+  source:
+    description: Folder holding the built site (must contain index.html or index.php).
+    required: true
+  site:
+    description: Short site name recorded in the server folder (letters, digits, . _ -).
+    required: true
+  host:
+    description: SSH host name or IP.
+    required: true
+  user:
+    description: SSH user.
+    required: true
+  port:
+    description: SSH port.
+    default: "22"
+  path:
+    description: Site folder on the server, relative to the SSH user's home (e.g. public_html).
+    required: true
+  ssh-key:
+    description: Private deploy key (pass a secret). Never printed.
+    required: true
+  known-hosts:
+    description: Pinned known_hosts line(s) for the server (pass a secret or variable).
+    required: true
+  url:
+    description: Base URL to verify after the upload (e.g. the temporary domain). Empty skips HTTP checks.
+    default: ""
+  verify-paths:
+    description: Extra space-separated paths that must answer 200 after the deploy.
+    default: ""
+  verify-insecure:
+    description: "true skips TLS checks while verifying (only for a temporary URL without a certificate)."
+    default: "false"
+  protect:
+    description: Extra space-separated top-level names on the server that are never deleted or replaced.
+    default: ""
+  delete:
+    description: "true removes server files the build no longer has (inside the site folder only)."
+    default: "true"
+  dry-run:
+    description: "true reports what would change and changes nothing."
+    default: "false"
+  adopt:
+    description: "true takes over a folder that already has files: backs it up, keeps existing entries."
+    default: "false"
+outputs:
+  stamp-url:
+    description: URL of the deploy stamp (wakanda-deploy.json).
+    value: ${{ steps.deploy.outputs.stamp-url }}
+runs:
+  using: composite
+  steps:
+    - name: Prepare SSH identity
+      shell: bash
+      env:
+        SSH_KEY: ${{ inputs.ssh-key }}
+        KNOWN_HOSTS: ${{ inputs.known-hosts }}
+      run: |
+        set -euo pipefail
+        dir="$RUNNER_TEMP/wakanda-ssh"; install -d -m 700 "$dir"
+        [[ -n "$SSH_KEY" ]] || { echo "::error::ssh-key is empty. Add the DEPLOY_SSH_KEY secret."; exit 1; }
+        [[ -n "$KNOWN_HOSTS" ]] || { echo "::error::known-hosts is empty. Add the DEPLOY_KNOWN_HOSTS secret."; exit 1; }
+        printf '%s\n' "$SSH_KEY" | tr -d '\r' > "$dir/key"; chmod 600 "$dir/key"
+        printf '%s\n' "$KNOWN_HOSTS" | tr -d '\r' > "$dir/known_hosts"
+        ssh-keygen -y -f "$dir/key" >/dev/null 2>&1 || { echo "::error::ssh-key is not a valid unencrypted private key."; exit 1; }
+        command -v rsync >/dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq rsync; }
+    - name: Deploy
+      id: deploy
+      shell: bash
+      env:
+        DEPLOY_SOURCE: ${{ inputs.source }}
+        DEPLOY_SITE: ${{ inputs.site }}
+        DEPLOY_HOST: ${{ inputs.host }}
+        DEPLOY_USER: ${{ inputs.user }}
+        DEPLOY_PORT: ${{ inputs.port }}
+        DEPLOY_PATH: ${{ inputs.path }}
+        DEPLOY_PROTECT: ${{ inputs.protect }}
+        DEPLOY_DELETE: ${{ inputs.delete == 'true' && '1' || '0' }}
+        DEPLOY_DRY_RUN: ${{ inputs.dry-run == 'true' && '1' || '0' }}
+        DEPLOY_ADOPT: ${{ inputs.adopt == 'true' && '1' || '0' }}
+        DEPLOY_SSH_KEY_FILE: ${{ runner.temp }}/wakanda-ssh/key
+        DEPLOY_KNOWN_HOSTS_FILE: ${{ runner.temp }}/wakanda-ssh/known_hosts
+        DEPLOY_COMMIT: ${{ github.sha }}
+        DEPLOY_REF: ${{ github.ref_name }}
+        DEPLOY_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        DEPLOY_ACTOR: ${{ github.actor }}
+        URL: ${{ inputs.url }}
+      run: |
+        set -euo pipefail
+        "$GITHUB_ACTION_PATH/deploy-static.sh" 2>&1 | tee "$RUNNER_TEMP/wakanda-deploy.log"
+        [[ -n "$URL" ]] && echo "stamp-url=${URL%/}/wakanda-deploy.json" >> "$GITHUB_OUTPUT" || true
+    - name: Verify over HTTP
+      if: inputs.url != '' && inputs.dry-run != 'true'
+      shell: bash
+      env:
+        URL: ${{ inputs.url }}
+        PATHS: ${{ inputs.verify-paths }}
+        VERIFY_INSECURE: ${{ inputs.verify-insecure == 'true' && '1' || '0' }}
+      run: |
+        set -euo pipefail
+        # shellcheck disable=SC2086
+        "$GITHUB_ACTION_PATH/verify-site.sh" "$URL" "$GITHUB_SHA" $PATHS | tee "$RUNNER_TEMP/wakanda-verify.log"
+    - name: Summary
+      if: always()
+      shell: bash
+      env:
+        URL: ${{ inputs.url }}
+        DRY: ${{ inputs.dry-run }}
+      run: |
+        {
+          echo "### Shared-hosting deploy"
+          [[ "$DRY" == true ]] && echo "**Dry run**: nothing on the server changed."
+          [[ -n "$URL" ]] && echo "Site: $URL"
+          echo '```'
+          cat "$RUNNER_TEMP/wakanda-deploy.log" "$RUNNER_TEMP/wakanda-verify.log" 2>/dev/null || true
+          echo '```'
+        } >> "$GITHUB_STEP_SUMMARY"
+        rm -rf "$RUNNER_TEMP/wakanda-ssh"
