@@ -32,7 +32,7 @@ Make the agent-driven publishing workflow operational: request -> agent -> PR ->
 
 ## Exact Next Action
 
-Install the workflow file (`tools/ci/README.md`). After merge: Ken sets up Bluehost SSH and runs `tools/deploy/Initialize-DeployAccess.ps1` (steps in `docs/publishing-workflow.md`), then sets `DEPLOY_ENABLED=true` for a dry run.
+Ken runs the one-line setup in `docs/publishing-workflow.md` ("Fastest path"): it installs the workflow file, previews the site, sets up the Bluehost deploy key and GitHub settings, and offers dry-run publishing and the PR #1 merge. The generic tool is in review as blackfacts/tools#30.
 
 ## Read First Next Session
 
