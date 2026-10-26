@@ -53,6 +53,12 @@ scripts/build-site.sh            # from the repo root: legacy files + this site 
 SITE_MODE=production scripts/build-site.sh
 ```
 
+After any design or content change, also run the fit check. It opens every page at 360, 390, 768, 1024 and 1440px and fails if a heading is wider than its box, a word breaks across lines, or a page scrolls sideways:
+
+```bash
+cd web && npm run check:fit      # reads ../_site; needs Playwright + Chromium
+```
+
 `build-site.sh` copies the legacy folders, renames the old one-page site to `classic.html`, runs `npm run build` here, copies `web/dist/site/` on top, and fails on any page linking to a missing local file. GitHub Actions runs the same script on every push to `master` (see `DEPLOY.md`).
 
 Inside `web/`, `npm run build` does three things: Vite builds the client bundle (`dist/client`), Vite builds the server renderer (`dist/server`), and `prerender.mjs` writes one `index.html` per route into `dist/site`, with that page's data embedded for hydration.
