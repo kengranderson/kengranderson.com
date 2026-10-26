@@ -1,15 +1,39 @@
 {
   "name": "Ken Granderson",
-  "tagline": ["Bed-Stuy, Brooklyn", "MIT '85", "Independent technologist"],
+  "tagline": [
+    "Bed-Stuy, Brooklyn",
+    "MIT '85",
+    "Independent technologist"
+  ],
   "hero": {
     "lead": "I build technology by, for and about",
     "accent": "Black communities.",
     "intro": "Since 1992. Technologies that WE created, control and OWN. Don't take my word for it. The evidence is below."
   },
   "doors": [
-    { "page": "story", "label": "My Story", "title": "Bed-Stuy → MIT → Roxbury → Home", "text": "The DJ, the engineer, the 'hood. My life and my technology are the same story.", "cta": "Read the story" },
-    { "page": "work", "label": "My Work", "title": "30+ years. Receipts attached.", "accentWord": "Receipts", "text": "Current projects first. Every one with its dates, status and evidence.", "cta": "See the work", "dark": true },
-    { "page": "philosophy", "label": "My Philosophy", "title": "Duty and Opportunity", "text": "Ownership. Self-determination. Techie-chagulia. Outcomes over income.", "cta": "Read the essays" }
+    {
+      "page": "story",
+      "label": "My Story",
+      "title": "Bed-Stuy → MIT → Roxbury → Home",
+      "text": "The DJ, the engineer, the 'hood. My life and my technology are the same story.",
+      "cta": "Read the story"
+    },
+    {
+      "page": "work",
+      "label": "My Work",
+      "title": "30+ years. Receipts attached.",
+      "accentWord": "Receipts",
+      "text": "Current projects first. Every one with its dates, status and evidence.",
+      "cta": "See the work",
+      "dark": true
+    },
+    {
+      "page": "philosophy",
+      "label": "My Philosophy",
+      "title": "Duty and Opportunity",
+      "text": "Ownership. Self-determination. Techie-chagulia. Outcomes over income.",
+      "cta": "Read the essays"
+    }
   ],
   "video": {
     "youtube": "3aw2cTFvy20",
@@ -21,26 +45,76 @@
   "connect": {
     "title": "Let's build something WE own.",
     "text": "Community leaders, educators, funders, journalists, builders. If you're working on changing the game, I want to hear about it.",
-    "email": null,
+    "email": "ken@blackfacts.com",
     "intents": [
-      { "subject": "Collaborate", "title": "Build something together", "text": "Community leaders, civic orgs, partners" },
-      { "subject": "Speaking", "title": "Bring me in to speak", "text": "Conferences, panels, classrooms, podcasts" },
-      { "subject": "Schools", "title": "Schools & educators", "text": "Diversity Schoolhouse for your district" },
-      { "subject": "Press", "title": "Press, research, funders", "text": "Sources attached to every claim on this site", "dark": true }
+      {
+        "subject": "Collaborate",
+        "title": "Build something together",
+        "text": "Community leaders, civic orgs, partners"
+      },
+      {
+        "subject": "Speaking",
+        "title": "Bring me in to speak",
+        "text": "Conferences, panels, classrooms, podcasts"
+      },
+      {
+        "subject": "Schools",
+        "title": "Schools & educators",
+        "text": "Diversity Schoolhouse for your district"
+      },
+      {
+        "subject": "Press",
+        "title": "Press, research, funders",
+        "text": "Sources attached to every claim on this site",
+        "dark": true
+      }
     ]
   },
   "links": [
-    { "label": "BlackFacts.com", "note": "Since 1997", "url": "https://blackfacts.com" },
-    { "label": "LinkedIn", "note": "Professional record", "url": null },
-    { "label": "GitHub", "note": "See how this site is built", "url": "https://github.com/kengranderson/kengranderson" }
+    {
+      "label": "BlackFacts.com",
+      "note": "Since 1997",
+      "url": "https://blackfacts.com"
+    },
+    {
+      "label": "LinkedIn",
+      "note": "Professional record",
+      "url": null
+    },
+    {
+      "label": "GitHub",
+      "note": "See how this site is built",
+      "url": "https://github.com/kengranderson/kengranderson"
+    }
   ],
   "nav": [
-    { "page": "work", "label": "Work" },
-    { "page": "story", "label": "Story" },
-    { "page": "philosophy", "label": "Philosophy" },
-    { "page": "timeline", "label": "Timeline" },
-    { "page": "events", "label": "Events" },
-    { "page": "connect", "label": "Connect" }
+    {
+      "page": "story",
+      "label": "Story"
+    },
+    {
+      "page": "work",
+      "label": "Work"
+    },
+    {
+      "page": "philosophy",
+      "label": "Philosophy"
+    },
+    {
+      "page": "timeline",
+      "label": "Timeline"
+    },
+    {
+      "page": "events",
+      "label": "Events"
+    },
+    {
+      "page": "connect",
+      "label": "Connect"
+    }
   ],
-  "motto": ["Technology By Us, For Us, About Us and", "Owned By Us."]
+  "motto": [
+    "Technology By Us, For Us, About Us and",
+    "Owned By Us."
+  ]
 }

@@ -5,6 +5,7 @@ import path from 'node:path';
 import highlightsRaw from '../../KenGranderson/highlights.json';
 import site from '../../KenGranderson/content/site.json';
 import principlesFile from '../../KenGranderson/content/philosophy/_principles.json';
+import story from '../../KenGranderson/content/story.json';
 
 const workFiles = import.meta.glob('../../KenGranderson/content/work/*.json', { eager: true, import: 'default' });
 const essayFiles = import.meta.glob(['../../KenGranderson/content/philosophy/*.json', '!../../KenGranderson/content/philosophy/_*.json'], { eager: true, import: 'default' });
@@ -127,7 +128,7 @@ function nav(pages) {
 }
 
 function pagePath(page) {
-  return { home: '', work: 'work/', timeline: 'timeline/', philosophy: 'philosophy/', connect: 'connect/' }[page] ?? null;
+  return { home: '', story: 'story/', work: 'work/', timeline: 'timeline/', philosophy: 'philosophy/', connect: 'connect/' }[page] ?? null;
 }
 
 function common(pages) {
@@ -140,9 +141,24 @@ function common(pages) {
   };
 }
 
+// "work:<slug>" or "timeline:<hash>" → a labelled link (unknown or hidden refs drop out).
+const entryByHash = new Map(timeline.flatMap((y) => y.entries.map((e) => [e.id, e])));
+function evidenceLinks(refs = []) {
+  return refs.map((ref) => {
+    const [kind, key] = ref.split(':');
+    if (kind === 'work') {
+      const w = workBySlug.get(key);
+      return w && visible(w) ? { kind: 'Project', title: w.title, year: w.years?.start ?? null, path: workPath(key) } : null;
+    }
+    const e = entryByHash.get(key);
+    return e ? { kind: 'Archive', title: e.title, year: e.year, path: timelinePath(e) } : null;
+  }).filter(Boolean);
+}
+
 // Every page the build writes, with the props it renders from.
 export function routes() {
   const pages = new Set(['home', 'work', 'timeline', 'connect']);
+  if (visible(story)) pages.add('story');
   if (essays.length) pages.add('philosophy');
   const base = common(pages);
   const list = [];
@@ -254,6 +270,24 @@ export function routes() {
           next: nextP ? { title: nextP.title, path: essayPath(nextP.slug) } : null
         }
       });
+    });
+  }
+
+  if (pages.has('story')) {
+    list.push({
+      path: 'story/',
+      page: 'Story',
+      title: `My Story | ${site.name}`,
+      description: story.dek,
+      props: {
+        ...base,
+        story: {
+          ...story,
+          needs: MODE === 'preview' ? story.needs || [] : [],
+          journey: story.journey.map((j) => ({ ...j, links: evidenceLinks(j.links) })),
+          chapters: story.chapters.map((c) => ({ ...c, evidence: evidenceLinks(c.evidence) }))
+        }
+      }
     });
   }
 

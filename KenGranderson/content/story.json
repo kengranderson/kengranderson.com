@@ -1,0 +1,123 @@
+{
+  "title": "My Story",
+  "publish": "review",
+  "dek": "Bed-Stuy → MIT → Boston and Roxbury → back to Brooklyn. My life and my technology are the same story.",
+  "source": "In my own words, from the original kengranderson.com (now classic.html). Wording unchanged; headings and evidence links added.",
+  "journey": [
+    {
+      "place": "Bed-Stuy, Brooklyn",
+      "when": "Native son",
+      "text": "Where it starts.",
+      "links": []
+    },
+    {
+      "place": "MIT",
+      "when": "Class of '85",
+      "text": "Engineer. One of the top DJs on campus.",
+      "links": []
+    },
+    {
+      "place": "Boston & Roxbury",
+      "when": "1985–2018",
+      "text": "Inner-City Software, BlackFacts, Roxbury.com.",
+      "links": [
+        "work:inner-city-software",
+        "work:roxbury"
+      ]
+    },
+    {
+      "place": "Back to Brooklyn",
+      "when": "2018 →",
+      "text": "Home again, building My Bed-Stuy.",
+      "links": [
+        "work:my-bed-stuy"
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "heading": "Since 1992",
+      "paragraphs": [
+        "Hey There! Thanks for stopping By!",
+        "Ever since 1992, when I was able to leave my hi-tech job to work on my own software creations full-time out of my basement apartment with a self-built computer and second telephone line, I have been conceiving, creating and deploying software solutions that educate individuals, put businesses, organizations and communities online, and have even enabled a national government to deliver accurate and timely information to their citizenry."
+      ],
+      "evidence": [
+        "work:inner-city-software",
+        "work:saint-lucia"
+      ]
+    },
+    {
+      "heading": "Bed-Stuy, MIT, Boston",
+      "paragraphs": [
+        "My name is Ken Granderson. I am a native and repatriate of the Bedford-Stuyvesant section of Brooklyn USA, having returned to New York in 2018 in search of better networking and collaboration opportunities than those available in the Boston area, where I stayed after graduating from MIT in 1985."
+      ],
+      "evidence": []
+    },
+    {
+      "heading": "The MIT years",
+      "placeholder": "Ken to write: MIT, engineering, and being one of the top DJs on campus.",
+      "evidence": []
+    },
+    {
+      "heading": "The early online age",
+      "paragraphs": [
+        "I experienced the early online age as a meritocracy, where despite my lack of capital or connections, I was selling my software creations in over a dozen countries, and despite my ethnic background, was doing remote programming work and selling one of my products through the catalog of a company in Arizona (which was not honoring Martin Luther King Day then), and was owned by two high-ranking Mormons (who had only started accepting blacks into their priesthood in then-recent history)."
+      ],
+      "evidence": [
+        "timeline:keymapper",
+        "timeline:nodos"
+      ]
+    },
+    {
+      "heading": "Brains in the 'Hood",
+      "paragraphs": [
+        "So, when I launched my software development company Inner-City Software in 1992 with the slogan \"Brains in the 'Hood\" (RIP John Singleton), and my first product ended up in a PC Magazine editor's book available in CompUSA stores nationwide, I made this commitment:"
+      ],
+      "quote": "To help close the Digital Divide by establishing world-class leadership in the technology space by creating technology products and solutions by and for people of African descent.",
+      "evidence": [
+        "work:inner-city-software",
+        "timeline:grpicon"
+      ]
+    },
+    {
+      "heading": "The Boston decade",
+      "paragraphs": [
+        "Over the next decade, as you will see in the 'Highlights' section below, I spearheaded a variety of initiatives that introduced Boston's communities of color to computers and the Internet, put many local organizations, Boston's black newspaper and the entire community itself online with online presences that were world-class for their time, and promoted economic development in the area with online presences for several economic development organizations and an interactive web application that connected businesses throughout Boston's Empowerment Zone."
+      ],
+      "evidence": [
+        "work:inner-city-access",
+        "work:roxbury",
+        "timeline:baystatebanner",
+        "timeline:ezinfo"
+      ]
+    },
+    {
+      "heading": "A wall full of awards",
+      "paragraphs": [
+        "Despite all these projects that were way ahead of their time, while I ended up with a wall full of awards, proclamations and even an Honorary Doctorate for my efforts, I was never able to secure external financing or establish industry connections that would get me access to high revenue contracts, and I ultimately shut down Inner-City Software in 2004, and eventually returned to New York in 2018 in search of a better environment to launch progressive ventures."
+      ],
+      "evidence": [
+        "timeline:salem",
+        "timeline:mvp",
+        "timeline:freedom"
+      ]
+    },
+    {
+      "heading": "Put on your Big Idea Hat",
+      "paragraphs": [
+        "So please look at the info below I have saved over the years. There is a lot, so bookmark this page and come back as your time permits, but please look at at least some of the newspaper articles or TV programs that give you a window into what I was thinking, saying and most importantly, DOING over 20 years ago. You will find that pretty much all of it is just as relevant today (and still has not been done at a significant level).",
+        "Then put on your Big Idea Hat (if you don't have one, you are free to borrow mine) and ask yourself how things might be different today if ideas like the ones I was pushing in the 90s had taken root in some of our major cities.",
+        "And finally, if you would like to help make ideas like these come to fruition in the present, please share this page with others who may be in positions to help make things happen, those who may be trying to do similar things but like myself, are not connected to like-minded folks, or folks who just need to be encouraged that there are folks who understand and master technology who are truly committed to using it to create better opportunities and futures for 'the rest of us.'",
+        "All that needs to get the ball rolling is for folks with the technical expertise and commitment to connect with others who have the resources to make things happen, and it's 'Game On,' and I as like to say - \"The only game I am interested in playing is the one called 'Changing The Game'\" So please help us all Play to Win the Game by sharing this page with someone else who you think will appreciate it!"
+      ],
+      "signoff": "- Ken",
+      "evidence": []
+    }
+  ],
+  "needs": [
+    "Write the MIT / DJ chapter (slot shown on the page)",
+    "The text points to the 'Highlights section below'; on this site that is the Archive. Keep as-is, or update the wording?",
+    "Typo in the original: \"I as like to say\". Fix, or leave as historical text?",
+    "Approve the section headings and journey captions (added, not in the original)"
+  ]
+}

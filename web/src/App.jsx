@@ -6,8 +6,9 @@ import Timeline from './pages/Timeline.jsx';
 import Philosophy from './pages/Philosophy.jsx';
 import Essay from './pages/Essay.jsx';
 import Connect from './pages/Connect.jsx';
+import Story from './pages/Story.jsx';
 
-const PAGES = { Home, Work, Project, Timeline, Philosophy, Essay, Connect };
+const PAGES = { Home, Story, Work, Project, Timeline, Philosophy, Essay, Connect };
 
 export default function App({ page, rel, props }) {
   const Page = PAGES[page];
