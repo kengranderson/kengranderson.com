@@ -1,7 +1,7 @@
 # The kengranderson.com site (web/)
 
 **Author:** Claude Code for Ken Granderson
-**Last updated:** 2026-10-26
+**Last updated:** 2026-10-27
 
 React components, built with Vite and **pre-rendered to static HTML at build time**. Every page is complete HTML that search engines and AI agents can read without running JavaScript; the small React bundle then makes filters, search, the mobile menu and video embeds interactive. No server, no database, no CMS.
 
@@ -46,6 +46,24 @@ Optional: `flagship` (the Home feature), `proof` + `proofTitle` (the "Since 1992
 
 A project page is the record **plus the timeline entries it lists in `highlights`**: their videos, screenshots, clippings and documents become the page's exhibits. Add evidence once in `highlights.json` and it shows on both the timeline and the project.
 
+## Themes
+
+The whole look lives in one file, `src/site.css`, and every component uses design tokens (CSS custom properties) instead of raw colours or fonts. A theme is just a block of token values, CSS Zen Garden style. Visitors pick one from the **Theme** drop-down in the header; the choice is saved in their browser (`localStorage`, key `kg-theme`) and applied by a tiny script in `<head>` before the page paints, so there is no flash of the default.
+
+| id | Name | Look |
+|---|---|---|
+| `block-party` | Block Party (default) | Warm cream, marigold and plum, rounded corners, sticker shadows |
+| `poster` | Unapologetically Black | The red, white and black protest-poster signage |
+| `pan-african` | Pan-African | Red, black and green of the 1920 UNIA flag |
+| `kente` | Kente Gold | Gold, green and red woven bands, after Asante and Ewe kente cloth |
+| `harlem` | Harlem Renaissance | Art Deco parchment, midnight and gold |
+| `saint-lucia` | Saint Lucia | Cerulean, gold and black from the island's flag |
+| `afrofuturist` | Afrofuturist | Night-sky violet with gold and cyan (the dark theme) |
+
+A first-time visitor whose device is set to dark mode gets Afrofuturist; everyone else gets Block Party until they choose. Without JavaScript the drop-down is hidden and Block Party shows. Hover lifts and the colour fade between themes only run for visitors who have not asked their device to reduce motion.
+
+**To add or change a theme:** copy a `:root[data-theme="…"]` block in `src/site.css`, give it a new id, add the same id to `src/themes.js`, then run `npm run check:contrast` (it also runs at the start of every build and fails it if any text colour pair in any theme is too faint to read). Run `npm run check:fit` too: a new display font can make headings wider.
+
 ## Build
 
 ```bash
@@ -53,7 +71,7 @@ scripts/build-site.sh            # from the repo root: legacy files + this site 
 SITE_MODE=production scripts/build-site.sh
 ```
 
-After any design or content change, also run the fit check. It opens every page at 360, 390, 768, 1024 and 1440px and fails if a heading is wider than its box, a word breaks across lines, or a page scrolls sideways:
+After any design or content change, also run the fit check. It opens every page, in every theme, at 360, 390, 768, 1024 and 1440px and fails if a heading is wider than its box, a word breaks across lines, or a page scrolls sideways:
 
 ```bash
 cd web && npm run check:fit      # reads ../_site; needs Playwright + Chromium
@@ -69,7 +87,8 @@ Inside `web/`, `npm run build` does three things: Vite builds the client bundle 
 - `src/pages/*.jsx`: one component per page type (Home, Work, Project, Timeline, Philosophy, Essay, Connect).
 - `src/components/ui.jsx`: the shared components (status chip, VERIFY flag, project card, video, exhibit, evidence/document link, pull quote).
 - `src/components/Layout.jsx`: header, footer, preview bar.
-- `src/site.css`: the one stylesheet. Tokens at the top; one block per component.
+- `src/site.css`: the one stylesheet. Fonts, tokens and themes at the top; one block per component.
+- `src/themes.js`: the list of themes, the default, and the `<head>` script that applies the saved one.
 
 Links are always relative (`./`, `../`), so the site works from any folder on any host.
 

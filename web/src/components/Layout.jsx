@@ -1,5 +1,27 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useHref, useSite } from './ui.jsx';
+import { THEMES, DEFAULT_THEME, STORAGE_KEY } from '../themes.js';
+
+// The theme drop-down. The <head> script has already applied the saved theme before paint;
+// this only reads it back and saves a new choice. Hidden without JavaScript (see .theme-picker).
+export function ThemePicker() {
+  const [theme, setTheme] = useState(DEFAULT_THEME);
+  useEffect(() => { setTheme(document.documentElement.getAttribute('data-theme') || DEFAULT_THEME); }, []);
+  const choose = (e) => {
+    const t = e.target.value;
+    setTheme(t);
+    document.documentElement.setAttribute('data-theme', t);
+    try { localStorage.setItem(STORAGE_KEY, t); } catch { /* private mode: the choice lasts for this page only */ }
+  };
+  return (
+    <label className="theme-picker">
+      <span className="theme-picker__label">Theme</span>
+      <select className="theme-picker__select" value={theme} onChange={choose}>
+        {THEMES.map((t) => <option key={t.id} value={t.id}>{t.label}</option>)}
+      </select>
+    </label>
+  );
+}
 
 export function Header({ nav, name, current }) {
   const [open, setOpen] = useState(false);
@@ -14,11 +36,14 @@ export function Header({ nav, name, current }) {
         <button type="button" className="menu-btn" aria-expanded={open} aria-controls="site-nav" aria-label={open ? 'Close menu' : 'Open menu'} onClick={() => setOpen(!open)}>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d={open ? 'M5 5l14 14M19 5L5 19' : 'M3 6h18M3 12h18M3 18h18'} stroke="currentColor" strokeWidth="2.5" fill="none"></path></svg>
         </button>
-        <nav id="site-nav" aria-label="Main" className={`site-nav${open ? ' is-open' : ''}`}>
-          {nav.filter((n) => n.path != null).map((n) => (
-            <Link key={n.page} to={n.path} className={`site-nav__link${n.page === 'connect' ? ' site-nav__link--cta' : ''}`} aria-current={n.page === current ? 'page' : undefined}>{n.label}</Link>
-          ))}
-        </nav>
+        <div id="site-nav" className={`site-menu${open ? ' is-open' : ''}`}>
+          <nav aria-label="Main" className="site-nav">
+            {nav.filter((n) => n.path != null).map((n) => (
+              <Link key={n.page} to={n.path} className={`site-nav__link${n.page === 'connect' ? ' site-nav__link--cta' : ''}`} aria-current={n.page === current ? 'page' : undefined}>{n.label}</Link>
+            ))}
+          </nav>
+          <ThemePicker />
+        </div>
       </div>
     </header>
   );
