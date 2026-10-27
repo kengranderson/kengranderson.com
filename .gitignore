@@ -345,3 +345,7 @@ healthchecksdb
 _site/
 # Built React site (web/)
 web/dist/
+
+# KenGranderson/content/work/ holds the project records (source, not a build output).
+# The Visual Studio rule [Ww]ork/ above would otherwise ignore it.
+!KenGranderson/content/work/
