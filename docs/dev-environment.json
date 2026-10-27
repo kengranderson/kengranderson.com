@@ -1,0 +1,101 @@
+{
+  "schema": "wakanda-dev-environment",
+  "schemaVersion": "1.0",
+  "project": {
+    "id": "kengranderson-com",
+    "name": "KenGranderson.com",
+    "description": "Ken Granderson's personal website: a static site (legacy pages plus a Vite + React site pre-rendered to HTML) published to Bluehost shared hosting by GitHub Actions on every merge to master.",
+    "statusDoc": "docs/status.md",
+    "workstationGuide": "docs/workstation-setup.md",
+    "coordinatingRepository": "blackfacts/tools"
+  },
+  "workspace": {
+    "defaultRoot": "{userprofile}/source/repos",
+    "notes": [
+      "Ken's repositories live under %USERPROFILE%\\source\\repos on Windows (blackfacts/tools is cloned there as Wakanda.Tools).",
+      "Any folder works: the tools find sibling repositories relative to this repository unless -WorkspaceRoot is given."
+    ]
+  },
+  "repositories": [
+    {
+      "name": "kengranderson",
+      "url": "https://github.com/kengranderson/kengranderson.git",
+      "purpose": "The website: content (JSON), legacy pages, React site in web/, build script, deploy workflow.",
+      "required": true,
+      "self": true,
+      "branch": "master",
+      "localPath": "kengranderson",
+      "access": "public (read); write: Ken (kengranderson) and collaborators he adds",
+      "packages": [
+        { "path": "web", "manager": "npm", "lockfile": "package-lock.json", "installed": "node_modules", "install": "npm ci --no-audit --no-fund" }
+      ]
+    },
+    {
+      "name": "tools",
+      "url": "https://github.com/blackfacts/tools.git",
+      "purpose": "Wakanda Tools: the shared deploy action (vendored here in .wakanda/shared-hosting-deploy), deploy-key setup, custom-domain cutover, and these workstation-readiness tools. Not needed to edit or build the site.",
+      "required": false,
+      "branch": "main",
+      "localPath": "Wakanda.Tools",
+      "access": "private: blackfacts GitHub organization members"
+    }
+  ],
+  "prerequisites": {
+    "tools": [
+      { "id": "git", "name": "Git", "command": "git", "required": true, "purpose": "source control", "install": { "windows": "winget install --id Git.Git -e (or launcher\\Install-WakandaTools.cmd from blackfacts/tools)", "macos": "brew install git", "linux": "sudo apt-get install git" } },
+      { "id": "bash", "name": "Bash (Git Bash on Windows)", "command": "bash", "resolve": "git-bash", "required": true, "purpose": "scripts/build-site.sh", "install": { "windows": "Install Git for Windows (winget install --id Git.Git -e); it includes Git Bash. WSL's bash is not used.", "macos": "included with macOS", "linux": "included" } },
+      { "id": "node", "name": "Node.js", "command": "node", "minVersion": "22.0", "required": true, "purpose": "builds web/ (GitHub Actions uses Node 22)", "install": { "windows": "winget install --id OpenJS.NodeJS.LTS -e", "macos": "brew install node@22", "linux": "https://nodejs.org (22.x)" } },
+      { "id": "npm", "name": "npm", "command": "npm", "required": true, "purpose": "installs web/ packages from package-lock.json", "install": { "windows": "comes with Node.js", "macos": "comes with Node.js", "linux": "comes with Node.js" } },
+      { "id": "python3", "name": "Python 3 (as the python3 command)", "command": "python3", "required": true, "purpose": "scripts/build-site.sh validates highlights.json with python3", "install": { "windows": "Install Python 3 from the Microsoft Store (it provides python3.exe); the python.org installer only provides python/py", "macos": "brew install python", "linux": "sudo apt-get install python3" } },
+      { "id": "gh", "name": "GitHub CLI", "command": "gh", "required": false, "purpose": "deploy-key setup (blackfacts/tools Setup-DeployKey.ps1) and pull requests from the command line", "install": { "windows": "winget install --id GitHub.cli -e", "macos": "brew install gh", "linux": "https://cli.github.com" } },
+      { "id": "ssh", "name": "OpenSSH client", "command": "ssh", "required": false, "purpose": "only for one-time deploy setup against Bluehost; normal deploys run in GitHub Actions", "install": { "windows": "Settings > Optional features > OpenSSH Client (built into Windows 10/11)", "macos": "included", "linux": "sudo apt-get install openssh-client" } },
+      { "id": "pwsh", "name": "PowerShell 7", "command": "pwsh", "required": false, "purpose": "recommended for the blackfacts/tools scripts (Windows PowerShell 5.1 also runs the readiness tools)", "install": { "windows": "winget install --id Microsoft.PowerShell -e", "macos": "brew install powershell", "linux": "https://learn.microsoft.com/powershell/scripting/install/installing-powershell-on-linux" } }
+    ],
+    "manual": [
+      { "id": "github-write", "description": "A GitHub account with write access to kengranderson/kengranderson (to push branches and open pull requests).", "required": true, "scope": "develop", "howToVerify": "gh auth status; then gh repo view kengranderson/kengranderson" },
+      { "id": "tools-read", "description": "Read access to the private blackfacts/tools repository (deploy setup, refreshing the vendored deploy action, these readiness tools).", "required": false, "scope": "deploy", "howToVerify": "git ls-remote https://github.com/blackfacts/tools.git" },
+      { "id": "merge-rights", "description": "Merging to master publishes the site. Only Ken (or someone he authorizes) merges.", "required": false, "scope": "deploy", "howToVerify": "GitHub > kengranderson/kengranderson > Settings > Collaborators" },
+      { "id": "bluehost-ssh", "description": "SSH access to the Bluehost account, only to (re)create the deploy key. Day-to-day deploys need nothing on the workstation.", "required": false, "scope": "deploy", "howToVerify": "ssh <your bluehost alias> echo ok" },
+      { "id": "playwright", "description": "Playwright with Chromium for the heading fit check (npm run check:fit in web/). Not in package.json; install separately.", "required": false, "scope": "develop", "howToVerify": "cd web; npm run check:fit" }
+    ]
+  },
+  "environmentVariables": [
+    { "name": "SITE_MODE", "required": false, "where": "workstation", "default": "preview", "purpose": "preview (default: drafts and VERIFY flags shown, pages noindex) or production (published records only)." },
+    { "name": "DEPLOY_HOST", "required": true, "where": "github-environment", "purpose": "Bluehost SSH host; GitHub environment bluehost-preview variable." },
+    { "name": "DEPLOY_USER", "required": true, "where": "github-environment", "purpose": "Bluehost SSH user; environment variable." },
+    { "name": "DEPLOY_PATH", "required": true, "where": "github-environment", "purpose": "Site folder on Bluehost, relative to the SSH home; environment variable." },
+    { "name": "DEPLOY_URL", "required": true, "where": "github-environment", "purpose": "URL the deploy verifies; environment variable." },
+    { "name": "DEPLOY_PORT", "required": false, "where": "github-environment", "purpose": "SSH port, default 22." },
+    { "name": "DEPLOY_VERIFY_INSECURE", "required": false, "where": "github-environment", "purpose": "true only while the site has no valid certificate." },
+    { "name": "DEPLOY_SSH_KEY", "required": true, "where": "github-secret", "secret": true, "purpose": "Private deploy key for this site only (created by Setup-DeployKey.ps1)." },
+    { "name": "DEPLOY_KNOWN_HOSTS", "required": true, "where": "github-secret", "secret": true, "purpose": "Pinned SSH host key of the Bluehost server." }
+  ],
+  "services": [
+    { "id": "github", "name": "GitHub", "kind": "http", "url": "https://github.com", "required": true, "purpose": "Source, pull requests and the deploy workflow." },
+    { "id": "npm-registry", "name": "npm registry", "kind": "http", "url": "https://registry.npmjs.org/", "required": true, "purpose": "npm ci downloads web/ packages." }
+  ],
+  "databases": [],
+  "commands": {
+    "install": [
+      { "name": "web packages", "run": "npm ci --no-audit --no-fund", "shell": "bash", "cwd": "web", "verified": "linux 2026-10-27 (via build-site.sh)" }
+    ],
+    "build": [
+      { "name": "build and check the site into _site", "run": "scripts/build-site.sh _site", "shell": "bash", "timeoutSeconds": 900, "verified": "linux 2026-10-27 (Node 22.22.0, Python 3.13): 894 files, 0 warnings; GitHub Actions on every merge" }
+    ],
+    "test": [
+      { "name": "heading fit check (needs Playwright + Chromium)", "run": "npm run check:fit", "shell": "bash", "cwd": "web", "required": false, "platforms": ["linux", "macos"], "verified": "added in PR #5 (2026-10-26); run on linux 2026-10-27 in this session only if noted in docs/status.md; not run on Windows (the script builds paths from import.meta.url pathname, which may not resolve on Windows)" }
+    ],
+    "smoke": [
+      { "name": "built home page and highlights exist", "run": "test -s _site/index.html && test -s _site/highlights.json && test -s _site/classic.html", "shell": "bash", "verified": "linux 2026-10-27" },
+      { "name": "project records present (My Work pages)", "run": "ls KenGranderson/content/work/*.json && test -d _site/work/my-bed-stuy", "shell": "bash", "required": false, "verified": "linux 2026-10-27: FAILS, the records were never committed (see docs/status.md)" }
+    ],
+    "start": [
+      { "name": "serve the built site at http://localhost:8080", "run": "python3 -m http.server 8080 --directory _site", "shell": "bash", "longRunning": true, "verified": "linux 2026-10-27" }
+    ]
+  },
+  "knownLimitations": [
+    "The build has run on Linux (GitHub Actions and a cloud session). It has not yet been run on Windows: scripts/build-site.sh needs Git Bash and a python3 command there.",
+    "There is no live-reload dev server; rebuild with scripts/build-site.sh and refresh.",
+    "Legacy: generatejson/ (a .NET Framework console app) once generated KenGranderson/highlights.json from a SQL Server database 'KenGranderson' on the machine INKOSI. The JSON file is now edited directly; running generatejson would overwrite those edits. Not needed for development."
+  ]
+}
