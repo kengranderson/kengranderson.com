@@ -1,7 +1,8 @@
-// Measures every heading on every built page at several screen widths and fails if
+// Measures every heading on every built page, in every theme, at several screen widths and fails if
 // a heading is wider than its box, a word is split across lines, or the page scrolls sideways.
 //
 // Usage (after scripts/build-site.sh): npm run check:fit [-- path/to/_site]
+// THEMES=poster,kente npm run check:fit   checks only those themes (default: all of src/themes.js).
 // Needs Playwright with Chromium (preinstalled in Claude Code cloud sessions; elsewhere:
 // npm i -D playwright && npx playwright install chromium).
 import fs from 'node:fs';
@@ -14,6 +15,8 @@ const { chromium } = require('playwright');
 
 const root = path.resolve(process.argv[2] || path.join(path.dirname(new URL(import.meta.url).pathname), '../../_site'));
 const WIDTHS = [360, 390, 768, 1024, 1440];
+const { THEMES, STORAGE_KEY } = await import(path.join(path.dirname(new URL(import.meta.url).pathname), '../src/themes.js'));
+const themes = process.env.THEMES ? process.env.THEMES.split(',') : THEMES.map((t) => t.id);
 const HEADINGS = 'h1, h2, h3, .display, .door__title, .card__title, .tl-year__label, .pullquote p, .intent__title, .signage__text, .lineage__title, .lineage-card strong, .row__title, .features strong, .plaque__title, .brand__name, .site-footer__motto > span';
 
 // Every page the React build wrote: read from web/dist/site, so new sections are checked automatically.
@@ -44,8 +47,9 @@ const base = `http://127.0.0.1:${server.address().port}/`;
 const browser = await chromium.launch();
 const problems = [];
 const pages = routes();
-for (const width of WIDTHS) {
+for (const theme of themes) for (const width of WIDTHS) {
   const ctx = await browser.newContext({ viewport: { width, height: 900 } });
+  await ctx.addInitScript(([k, t]) => localStorage.setItem(k, t), [STORAGE_KEY, theme]);
   await ctx.route(/^https?:\/\/(?!127\.0\.0\.1)/, (r) => r.abort()); // YouTube thumbnails etc.
   const page = await ctx.newPage();
   for (const route of pages) {
@@ -60,7 +64,8 @@ for (const width of WIDTHS) {
         if (el.scrollWidth > el.clientWidth + 1) issues.push(`${label} is ${el.scrollWidth - el.clientWidth}px wider than its box`);
         const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
         for (let node; (node = walker.nextNode());) {
-          for (const m of node.data.matchAll(/\S+/g)) {
+          // A line break right after a hyphen ("self-/determination") is normal typesetting, not a broken word.
+          for (const m of node.data.matchAll(/[^\s-]+-?/g)) {
             const range = document.createRange();
             range.setStart(node, m.index);
             range.setEnd(node, m.index + m[0].length);
@@ -71,7 +76,7 @@ for (const width of WIDTHS) {
       }
       return issues;
     }, HEADINGS);
-    for (const f of found) problems.push(`${String(width).padStart(4)}px  /${route}  ${f}`);
+    for (const f of found) problems.push(`${theme.padEnd(13)} ${String(width).padStart(4)}px  /${route}  ${f}`);
   }
   await ctx.close();
 }
@@ -80,7 +85,7 @@ server.close();
 
 if (problems.length) {
   console.log([...new Set(problems)].join('\n'));
-  console.log(`FAIL ${problems.length} heading fit problems across ${pages.length} pages × ${WIDTHS.length} widths`);
+  console.log(`FAIL ${problems.length} heading fit problems across ${pages.length} pages × ${WIDTHS.length} widths × ${themes.length} themes`);
   process.exit(1);
 }
-console.log(`OK  every heading fits on ${pages.length} pages at ${WIDTHS.join(', ')}px`);
+console.log(`OK  every heading fits on ${pages.length} pages at ${WIDTHS.join(', ')}px in ${themes.length} themes`);

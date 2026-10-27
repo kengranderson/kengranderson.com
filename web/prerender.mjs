@@ -8,6 +8,7 @@ const out = path.join(root, 'dist/site');
 const manifest = JSON.parse(fs.readFileSync(path.join(root, 'dist/client/.vite/manifest.json'), 'utf8'));
 const entry = manifest['src/entry-client.jsx'];
 const { pages, MODE } = await import(path.join(root, 'dist/server/entry-server.js'));
+const { themeBootScript } = await import(path.join(root, 'src/themes.js'));
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 // JSON inside <script> must not be able to close the tag.
@@ -24,6 +25,7 @@ for (const p of list) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>${themeBootScript()}</script>
 <title>${esc(p.title)}</title>
 <meta name="description" content="${esc(p.description)}">
 ${MODE === 'preview' ? '<meta name="robots" content="noindex">\n' : ''}<meta property="og:title" content="${esc(p.title)}">
