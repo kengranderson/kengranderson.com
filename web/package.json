@@ -3,14 +3,21 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist/server && node prerender.mjs",
+    "build": "node scripts/check-contrast.mjs && vite build && vite build --ssr src/entry-server.jsx --outDir dist/server && node prerender.mjs",
     "build:production": "SITE_MODE=production npm run build",
-    "check:fit": "node scripts/check-fit.mjs"
+    "check:fit": "node scripts/check-fit.mjs",
+    "check:contrast": "node scripts/check-contrast.mjs"
   },
   "dependencies": {
+    "@fontsource/alfa-slab-one": "5.1.0",
     "@fontsource/anton": "5.1.0",
+    "@fontsource/baloo-2": "5.1.0",
+    "@fontsource/fraunces": "5.1.0",
     "@fontsource/ibm-plex-mono": "5.1.0",
+    "@fontsource/limelight": "5.1.0",
+    "@fontsource/oswald": "5.1.0",
     "@fontsource/source-serif-4": "5.1.0",
+    "@fontsource/space-grotesk": "5.1.0",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },

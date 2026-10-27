@@ -17,11 +17,11 @@ function useLegacyHashRedirect() {
 function AssetMap({ to, label }) {
   return (
     <Link to={to} className="asset-map" aria-label={label}>
-      <span className="pin" style={{ left: '18%', top: '22%' }}></span>
-      <span className="pin" style={{ left: '41%', top: '38%' }}></span>
-      <span className="pin pin--sq" style={{ left: '63%', top: '18%' }}></span>
-      <span className="pin pin--sq" style={{ left: '30%', top: '64%' }}></span>
-      <span className="pin" style={{ left: '72%', top: '58%' }}></span>
+      <span className="pin"></span>
+      <span className="pin"></span>
+      <span className="pin pin--sq"></span>
+      <span className="pin pin--sq"></span>
+      <span className="pin"></span>
       <span className="asset-map__note">PLACEHOLDER: live screenshot of the community asset map</span>
     </Link>
   );

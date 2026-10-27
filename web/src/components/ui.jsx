@@ -117,7 +117,7 @@ export function Exhibit({ src, alt, caption, fit = 'cover', className = '' }) {
   return (
     <figure className={`exhibit ${className}`}>
       <a href={href(src)} className="exhibit__img">
-        <img src={href(src)} alt={alt} loading="lazy" style={fit === 'contain' ? { objectFit: 'contain' } : undefined} />
+        <img src={href(src)} alt={alt} loading="lazy" className={fit === 'contain' ? 'is-contain' : undefined} />
       </a>
       {caption && <figcaption className="caption">{caption}</figcaption>}
     </figure>
@@ -162,7 +162,7 @@ export function ProjectCard({ p, big }) {
   return (
     <Link to={p.path} className={`card${big ? ' card--big' : ''}`}>
       {p.image ? (
-        <img className="card__img" src={href(p.image)} alt={p.imageAlt} loading="lazy" style={p.imageFit === 'contain' ? { objectFit: 'contain', background: '#fff' } : undefined} />
+        <img className={`card__img${p.imageFit === 'contain' ? ' is-contain' : ''}`} src={href(p.image)} alt={p.imageAlt} loading="lazy" />
       ) : (
         <Placeholder className="card__img">{p.flagship ? 'Asset map screenshot' : 'Screenshot'}</Placeholder>
       )}

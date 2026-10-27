@@ -82,7 +82,7 @@ export default function Work(props) {
                 <li key={p.slug}>
                   <Link to={p.path} className="row">
                     <span className="row__year">{p.start ?? '—'}</span>
-                    {p.image ? <img className="row__thumb" src={href(p.image)} alt="" loading="lazy" style={p.imageFit === 'contain' ? { objectFit: 'contain' } : undefined} /> : <span className="row__thumb row__thumb--empty"></span>}
+                    {p.image ? <img className={`row__thumb${p.imageFit === 'contain' ? ' is-contain' : ''}`} src={href(p.image)} alt="" loading="lazy" /> : <span className="row__thumb row__thumb--empty"></span>}
                     <span className="row__main"><strong className="row__title">{p.title}</strong><span className="row__text">{p.summary}</span></span>
                     <Chip status={p.status} />
                   </Link>
